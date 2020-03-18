@@ -1,0 +1,8 @@
+include LICENSE
+include *.md
+include *.spec
+include *.txt
+include *.yml
+include *.ini
+recursive-include otherfiles *.png
+recursive-include otherfiles *.jpg

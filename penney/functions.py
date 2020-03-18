@@ -17,7 +17,7 @@ def line(num=11, char="#"):
     """
     print(char * num)
 
-def left_justify(words, width): # pragma: no cover
+def left_justify(words, width):
     """
     Left justify words.
 
@@ -29,7 +29,7 @@ def left_justify(words, width): # pragma: no cover
     """
     return ' '.join(words).ljust(width)
 
-def justify(words, width): # pragma: no cover
+def justify(words, width):
     """
     Justify input words.
 

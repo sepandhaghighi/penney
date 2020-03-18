@@ -5,12 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-## [0.1] - 2017-10-04
+## [0.1] - 2020-04-01
 ### Added
+- Player mode
+- Computer mode
+- Exe version
+- Test system
 
-
-[Unreleased]: https://github.com/sepandhaghighi/art/compare/v0.1...dev
-[0.1]: https://github.com/sepandhaghighi/art/compare/1e238cd...v0.1
+[Unreleased]: https://github.com/sepandhaghighi/penney/compare/v0.1...dev
+[0.1]: https://github.com/sepandhaghighi/penney/compare/1e238cd...v0.1
 
 
 

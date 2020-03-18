@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """"""
-from .functions import *
+from penney.functions import *
 
 if __name__ == "__main__":
     while(True):

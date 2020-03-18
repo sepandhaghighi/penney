@@ -107,7 +107,7 @@ def check_seq(seq,seq_len,seq_dict):
     return False
 
 
-def get_seq(seq_len, names_dict):
+def get_seq(seq_len, names_dict): # pragma: no cover
     seq_dict = {name:"" for name in names_dict.values()}
     for player_ord in sorted(names_dict.keys()):
         while(True):
@@ -120,7 +120,7 @@ def get_seq(seq_len, names_dict):
                 print(SEQ_ERROR.format(str(seq_len)))
     return seq_dict
 
-def get_len():
+def get_len(): # pragma: no cover
     seq_len = 0
     while(True):
         try:
@@ -138,7 +138,7 @@ def check_name(name,name_list):
         return True
     return False
 
-def get_names(num=2):
+def get_names(num=2): # pragma: no cover
     names_dict = {}
     names_order = list(range(1,num+1))
     index = 0
@@ -168,7 +168,7 @@ def print_result(scores,seq_dict):
         print(name+space+str(score)+static_space+seq_dict[name])
     print("Winner : {}".format(sorted_scores[0][0]))
 
-def get_number(message,error_message):
+def get_number(message,error_message): # pragma: no cover
     number = 0
     while(True):
         try:
@@ -200,7 +200,7 @@ def player_filter(num,seq_len,print_status=False):
         return 2**seq_len
     return num
 
-def menu():
+def menu(): # pragma: no cover
     player_or_computer = input(PLAYER_COMPUTER_MESSAGE)
     round_number = get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR)
     seq_len = get_len()
@@ -222,7 +222,7 @@ def menu():
     print_result(scores,seq_dict)
 
 
-def description():
+def description(): # pragma: no cover
     tprint("Penney Game", font="larry3d")
     tprint("v {}".format(PENNEY_VERSION))
     line(100)

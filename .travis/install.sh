@@ -12,7 +12,6 @@
   
   $PIP_COMMAND install -r requirements.txt
   $PYTHON_COMMAND setup.py install
-  $PYTHON_COMMAND -m penney test
   
   if [ "$TRAVIS_OS_NAME" == "osx" ]
   then

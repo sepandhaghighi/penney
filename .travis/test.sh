@@ -8,7 +8,7 @@
   then
 	PYTHON_COMMAND=python3
   fi
-  $PYTHON_COMMAND -m pytest penney --cov=penney --cov-report=term
+  $PYTHON_COMMAND -m pytest test --cov=penney --cov-report=term
   
   if [ "$CI" = 'true' ] && [ "$TRAVIS" = 'true' ]
   then

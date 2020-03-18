@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-""""""
+"""Penney functions."""
 import random
 import time
 from .params import *
@@ -63,9 +63,23 @@ def justify(words, width):
         yield left_justify(line, width)
 
 def seq_generator():
+    """
+    Generate each part of sequence.
+
+    :return: sequence part as str
+    """
     return random.choice(["T","H"])
 
 def find_winner(seq,seq_dict):
+    """
+    Identify each round winner.
+
+    :param seq: round sequence
+    :type seq: str
+    :param seq_dict: players sequences
+    :type seq_dict: dict
+    :return: winner name as str
+    """
     winner_name = ""
     min_index = len(seq)
     for name in seq_dict.keys():
@@ -80,6 +94,17 @@ def find_winner(seq,seq_dict):
 
 
 def game(seq_dict,iter=100,print_status=False):
+    """
+    Game simulation.
+
+    :param seq_dict: players sequences
+    :type seq_dict: dict
+    :param iter: number of rounds
+    :type iter: int
+    :param print_status: print status flag
+    :type print_status: bool
+    :return: scores as dict
+    """
     round_num = 0
     scores = {name:0 for name in seq_dict.keys()}
     while(round_num < iter):
@@ -101,6 +126,17 @@ def game(seq_dict,iter=100,print_status=False):
     return scores
 
 def check_seq(seq,seq_len,seq_dict):
+    """
+    Check the validity of sequence.
+
+    :param seq: test sequence
+    :type seq: str
+    :param seq_len: sequence length
+    :type seq_len: int
+    :param seq_dict: players sequences
+    :type seq_dict: dict
+    :return: validity as bool
+    """
     seq_elements = set(list(seq))
     if len(seq)== seq_len and seq_elements.issubset({"T","H"}) and seq not in seq_dict.values():
         return True
@@ -108,6 +144,15 @@ def check_seq(seq,seq_len,seq_dict):
 
 
 def get_seq(seq_len, names_dict): # pragma: no cover
+    """
+    Get sequence from user.
+
+    :param seq_len: sequence length
+    :type seq_len: int
+    :param names_dict: players names
+    :type names_dict: dict
+    :return: players sequences as dict
+    """
     seq_dict = {name:"" for name in names_dict.values()}
     for player_ord in sorted(names_dict.keys()):
         while(True):
@@ -121,6 +166,11 @@ def get_seq(seq_len, names_dict): # pragma: no cover
     return seq_dict
 
 def get_len(): # pragma: no cover
+    """
+    Get sequence length from user.
+
+    :return: sequence length as int
+    """
     seq_len = 0
     while(True):
         try:
@@ -134,11 +184,27 @@ def get_len(): # pragma: no cover
     return seq_len
 
 def check_name(name,name_list):
+    """
+    Check the validity of name.
+
+    :param name: test name
+    :type name: str
+    :param name_list: players names
+    :type name_list: list
+    :return: validity as bool
+    """
     if len(name)!=0 and name not in name_list:
         return True
     return False
 
 def get_names(num=2): # pragma: no cover
+    """
+    Get names from user.
+
+    :param num: number of players
+    :type num: int
+    :return: players names as dict
+    """
     names_dict = {}
     names_order = list(range(1,num+1))
     index = 0
@@ -156,6 +222,15 @@ def get_names(num=2): # pragma: no cover
     return names_dict
 
 def print_result(scores,seq_dict):
+    """
+    Print game result.
+
+    :param scores: players scores
+    :type scores: dict
+    :param seq_dict: players sequences
+    :type seq_dict: dict
+    :return: None
+    """
     sorted_scores = sorted(scores.items(), key=lambda x: x[1])
     sorted_scores.reverse()
     name_max_length = max(map(lambda x: len(x),scores.keys()))
@@ -169,6 +244,15 @@ def print_result(scores,seq_dict):
     print("Winner : {}".format(sorted_scores[0][0]))
 
 def get_number(message,error_message): # pragma: no cover
+    """
+    Get a number from user.
+
+    :param message: user message
+    :type message: str
+    :param error_message: error message
+    :type error_message: str
+    :return: number as int
+    """
     number = 0
     while(True):
         try:
@@ -179,6 +263,13 @@ def get_number(message,error_message): # pragma: no cover
     return number
 
 def computer_seq(seq):
+    """
+    Generate computer sequence.
+
+    :param seq: player sequence
+    :type seq: str
+    :return: computer sequence as str
+    """
     while(True):
         result = ""
         index = 0
@@ -190,6 +281,17 @@ def computer_seq(seq):
     return result
 
 def player_filter(num,seq_len,print_status=False):
+    """
+    Filter number of players.
+
+    :param num: number of players
+    :type num: int
+    :param seq_len: sequence length
+    :type seq_len: int
+    :param print_status: print status flag
+    :type print_status: bool
+    :return: filtered number of players as int
+    """
     if num < 2:
         if print_status:
             print(PLAYER_NUMBER_WARNING.format("2"))
@@ -201,6 +303,11 @@ def player_filter(num,seq_len,print_status=False):
     return num
 
 def menu(): # pragma: no cover
+    """
+    Handle CLI menu.
+
+    :return: None
+    """
     player_or_computer = input(PLAYER_COMPUTER_MESSAGE)
     round_number = get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR)
     seq_len = get_len()
@@ -223,6 +330,11 @@ def menu(): # pragma: no cover
 
 
 def description(): # pragma: no cover
+    """
+    Print introduction and description.
+
+    :return: None
+    """
     tprint("Penney Game", font="larry3d")
     tprint("v {}".format(PENNEY_VERSION))
     line(100)

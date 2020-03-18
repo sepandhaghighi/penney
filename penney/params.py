@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-""""""
+"""Penney params."""
 
 PENNEY_VERSION = "0.1"
 

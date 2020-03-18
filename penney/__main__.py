@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-""""""
+"""Penney main."""
 from penney.functions import *
 
 if __name__ == "__main__":

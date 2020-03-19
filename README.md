@@ -32,6 +32,13 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 - Download [Penney 0.1](https://github.com/sepandhaghighi/penney/releases/download/v0.1/Penney-0.1.exe)
 - Run `Penney-0.1.exe`
 
+## How to Play
+
+- Open `CMD` (Windows) or `Terminal` (UNIX)
+- Run `python -m penney` or `python3 -m penney` (or run `Penney.exe`)
+
+
+
 ## Contribution			
 
 Changes and improvements are more than welcome! ❤️ Feel free to fork and open a pull request.		

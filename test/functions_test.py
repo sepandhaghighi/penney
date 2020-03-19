@@ -72,8 +72,8 @@ True
 False
 >>> print_result(scores={"Player1":30,"Player2":32},seq_dict={"Player1":"HHT","Player2":"HTH"})
 Scores Table :
-Player2     32     HTH
-Player1     30     HHT
+Player2     32   HTH
+Player1     30   HHT
 Winner : Player2
 >>> random.seed(300)
 >>> computer_seq("HTH")

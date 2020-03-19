@@ -321,7 +321,7 @@ def menu(): # pragma: no cover
         seq_dict = get_seq(seq_len, names_dict)
         player_name = list(seq_dict.values())[0]
 
-        if player_name == 'Computer':
+        if player_name != 'Computer':
             seq_dict["Computer"] = computer_seq(player_name)
         else:
             seq_dict["Bot"] = computer_seq(player_name)

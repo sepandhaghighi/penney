@@ -242,7 +242,10 @@ def print_result(scores,seq_dict):
         space_name = (name_max_length - len(name) + 5) * " "
         space_score = (score_max_length - len(str(score)) + 3) * " "
         print(name+space_name+str(score)+space_score+seq_dict[name])
-    print("Winner : {}".format(sorted_scores[0][0]))
+    if set(scores.values()) > 1:
+        print("Winner : {}".format(sorted_scores[0][0]))
+    else:
+        print("Tie!")
 
 def get_number(message,error_message): # pragma: no cover
     """

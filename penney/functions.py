@@ -234,13 +234,14 @@ def print_result(scores,seq_dict):
     sorted_scores = sorted(scores.items(), key=lambda x: x[1])
     sorted_scores.reverse()
     name_max_length = max(map(lambda x: len(x),scores.keys()))
+    score_max_length = max(map(lambda x: len(str(x)),scores.values()))
     print("Scores Table : ")
-    static_space = 5* " "
     for item in sorted_scores:
-        space = (name_max_length - len(item[0]) + 5) * " "
         score = item[1]
         name = item[0]
-        print(name+space+str(score)+static_space+seq_dict[name])
+        space_name = (name_max_length - len(name) + 5) * " "
+        space_score = (score_max_length - len(str(score)) + 3) * " "
+        print(name+space_name+str(score)+space_score+seq_dict[name])
     print("Winner : {}".format(sorted_scores[0][0]))
 
 def get_number(message,error_message): # pragma: no cover

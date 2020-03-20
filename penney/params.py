@@ -39,3 +39,5 @@ SEQ_MESSAGE = "[{}] Please enter your sequence : "
 SEQ_ERROR = "[Error] Sequence should be uniqe, only consist of 'T' and 'H' characters with length of {}"
 
 COMPUTER_SEQ_MESSAGE = "{0} sequence : {1}"
+
+POINT_MESSAGE = "Point for --> {}"

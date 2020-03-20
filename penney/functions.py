@@ -117,7 +117,7 @@ def game(seq_dict,iter=100,print_status=False):
                 if print_status:
                     print("Round {}".format(str(round_num + 1)))
                     print(round_seq)
-                    print("Point for -->{}".format(winner))
+                    print(POINT_MESSAGE.format(winner))
                     line()
                     time.sleep(1)
                 scores[winner] += 1

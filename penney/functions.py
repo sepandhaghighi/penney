@@ -317,7 +317,7 @@ def menu(): # pragma: no cover
     :return: None
     """
     player_or_computer = input(PLAYER_COMPUTER_MESSAGE)
-    round_number = get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR)
+    round_number = abs(get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR))
     seq_len = get_len()
     if player_or_computer !="1":
         player_number = get_number(PLAYER_NUMBER_MESSAGE, PLAYER_NUMBER_ERROR)

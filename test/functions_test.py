@@ -34,7 +34,7 @@ Word0 Word1 Word2 Word3 Word4 Word5 Word6 Word7 Word8 Word9 Word10 Word11 Word12
 >>> result = game({"Player1":"HTT","Player2":"TTH"},iter=1,print_status=True)
 Round 1
 HHTT
-Point for -->Player1
+Point for --> Player1
 ###########
 >>> result['Player1']
 1
@@ -44,15 +44,15 @@ Point for -->Player1
 >>> result = game({"Player1":"HTT","Player2":"TTH"},iter=3,print_status=True)
 Round 1
 TTH
-Point for -->Player2
+Point for --> Player2
 ###########
 Round 2
 HTT
-Point for -->Player1
+Point for --> Player1
 ###########
 Round 3
 HHTHTT
-Point for -->Player1
+Point for --> Player1
 ###########
 >>> result['Player1']
 2

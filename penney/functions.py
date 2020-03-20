@@ -234,7 +234,7 @@ def print_result(scores,seq_dict):
     :return: None
     """
     sorted_scores = sorted(scores.items(), key=lambda x: (x[1],x[0]),reverse = True)
-    name_max_length = max(map(lambda x: len(x),scores.keys()))
+    name_max_length = max(map(len,scores.keys()))
     score_max_length = max(map(lambda x: len(str(x)),scores.values()))
     print("Scores Table : ")
     for item in sorted_scores:

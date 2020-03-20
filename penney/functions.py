@@ -93,21 +93,21 @@ def find_winner(seq,seq_dict):
     return None
 
 
-def game(seq_dict,iter=100,print_status=False):
+def game(seq_dict,round_number=100,print_status=False):
     """
     Game simulation.
 
     :param seq_dict: players sequences
     :type seq_dict: dict
-    :param iter: number of rounds
-    :type iter: int
+    :param round_number: number of rounds
+    :type round_number: int
     :param print_status: print status flag
     :type print_status: bool
     :return: scores as dict
     """
     round_num = 0
     scores = {name:0 for name in seq_dict.keys()}
-    while(round_num < iter):
+    while(round_num < round_number):
         next_round = False
         round_seq = ""
         while(not next_round):
@@ -363,7 +363,7 @@ def menu(): # pragma: no cover
     else:
         seq_dict = computer_player_handler(seq_len)
     line()
-    scores = game(seq_dict,iter=round_number,print_status=True)
+    scores = game(seq_dict,round_number=round_number,print_status=True)
     print_result(scores,seq_dict)
 
 

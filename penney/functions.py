@@ -310,9 +310,9 @@ def player_filter(num,seq_len,print_status=False):
         return 2**seq_len
     return num
 
-def computer_player_handler(seq_len):
+def computer_player_handler(seq_len): # pragma: no cover
     """
-    Handler for computer-player mode.
+    Computer-Player mode handler.
 
     :param seq_len: sequence length
     :type seq_len: int
@@ -336,9 +336,9 @@ def computer_player_handler(seq_len):
     seq_dict[computer_name] = computer_seq
     return seq_dict
 
-def player_player_handler(seq_len):
+def player_player_handler(seq_len): # pragma: no cover
     """
-    Handler for player-player mode.
+    Player-Player mode handler.
 
     :param seq_len: sequence length
     :type seq_len: int
@@ -352,7 +352,7 @@ def player_player_handler(seq_len):
 
 def menu(): # pragma: no cover
     """
-    Main handler for CLI menu.
+    CLI menu main handler.
 
     :return: None
     """

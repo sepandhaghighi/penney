@@ -266,7 +266,7 @@ def get_number(message,error_message): # pragma: no cover
             print(error_message)
     return number
 
-def computer_seq(seq_len,seq=None):
+def computer_seq_gen(seq_len,seq=None):
     """
     Generate computer sequence.
 
@@ -328,9 +328,17 @@ def menu(): # pragma: no cover
         player_name = list(names_dict.values())[0]
         if player_name.upper() == 'COMPUTER':
             computer_name = "Bot"
+        computer_seq = None
+        first_coin = seq_generator()
+        if first_coin == "T":
+            computer_seq = computer_seq_gen(seq_len)
+            print(computer_name+" sequence : "+computer_seq)
         seq_dict = get_seq(seq_len, names_dict)
         player_seq = list(seq_dict.values())[0]
-        seq_dict[computer_name] = computer_seq(seq_len,player_seq)
+        if computer_seq is None:
+            computer_seq = computer_seq_gen(seq_len,player_seq)
+            print(computer_name + " sequence : " + computer_seq)
+        seq_dict[computer_name] = computer_seq
     scores = game(seq_dict,iter=round_number,print_status=True)
     print_result(scores,seq_dict)
 

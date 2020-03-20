@@ -310,9 +310,49 @@ def player_filter(num,seq_len,print_status=False):
         return 2**seq_len
     return num
 
+def computer_player_handler(seq_len):
+    """
+    Handler for computer-player mode.
+
+    :param seq_len: sequence length
+    :type seq_len: int
+    :return: players sequences as dict
+    """
+    names_dict = get_names(num=1)
+    computer_name = "Computer"
+    player_name = list(names_dict.values())[0]
+    if player_name.upper() == 'COMPUTER':
+        computer_name = "Bot"
+    computer_seq = None
+    first_coin = seq_generator()
+    if first_coin == "T":
+        computer_seq = computer_seq_gen(seq_len)
+        print(computer_name + " sequence : " + computer_seq)
+    seq_dict = get_seq(seq_len, names_dict, computer_seq)
+    player_seq = list(seq_dict.values())[0]
+    if computer_seq is None:
+        computer_seq = computer_seq_gen(seq_len, player_seq)
+        print(computer_name + " sequence : " + computer_seq)
+    seq_dict[computer_name] = computer_seq
+    return seq_dict
+
+def player_player_handler(seq_len):
+    """
+    Handler for player-player mode.
+
+    :param seq_len: sequence length
+    :type seq_len: int
+    :return: players sequences as dict
+    """
+    player_number = get_number(PLAYER_NUMBER_MESSAGE, PLAYER_NUMBER_ERROR)
+    player_number = player_filter(player_number, seq_len=seq_len, print_status=True)
+    names_dict = get_names(num=player_number)
+    seq_dict = get_seq(seq_len, names_dict)
+    return seq_dict
+
 def menu(): # pragma: no cover
     """
-    Handle CLI menu.
+    Main handler for CLI menu.
 
     :return: None
     """
@@ -320,27 +360,9 @@ def menu(): # pragma: no cover
     round_number = abs(get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR))
     seq_len = get_len()
     if player_or_computer !="1":
-        player_number = get_number(PLAYER_NUMBER_MESSAGE, PLAYER_NUMBER_ERROR)
-        player_number = player_filter(player_number,seq_len = seq_len,print_status =True)
-        names_dict = get_names(num=player_number)
-        seq_dict = get_seq(seq_len, names_dict)
+        seq_dict = player_player_handler(seq_len)
     else:
-        names_dict = get_names(num=1)
-        computer_name = "Computer"
-        player_name = list(names_dict.values())[0]
-        if player_name.upper() == 'COMPUTER':
-            computer_name = "Bot"
-        computer_seq = None
-        first_coin = seq_generator()
-        if first_coin == "T":
-            computer_seq = computer_seq_gen(seq_len)
-            print(computer_name+" sequence : "+computer_seq)
-        seq_dict = get_seq(seq_len, names_dict,computer_seq)
-        player_seq = list(seq_dict.values())[0]
-        if computer_seq is None:
-            computer_seq = computer_seq_gen(seq_len,player_seq)
-            print(computer_name + " sequence : " + computer_seq)
-        seq_dict[computer_name] = computer_seq
+        seq_dict = computer_player_handler(seq_len)
     scores = game(seq_dict,iter=round_number,print_status=True)
     print_result(scores,seq_dict)
 

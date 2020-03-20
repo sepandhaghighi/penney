@@ -37,8 +37,8 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 	</tr>
 	<tr>
 		<td align="center">AppVeyor</td>
-		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/penney"><img src=""></a></td>
-		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/penney"><img src=""></a></td>
+		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/penney"><img src="https://ci.appveyor.com/api/projects/status/a32vdhh52b61ij76/branch/master?svg=true"></a></td>
+		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/penney"><img src="https://ci.appveyor.com/api/projects/status/a32vdhh52b61ij76/branch/dev?svg=true"></a></td>
 	</tr>
 </table>
 

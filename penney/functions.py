@@ -143,7 +143,7 @@ def check_seq(seq,seq_len,seq_dict):
     return False
 
 
-def get_seq(seq_len, names_dict): # pragma: no cover
+def get_seq(seq_len, names_dict, computer_seq=None): # pragma: no cover
     """
     Get sequence from user.
 
@@ -151,6 +151,8 @@ def get_seq(seq_len, names_dict): # pragma: no cover
     :type seq_len: int
     :param names_dict: players names
     :type names_dict: dict
+    :param computer_seq: computer sequence
+    :type computer_seq: str
     :return: players sequences as dict
     """
     seq_dict = {name:"" for name in names_dict.values()}
@@ -158,7 +160,7 @@ def get_seq(seq_len, names_dict): # pragma: no cover
         while(True):
             player_name = names_dict[player_ord]
             seq_select = input(SEQ_MESSAGE.format(str(player_name)))
-            if check_seq(seq_select,seq_len,seq_dict):
+            if check_seq(seq_select,seq_len,seq_dict) and seq_select!=computer_seq:
                 seq_dict[player_name] = seq_select
                 break
             else:
@@ -333,7 +335,7 @@ def menu(): # pragma: no cover
         if first_coin == "T":
             computer_seq = computer_seq_gen(seq_len)
             print(computer_name+" sequence : "+computer_seq)
-        seq_dict = get_seq(seq_len, names_dict)
+        seq_dict = get_seq(seq_len, names_dict,computer_seq)
         player_seq = list(seq_dict.values())[0]
         if computer_seq is None:
             computer_seq = computer_seq_gen(seq_len,player_seq)

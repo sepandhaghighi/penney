@@ -363,6 +363,7 @@ def menu(): # pragma: no cover
         seq_dict = player_player_handler(seq_len)
     else:
         seq_dict = computer_player_handler(seq_len)
+    line()
     scores = game(seq_dict,iter=round_number,print_status=True)
     print_result(scores,seq_dict)
 

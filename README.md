@@ -9,6 +9,49 @@
 
 Penney's game, named after its inventor Walter Penney, is a binary (head/tail) sequence generating game between two or more players. Player A selects a sequence of heads and tails (of length 3 or larger), and shows this sequence to player B. Player B then selects another sequence of heads and tails of the same length. Subsequently, a fair coin is tossed until either player A's or player B's sequence appears as a consecutive subsequence of the coin toss outcomes. The player whose sequence appears first wins.
 Here we have a friendly clone of this game that I wrote during coronavirus quarantine days.
+
+
+<table>
+	<tr>
+		<td align="center">PyPI Counter</td>
+		<td align="center"><a href="http://pepy.tech/count/penney"><img src="http://pepy.tech/badge/penney"></a></td>
+	</tr>
+	<tr>
+		<td align="center">Github Stars</td>
+		<td align="center"><a href="https://github.com/sepandhaghighi/penney"><img src="https://img.shields.io/github/stars/sepandhaghighi/penney.svg?style=social&label=Stars"></a></td>
+	</tr>
+</table>
+
+
+
+<table>
+	<tr> 
+		<td align="center">Branch</td>
+		<td align="center">master</td>	
+		<td align="center">dev</td>	
+	</tr>
+	<tr>
+		<td align="center">Travis</td>
+		<td align="center"><a href="https://travis-ci.org/sepandhaghighi/penney"><img src="https://travis-ci.org/sepandhaghighi/penney.svg?branch=master"></a></td>
+		<td align="center"><a href="https://travis-ci.org/sepandhaghighi/penney"><img src="https://travis-ci.org/sepandhaghighi/penney.svg?branch=dev"></a></td>
+	</tr>
+	<tr>
+		<td align="center">AppVeyor</td>
+		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/penney"><img src=""></a></td>
+		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/penney"><img src=""></a></td>
+	</tr>
+</table>
+
+
+<table>
+	<tr> 
+		<td align="center">Code Quality</td>
+		<td align="center"></td>	
+		<td align="center"><a href="https://www.codefactor.io/repository/github/sepandhaghighi/penney"><img src="https://www.codefactor.io/repository/github/sepandhaghighi/penney/badge" alt="CodeFactor" /></a></td>	
+		<td align="center"></td>	
+	</tr>
+</table>
+
 ## Installation	
 
 ### Source Code

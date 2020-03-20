@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/logo.png">
+<img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/logo.png" width="164px" height="297px">
 <h1>Penney's Game</h1>
 </div>
 

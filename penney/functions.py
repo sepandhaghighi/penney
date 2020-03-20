@@ -327,12 +327,12 @@ def computer_player_handler(seq_len): # pragma: no cover
     first_coin = seq_generator()
     if first_coin == "T":
         computer_seq = computer_seq_gen(seq_len)
-        print(computer_name + " sequence : " + computer_seq)
+        print(COMPUTER_SEQ_MESSAGE.format(computer_name,computer_seq))
     seq_dict = get_seq(seq_len, names_dict, computer_seq)
     player_seq = list(seq_dict.values())[0]
     if computer_seq is None:
         computer_seq = computer_seq_gen(seq_len, player_seq)
-        print(computer_name + " sequence : " + computer_seq)
+        print(COMPUTER_SEQ_MESSAGE.format(computer_name, computer_seq))
     seq_dict[computer_name] = computer_seq
     return seq_dict
 

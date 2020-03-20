@@ -12,7 +12,7 @@ appears as a consecutive subsequence of the coin toss outcomes. The player whose
 
 TRY_MESSAGE = "Try again!"
 
-PLAYER_COMPUTER_MESSAGE = "Play with computer[1]\nPlay with other players [any other key]\nPlease select : "
+PLAYER_COMPUTER_MESSAGE = "Play with computer [1]\nPlay with other players [any other key]\nPlease select : "
 
 ROUND_NUMBER_MESSAGE = "Please enter number of rounds : "
 
@@ -34,8 +34,8 @@ LENGTH_ERROR1 = "[Error] Sequence length should be greater than 2\n" + TRY_MESSA
 
 LENGTH_ERROR2 = "[Error] Sequence length should be an integer\n" + TRY_MESSAGE
 
-SEQ_MESSAGE = "{} please enter your sequence : "
+SEQ_MESSAGE = "[{}] Please enter your sequence : "
 
 SEQ_ERROR = "[Error] Sequence should be uniqe, only consist of 'T' and 'H' characters with length of {}"
 
-
+COMPUTER_SEQ_MESSAGE = "{0} sequence : {1}"

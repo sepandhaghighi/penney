@@ -357,22 +357,3 @@ def description(): # pragma: no cover
     print("\n".join(justify(PENNEY_DESCRIPTION.split(), 100)))
     line(100)
     tprint("MENU : ")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

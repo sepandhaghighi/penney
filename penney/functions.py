@@ -266,10 +266,12 @@ def get_number(message,error_message): # pragma: no cover
             print(error_message)
     return number
 
-def computer_seq(seq):
+def computer_seq(seq_len,seq=None):
     """
     Generate computer sequence.
 
+    :param seq_len: sequence length
+    :type seq_len: int
     :param seq: player sequence
     :type seq: str
     :return: computer sequence as str
@@ -277,10 +279,10 @@ def computer_seq(seq):
     while(True):
         result = ""
         index = 0
-        while(index < len(seq)):
+        while(index < seq_len):
             result += seq_generator()
             index +=1
-        if seq != result:
+        if seq != result or seq is None:
             break
     return result
 

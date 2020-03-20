@@ -324,13 +324,13 @@ def menu(): # pragma: no cover
         seq_dict = get_seq(seq_len, names_dict)
     else:
         names_dict = get_names(num=1)
+        computer_name = "Computer"
+        player_name = list(names_dict.values())[0]
+        if player_name.upper() == 'COMPUTER':
+            computer_name = "Bot"
         seq_dict = get_seq(seq_len, names_dict)
-        player_name = list(seq_dict.values())[0]
-
-        if player_name != 'Computer':
-            seq_dict["Computer"] = computer_seq(player_name)
-        else:
-            seq_dict["Bot"] = computer_seq(player_name)
+        player_seq = list(seq_dict.values())[0]
+        seq_dict[computer_name] = computer_seq(seq_len,player_seq)
     scores = game(seq_dict,iter=round_number,print_status=True)
     print_result(scores,seq_dict)
 

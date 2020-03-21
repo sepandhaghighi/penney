@@ -5,6 +5,7 @@ import time
 from .params import *
 from art import tprint
 
+
 def line(num=11, char="#"):
     """
     Print line of char.
@@ -17,6 +18,7 @@ def line(num=11, char="#"):
     """
     print(char * num)
 
+
 def left_justify(words, width):
     """
     Left justify words.
@@ -28,6 +30,7 @@ def left_justify(words, width):
     :return: left justified words as list
     """
     return ' '.join(words).ljust(width)
+
 
 def justify(words, width):
     """
@@ -62,15 +65,17 @@ def justify(words, width):
     if line:
         yield left_justify(line, width)
 
+
 def seq_generator():
     """
     Generate each part of sequence.
 
     :return: sequence part as str
     """
-    return random.choice(["T","H"])
+    return random.choice(["T", "H"])
 
-def find_winner(seq,seq_dict):
+
+def find_winner(seq, seq_dict):
     """
     Identify each round winner.
 
@@ -88,12 +93,12 @@ def find_winner(seq,seq_dict):
             if name_index < min_index:
                 winner_name = name
                 min_index = name_index
-    if len(winner_name) != 0 :
+    if len(winner_name) != 0:
         return winner_name
     return None
 
 
-def game(seq_dict,round_number=100,print_status=False):
+def game(seq_dict, round_number=100, print_status=False):
     """
     Game simulation.
 
@@ -106,13 +111,13 @@ def game(seq_dict,round_number=100,print_status=False):
     :return: scores as dict
     """
     round_num = 0
-    scores = {name:0 for name in seq_dict.keys()}
+    scores = {name: 0 for name in seq_dict.keys()}
     while(round_num < round_number):
         next_round = False
         round_seq = ""
         while(not next_round):
-            round_seq +=seq_generator()
-            winner = find_winner(round_seq,seq_dict)
+            round_seq += seq_generator()
+            winner = find_winner(round_seq, seq_dict)
             if winner is not None:
                 if print_status:
                     print("Round {}".format(str(round_num + 1)))
@@ -122,10 +127,11 @@ def game(seq_dict,round_number=100,print_status=False):
                     time.sleep(1)
                 scores[winner] += 1
                 next_round = True
-        round_num +=1
+        round_num += 1
     return scores
 
-def check_seq(seq,seq_len,seq_dict):
+
+def check_seq(seq, seq_len, seq_dict):
     """
     Check the validity of sequence.
 
@@ -138,12 +144,13 @@ def check_seq(seq,seq_len,seq_dict):
     :return: validity as bool
     """
     seq_elements = set(list(seq))
-    if len(seq)== seq_len and seq_elements.issubset({"T","H"}) and seq not in seq_dict.values():
+    if len(seq) == seq_len and seq_elements.issubset(
+            {"T", "H"}) and seq not in seq_dict.values():
         return True
     return False
 
 
-def get_seq(seq_len, names_dict, computer_seq=None): # pragma: no cover
+def get_seq(seq_len, names_dict, computer_seq=None):  # pragma: no cover
     """
     Get sequence from user.
 
@@ -155,19 +162,23 @@ def get_seq(seq_len, names_dict, computer_seq=None): # pragma: no cover
     :type computer_seq: str
     :return: players sequences as dict
     """
-    seq_dict = {name:"" for name in names_dict.values()}
+    seq_dict = {name: "" for name in names_dict.values()}
     for player_ord in sorted(names_dict.keys()):
         while(True):
             player_name = names_dict[player_ord]
             seq_select = input(SEQ_MESSAGE.format(str(player_name)))
-            if check_seq(seq_select,seq_len,seq_dict) and seq_select!=computer_seq:
+            if check_seq(
+                    seq_select,
+                    seq_len,
+                    seq_dict) and seq_select != computer_seq:
                 seq_dict[player_name] = seq_select
                 break
             else:
                 print(SEQ_ERROR.format(str(seq_len)))
     return seq_dict
 
-def get_len(): # pragma: no cover
+
+def get_len():  # pragma: no cover
     """
     Get sequence length from user.
 
@@ -177,7 +188,7 @@ def get_len(): # pragma: no cover
     while(True):
         try:
             seq_len = int(input(LENGTH_MESSAGE))
-            if seq_len >= 3 :
+            if seq_len >= 3:
                 break
             else:
                 print(LENGTH_ERROR1)
@@ -185,7 +196,8 @@ def get_len(): # pragma: no cover
             print(LENGTH_ERROR2)
     return seq_len
 
-def check_name(name,name_list):
+
+def check_name(name, name_list):
     """
     Check the validity of name.
 
@@ -195,11 +207,12 @@ def check_name(name,name_list):
     :type name_list: list
     :return: validity as bool
     """
-    if len(name)!=0 and name not in name_list:
+    if len(name) != 0 and name not in name_list:
         return True
     return False
 
-def get_names(num=2): # pragma: no cover
+
+def get_names(num=2):  # pragma: no cover
     """
     Get names from user.
 
@@ -208,12 +221,12 @@ def get_names(num=2): # pragma: no cover
     :return: players names as dict
     """
     names_dict = {}
-    names_order = list(range(1,num+1))
+    names_order = list(range(1, num + 1))
     index = 0
     while(index < num):
         while(True):
-            name = input(PLAYER_NAME_MESSAGE.format(str(index+1)))
-            if check_name(name,names_dict):
+            name = input(PLAYER_NAME_MESSAGE.format(str(index + 1)))
+            if check_name(name, names_dict):
                 rand_order = random.choice(names_order)
                 names_order.remove(rand_order)
                 names_dict[rand_order] = name
@@ -223,7 +236,8 @@ def get_names(num=2): # pragma: no cover
         index += 1
     return names_dict
 
-def print_result(scores,seq_dict):
+
+def print_result(scores, seq_dict):
     """
     Print game result.
 
@@ -233,22 +247,25 @@ def print_result(scores,seq_dict):
     :type seq_dict: dict
     :return: None
     """
-    sorted_scores = sorted(scores.items(), key=lambda x: (x[1],x[0]),reverse = True)
-    name_max_length = max(map(len,scores.keys()))
-    score_max_length = max(map(lambda x: len(str(x)),scores.values()))
+    sorted_scores = sorted(
+        scores.items(), key=lambda x: (
+            x[1], x[0]), reverse=True)
+    name_max_length = max(map(len, scores.keys()))
+    score_max_length = max(map(lambda x: len(str(x)), scores.values()))
     print("Scores Table : ")
     for item in sorted_scores:
         score = item[1]
         name = item[0]
         space_name = (name_max_length - len(name) + 5) * " "
         space_score = (score_max_length - len(str(score)) + 3) * " "
-        print(name+space_name+str(score)+space_score+seq_dict[name])
+        print(name + space_name + str(score) + space_score + seq_dict[name])
     if len(set(scores.values())) > 1:
         print("Winner : {}".format(sorted_scores[0][0]))
     else:
         print("Tie!")
 
-def get_number(message,error_message): # pragma: no cover
+
+def get_number(message, error_message):  # pragma: no cover
     """
     Get a number from user.
 
@@ -267,7 +284,8 @@ def get_number(message,error_message): # pragma: no cover
             print(error_message)
     return number
 
-def computer_seq_gen(seq_len,seq=None):
+
+def computer_seq_gen(seq_len, seq=None):
     """
     Generate computer sequence.
 
@@ -282,12 +300,13 @@ def computer_seq_gen(seq_len,seq=None):
         index = 0
         while(index < seq_len):
             result += seq_generator()
-            index +=1
+            index += 1
         if seq != result or seq is None:
             break
     return result
 
-def player_filter(num,seq_len,print_status=False):
+
+def player_filter(num, seq_len, print_status=False):
     """
     Filter number of players.
 
@@ -309,7 +328,8 @@ def player_filter(num,seq_len,print_status=False):
         return 2**seq_len
     return num
 
-def computer_player_handler(seq_len): # pragma: no cover
+
+def computer_player_handler(seq_len):  # pragma: no cover
     """
     Computer-Player mode handler.
 
@@ -326,7 +346,7 @@ def computer_player_handler(seq_len): # pragma: no cover
     first_coin = seq_generator()
     if first_coin == "T":
         computer_seq = computer_seq_gen(seq_len)
-        print(COMPUTER_SEQ_MESSAGE.format(computer_name,computer_seq))
+        print(COMPUTER_SEQ_MESSAGE.format(computer_name, computer_seq))
     seq_dict = get_seq(seq_len, names_dict, computer_seq)
     player_seq = list(seq_dict.values())[0]
     if computer_seq is None:
@@ -335,7 +355,8 @@ def computer_player_handler(seq_len): # pragma: no cover
     seq_dict[computer_name] = computer_seq
     return seq_dict
 
-def player_player_handler(seq_len): # pragma: no cover
+
+def player_player_handler(seq_len):  # pragma: no cover
     """
     Player-Player mode handler.
 
@@ -344,12 +365,16 @@ def player_player_handler(seq_len): # pragma: no cover
     :return: players sequences as dict
     """
     player_number = get_number(PLAYER_NUMBER_MESSAGE, PLAYER_NUMBER_ERROR)
-    player_number = player_filter(player_number, seq_len=seq_len, print_status=True)
+    player_number = player_filter(
+        player_number,
+        seq_len=seq_len,
+        print_status=True)
     names_dict = get_names(num=player_number)
     seq_dict = get_seq(seq_len, names_dict)
     return seq_dict
 
-def menu(): # pragma: no cover
+
+def menu():  # pragma: no cover
     """
     CLI menu main handler.
 
@@ -358,16 +383,16 @@ def menu(): # pragma: no cover
     player_or_computer = input(PLAYER_COMPUTER_MESSAGE)
     round_number = abs(get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR))
     seq_len = get_len()
-    if player_or_computer !="1":
+    if player_or_computer != "1":
         seq_dict = player_player_handler(seq_len)
     else:
         seq_dict = computer_player_handler(seq_len)
     line()
-    scores = game(seq_dict,round_number=round_number,print_status=True)
-    print_result(scores,seq_dict)
+    scores = game(seq_dict, round_number=round_number, print_status=True)
+    print_result(scores, seq_dict)
 
 
-def description(): # pragma: no cover
+def description():  # pragma: no cover
     """
     Print introduction and description.
 

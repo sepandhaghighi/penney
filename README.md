@@ -64,7 +64,7 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
-- Download [Version 0.1](https://github.com/sepandhaghighi/penney/archive/v0.1.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/develop.zip)
+- Download [Version 0.1](https://github.com/sepandhaghighi/penney/archive/v0.1.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -129,3 +129,4 @@ or send an email to [sepand@pycm.ir](mailto:sepand@pycm.ir "sepand@pycm.ir").
 		<td align="center"><a href="https://requires.io/github/sepandhaghighi/penney/requirements/?branch=dev"><img src="https://requires.io/github/sepandhaghighi/penney/requirements.svg?branch=dev" alt="Requirements Status" /></a></td>
 	</tr>
 </table>
+

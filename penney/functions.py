@@ -121,7 +121,27 @@ def det(A):
     return determinant
 
 
-#TODO:  ADD prob_calc function to return win probability dictionary.
+def prob_calc(seq_dict):
+    """
+    Calculate probability of each player.
+
+    :param seq_dict: players sequences
+    :type seq_dict: dict
+    :return: players win probabilties as a dict.
+    """
+    prob_dic = {}
+    sum_det_C = 0
+    det_C = {}
+    p_seq = lambda seq: 1 / 2 ** len(p_seq)
+    for name in seq_dict.keys():
+        seq_Ai = seq_dict[name]
+        C = []
+        #TODO:  Calculate C
+        det_C[name] = det(C)
+        sum_det_C += det_C[name]
+    for name in seq_dict.keys():
+        prob_dic[name] = det(C[name]) / sum_det_C
+    return prob_dic
 
 
 #TODO:  ADD print_prob function.

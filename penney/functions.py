@@ -154,7 +154,7 @@ def print_prob(prob_dic):
     """
     print("Wining Probability:")
     for name in prob_dic:
-        print("[{}] : {}".format(name, prob_dic[name]))
+        print(WINNING_PROBABILITY_MESSAGE.format(name, str(prob_dic[name])))
 
 
 def game(seq_dict, round_number=100, print_status=False):

@@ -41,3 +41,5 @@ SEQ_ERROR = "[Error] Sequence should be uniqe, only consist of 'T' and 'H' chara
 COMPUTER_SEQ_MESSAGE = "{0} sequence : {1}"
 
 POINT_MESSAGE = "Point for --> {}"
+
+WINNING_PROBABILITY_MESSAGE = "P({}) = {}"

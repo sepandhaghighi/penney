@@ -446,7 +446,7 @@ def menu():  # pragma: no cover
         seq_dict = player_player_handler(seq_len)
     else:
         seq_dict = computer_player_handler(seq_len)
-    #TODO: CALL print_prob function.
+    print_prob(prob_calc(seq_dict))
     line()
     scores = game(seq_dict, round_number=round_number, print_status=True)
     print_result(scores, seq_dict)

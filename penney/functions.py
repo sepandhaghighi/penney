@@ -118,7 +118,7 @@ def det(A):
     determinant = 1.0
     for i in range(n):
         determinant *= AM[i][i]
-    return product
+    return determinant
 
 
 #TODO:  ADD prob_calc function to return win probability dictionary.

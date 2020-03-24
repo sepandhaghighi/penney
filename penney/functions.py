@@ -98,7 +98,27 @@ def find_winner(seq, seq_dict):
     return None
 
 
-#TODO:  ADD det function to calculate determinant according to https://integratedmlai.com/find-the-determinant-of-a-matrix-with-pure-python-without-numpy-or-scipy/.
+def det(A):
+    """
+    Calculate determinant of a matrix in a fast way.
+
+    :param A: matrix itself
+    :type A: list or numpy.array
+    :return: determinant of A in float
+    """
+    n = len(A)
+    AM = A[:]
+    for focus_diagonal in range(n):
+        for i in range(focus_diagonal + 1, n):
+            if AM[focus_diagonal][focus_diagonal] == 0:
+                AM[focus_diagonal][focus_diagonal] == 1.0e-18
+            row_scaler = AM[i][focus_diagonal] / AM[focus_diagonal][focus_diagonal]
+            for j in range(n):
+                AM[i][j] = AM[i][j] - row_scaler * AM[focus_diagonal][j]
+    determinant = 1.0
+    for i in range(n):
+        determinant *= AM[i][i]
+    return product
 
 
 #TODO:  ADD prob_calc function to return win probability dictionary.

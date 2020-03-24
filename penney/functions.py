@@ -98,6 +98,15 @@ def find_winner(seq, seq_dict):
     return None
 
 
+#TODO:  ADD det function to calculate determinant according to https://integratedmlai.com/find-the-determinant-of-a-matrix-with-pure-python-without-numpy-or-scipy/.
+
+
+#TODO:  ADD prob_calc function to return win probability dictionary.
+
+
+#TODO:  ADD print_prob function.
+
+
 def game(seq_dict, round_number=100, print_status=False):
     """
     Game simulation.
@@ -111,6 +120,7 @@ def game(seq_dict, round_number=100, print_status=False):
     :return: scores as dict
     """
     round_num = 0
+    #TODO:  CALL print_prob function.
     scores = {name: 0 for name in seq_dict.keys()}
     while(round_num < round_number):
         next_round = False

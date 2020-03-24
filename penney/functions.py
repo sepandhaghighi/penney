@@ -144,7 +144,17 @@ def prob_calc(seq_dict):
     return prob_dic
 
 
-#TODO:  ADD print_prob function.
+def print_prob(prob_dic):
+    """
+    Print win probabilities of players.
+
+    :param prob_dic: win probability dictionary
+    :type prob_dic: dict
+    :return: None
+    """
+    print("Wining Probability:")
+    for name in prob_dic:
+        print("[{}] : {}".format(name, prob_dic[name]))
 
 
 def game(seq_dict, round_number=100, print_status=False):
@@ -160,7 +170,6 @@ def game(seq_dict, round_number=100, print_status=False):
     :return: scores as dict
     """
     round_num = 0
-    #TODO:  CALL print_prob function.
     scores = {name: 0 for name in seq_dict.keys()}
     while(round_num < round_number):
         next_round = False
@@ -437,6 +446,7 @@ def menu():  # pragma: no cover
         seq_dict = player_player_handler(seq_len)
     else:
         seq_dict = computer_player_handler(seq_len)
+    #TODO: CALL print_prob function.
     line()
     scores = game(seq_dict, round_number=round_number, print_status=True)
     print_result(scores, seq_dict)

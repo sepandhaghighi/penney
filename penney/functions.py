@@ -4,7 +4,7 @@ import random
 import time
 from .params import *
 from art import tprint
-
+import numpy as np
 
 def line(num=11, char="#"):
     """
@@ -130,17 +130,30 @@ def prob_calc(seq_dict):
     :return: players win probabilties as a dict.
     """
     prob_dic = {}
-    sum_det_C = 0
-    det_C = {}
-    p_seq = lambda seq: 1 / 2 ** len(p_seq)
-    for name in seq_dict.keys():
-        seq_Ai = seq_dict[name]
-        C = []
-        #TODO:  Calculate C
-        det_C[name] = det(C)
-        sum_det_C += det_C[name]
-    for name in seq_dict.keys():
-        prob_dic[name] = det(C[name]) / sum_det_C
+    C = []
+    p_seq = lambda seq: 1 / 2 ** len(seq)
+    names = list(seq_dict.keys())
+    for i in range(len(names)):
+        Ai = seq_dict[str(names[i])]
+        C_row = []
+        for j in range(len(names)):
+            Aj = seq_dict[str(names[j])]
+            Wij = 0
+            for k in range(1, min(len(Ai), len(Aj)) + 1):
+                if Ai[:k] == Aj[len(Aj) - k:]:
+                    Wij += p_seq(Ai[k:])
+            C_row.append(Wij)
+        C.append(C_row)
+    C = np.array(C)
+    detCj_dic = {}
+    for j in range(len(names)):
+        column_j = C[:, j]
+        C[:, j] = 1
+        detCj_dic[names[j]] = det(C)
+        C[:, j] = column_j
+    sum_det = sum(detCj_dic.values())
+    for name in names:
+        prob_dic[name] = detCj_dic[name] / sum_det
     return prob_dic
 
 

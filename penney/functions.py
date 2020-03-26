@@ -169,7 +169,6 @@ def print_prob(prob_dic):
         prob_dic.items(), key=lambda x: (
             x[1], x[0]), reverse=True)
     name_max_length = max(map(len, prob_dic.keys()))
-    prob_max_length = max(map(lambda x: len(str(x)), prob_dic.values()))
     print("Wining Probability : ")
     for item in sorted_probs:
         prob = item[1]

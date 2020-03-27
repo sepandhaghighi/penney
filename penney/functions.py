@@ -4,7 +4,6 @@ import random
 import time
 from .params import *
 from art import tprint
-import numpy as np
 import copy
 
 def line(num=11, char="#"):
@@ -145,13 +144,13 @@ def prob_calc(seq_dict):
                     w_i_j += p_seq(A_i[k:])
             C_row.append(w_i_j)
         C.append(C_row)
-    C = np.array(C)
     det_dic = {}
     for j in range(len(names)):
-        column_j = C[:, j]
-        C[:, j] = 1
-        det_dic[names[j]] = det(C)
-        C[:, j] = column_j
+        C_j = []
+        for i in range(len(names)):
+            C_j.append([1 if k == j else C[i][k] for k in range(len(names))])
+        det_dic[names[j]] = det(C_j)
+    print(det_dic)
     sum_det = sum(det_dic.values())
     for name in names:
         prob_dic[name] = det_dic[name] / sum_det

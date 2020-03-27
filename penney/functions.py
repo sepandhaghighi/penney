@@ -177,7 +177,7 @@ def print_prob(prob_dic):
         space_name = (name_max_length - len(name) + 5) * " "
         print(name + space_name + "{:0.5f}%".format(prob * 100))
     if len(set(prob_dic.values())) > 1:
-        print("Winner Should be : {}".format(sorted_probs[0][0]))
+        print("Winner Should be {}".format(sorted_probs[0][0]))
     else:
         print("Tie!")
 

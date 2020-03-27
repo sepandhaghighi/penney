@@ -188,8 +188,6 @@ def print_prob(prob_dic):
         print(name + space_name + "{:0.5f}%".format(prob * 100))
     if len(set(prob_dic.values())) > 1:
         print("Winner Should be {}".format(sorted_probs[0][0]))
-    else:
-        print("Tie!")
 
 
 def game(seq_dict, round_number=100, print_status=False):

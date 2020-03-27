@@ -141,7 +141,7 @@ def prob_calc(seq_dict):
             w_i_j = 0
             for k in range(1, min(len(A_i), len(A_j)) + 1):
                 if A_i[:k] == A_j[len(A_j) - k:]:
-                    w_i_j += p_seq(Ai[k:])
+                    w_i_j += p_seq(A_i[k:])
             C_row.append(w_i_j)
         C.append(C_row)
     C = np.array(C)

@@ -5,6 +5,7 @@ import time
 from .params import *
 from art import tprint
 import numpy as np
+import copy
 
 def line(num=11, char="#"):
     """
@@ -107,7 +108,7 @@ def det(A):
     :return: determinant of A in float
     """
     n = len(A)
-    AM = A[:]
+    AM = copy.deepcopy(A)
     for focus_diagonal in range(n):
         for i in range(focus_diagonal + 1, n):
             if AM[focus_diagonal][focus_diagonal] == 0:

@@ -120,19 +120,17 @@ def det(A):
         determinant *= AM[i][i]
     return determinant
 
-
-def prob_calc(seq_dict):
+def C_calc(seq_dict):
     """
-    Calculate probability of each player.
+    Calculate C Matrix used in winning probabilty process.
 
     :param seq_dict: players sequences
     :type seq_dict: dict
-    :return: players win probabilties as a dict.
+    :return: C Matrix as a 2D list.
     """
-    prob_dic = {}
     C = []
-    p_seq = lambda seq: 1 / 2 ** len(seq)
     names = list(seq_dict.keys())
+    p_seq = lambda seq: 1 / 2 ** len(seq)
     for i in range(len(names)):
         A_i = seq_dict[str(names[i])]
         C_row = []
@@ -144,13 +142,26 @@ def prob_calc(seq_dict):
                     w_i_j += p_seq(A_i[k:])
             C_row.append(w_i_j)
         C.append(C_row)
+    return C
+
+
+def prob_calc(seq_dict):
+    """
+    Calculate probability of each player.
+
+    :param seq_dict: players sequences
+    :type seq_dict: dict
+    :return: players win probabilties as a dict.
+    """
+    prob_dic = {}
+    names = list(seq_dict.keys())
+    C = C_calc(seq_dict)
     det_dic = {}
     for j in range(len(names)):
         C_j = []
         for i in range(len(names)):
             C_j.append([1 if k == j else C[i][k] for k in range(len(names))])
         det_dic[names[j]] = det(C_j)
-    print(det_dic)
     sum_det = sum(det_dic.values())
     for name in names:
         prob_dic[name] = det_dic[name] / sum_det

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `det` function added.
 - `prob_calc` funtion added.
 - `print_prob` function addded.
+- `C_calc` function added.
 ## [0.1] - 2020-03-21
 ### Added
 - Player mode

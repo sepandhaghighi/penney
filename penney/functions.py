@@ -4,7 +4,7 @@ import random
 import time
 from .params import *
 from art import tprint
-
+import copy
 
 def line(num=11, char="#"):
     """
@@ -96,6 +96,98 @@ def find_winner(seq, seq_dict):
     if len(winner_name) != 0:
         return winner_name
     return None
+
+
+def det(A):
+    """
+    Calculate determinant of a matrix in a fast way.
+
+    :param A: matrix itself
+    :type A: list or numpy.array
+    :return: determinant of A in float
+    """
+    n = len(A)
+    AM = copy.deepcopy(A)
+    for focus_diagonal in range(n):
+        for i in range(focus_diagonal + 1, n):
+            if AM[focus_diagonal][focus_diagonal] == 0:
+                AM[focus_diagonal][focus_diagonal] == 1.0e-18
+            row_scaler = AM[i][focus_diagonal] / AM[focus_diagonal][focus_diagonal]
+            for j in range(n):
+                AM[i][j] = AM[i][j] - row_scaler * AM[focus_diagonal][j]
+    determinant = 1.0
+    for i in range(n):
+        determinant *= AM[i][i]
+    return determinant
+
+def C_calc(seq_dict):
+    """
+    Calculate C Matrix used in winning probabilty process.
+
+    :param seq_dict: players sequences
+    :type seq_dict: dict
+    :return: C Matrix as a 2D list.
+    """
+    C = []
+    names = list(seq_dict.keys())
+    p_seq = lambda seq: 1 / 2 ** len(seq)
+    for i in range(len(names)):
+        A_i = seq_dict[str(names[i])]
+        C_row = []
+        for j in range(len(names)):
+            A_j = seq_dict[str(names[j])]
+            w_i_j = 0
+            for k in range(1, min(len(A_i), len(A_j)) + 1):
+                if A_i[:k] == A_j[len(A_j) - k:]:
+                    w_i_j += p_seq(A_i[k:])
+            C_row.append(w_i_j)
+        C.append(C_row)
+    return C
+
+
+def prob_calc(seq_dict):
+    """
+    Calculate probability of each player.
+
+    :param seq_dict: players sequences
+    :type seq_dict: dict
+    :return: players win probabilties as a dict.
+    """
+    prob_dic = {}
+    names = list(seq_dict.keys())
+    C = C_calc(seq_dict)
+    det_dic = {}
+    for j in range(len(names)):
+        C_j = []
+        for i in range(len(names)):
+            C_j.append([1 if k == j else C[i][k] for k in range(len(names))])
+        det_dic[names[j]] = det(C_j)
+    sum_det = sum(det_dic.values())
+    for name in names:
+        prob_dic[name] = det_dic[name] / sum_det
+    return prob_dic
+
+
+def print_prob(prob_dic):
+    """
+    Print win probabilities of players.
+
+    :param prob_dic: win probability dictionary
+    :type prob_dic: dict
+    :return: None
+    """
+    sorted_probs = sorted(
+        prob_dic.items(), key=lambda x: (
+            x[1], x[0]), reverse=True)
+    name_max_length = max(map(len, prob_dic.keys()))
+    print("Wining Probability : ")
+    for item in sorted_probs:
+        prob = item[1]
+        name = item[0]
+        space_name = (name_max_length - len(name) + 5) * " "
+        print(name + space_name + "{:0.5f}%".format(prob * 100))
+    if len(set(prob_dic.values())) > 1:
+        print("Winner Should be {}".format(sorted_probs[0][0]))
 
 
 def game(seq_dict, round_number=100, print_status=False):
@@ -387,6 +479,8 @@ def menu():  # pragma: no cover
         seq_dict = player_player_handler(seq_len)
     else:
         seq_dict = computer_player_handler(seq_len)
+    line()
+    print_prob(prob_calc(seq_dict))
     line()
     scores = game(seq_dict, round_number=round_number, print_status=True)
     print_result(scores, seq_dict)

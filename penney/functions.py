@@ -122,14 +122,14 @@ def det(A):
 
 def C_calc(seq_dict):
     """
-    Calculate C Matrix used in winning probabilty process.
+    Calculate C Matrix used in winning probability process.
 
     :param seq_dict: players sequences
     :type seq_dict: dict
     :return: C Matrix as a 2D list.
     """
     C = []
-    names = list(seq_dict.keys())
+    names = sorted(list(seq_dict.keys()))
     p_seq = lambda seq: 1 / 2 ** len(seq)
     for i in range(len(names)):
         A_i = seq_dict[str(names[i])]
@@ -151,10 +151,10 @@ def prob_calc(seq_dict):
 
     :param seq_dict: players sequences
     :type seq_dict: dict
-    :return: players win probabilties as a dict.
+    :return: players win probabilities as a dict.
     """
     prob_dic = {}
-    names = list(seq_dict.keys())
+    names = sorted(list(seq_dict.keys()))
     C = C_calc(seq_dict)
     det_dic = {}
     for j in range(len(names)):

@@ -138,3 +138,12 @@ or send an email to [sepand@pycm.ir](mailto:sepand@pycm.ir "sepand@pycm.ir").
 	</tr>
 </table>
 
+## References			
+
+<blockquote>1- Penney, Walter. "Problem 95: penney-ante." Journal of Recreational Mathematics 7 (1974): 321.</blockquote>
+
+<blockquote>2- Zajkowski, Krzysztof. "Penney's game between many players." arXiv preprint arXiv:1212.3973 (2012). </blockquote>
+
+<blockquote>3- Guy, R. K., and John Horton Conway. Winning Ways for your Mathematical Plays. Academic Press, London, 1982. </blockquote>
+
+<blockquote>4- Humble, Steve, and Yutaka Nishiyama. "Humble-Nishiyama Randomness Game-A New Variation on Penney's Coin Game." (2010). </blockquote>

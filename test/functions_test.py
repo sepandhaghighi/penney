@@ -100,4 +100,19 @@ A1     41.66667%
 A2     33.33333%
 A3     25.00000%
 Winner Should be A1
+>>> print_prob(prob_calc({"2":"HTT","1":"HHH"}))
+Wining Probability :
+2     60.00000%
+1     40.00000%
+Winner Should be 2
+>>> print_prob(prob_calc({"2":"HHT","1":"TTT"}))
+Wining Probability :
+2     70.00000%
+1     30.00000%
+Winner Should be 2
+>>> print_prob(prob_calc({"1":"HHT","2":"TTT"}))
+Wining Probability :
+1     70.00000%
+2     30.00000%
+Winner Should be 1
 """

@@ -90,7 +90,7 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 ## How to Play
 
 - Open `CMD` (Windows) or `Terminal` (UNIX)
-- Run `python -m penney` or `python3 -m penney` (or run `Penney.exe`)
+- Run `python -m penney` or `python3 -m penney` (or run executable file)
 
 <div align="center">
 <img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/help.gif">

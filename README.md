@@ -78,8 +78,14 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 - Run `easy_install --upgrade penney` (Need root access)
 
 ### Exe Version (Only Windows)
-- Download [Penney 0.1](https://github.com/sepandhaghighi/penney/releases/download/v0.1/Penney-0.1.exe)
+- Download [Exe-Version 0.1](https://github.com/sepandhaghighi/penney/releases/download/v0.1/Penney-0.1.exe)
 - Run `Penney-0.1.exe`
+
+### DMG Version (MacOS)
+- Download [DMG-Version 0.1](https://github.com/sepandhaghighi/penney/releases/download/v0.1/Penney-0.1.dmg)
+- Open DMG file
+- Copy `Penney` into your system
+- Run `Penney`
 
 ## How to Play
 

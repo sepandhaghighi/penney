@@ -31,9 +31,6 @@ matrix:
         - os: linux
           python: nightly
           dist: xenial
-        - os: osx
-          language: generic
-          env: TOXENV=py36
 install:
   - chmod +x .travis/install.sh
   - .travis/install.sh

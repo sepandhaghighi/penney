@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `print_prob` function
 - `C_calc` function
 - `Notebook.ipynb` file
+- `build_unix.sh` file
+- Github action
 ## [0.1] - 2020-03-21
 ### Added
 - Player mode

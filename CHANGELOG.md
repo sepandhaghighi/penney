@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `Notebook.ipynb` file
 - `build_unix.sh` file
 - Github action
+### Changed
+- `README.md` modified
+- `version_check.py` updated
 ## [0.1] - 2020-03-21
 ### Added
 - Player mode

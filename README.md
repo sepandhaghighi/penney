@@ -77,7 +77,7 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 
 - Run `easy_install --upgrade penney` (Need root access)
 
-### Exe Version (Only Windows)
+### Exe Version (Windows)
 - Download [Exe-Version 0.2](https://github.com/sepandhaghighi/penney/releases/download/v0.2/Penney-0.2.exe)
 - Run `Penney-0.2.exe`
 
@@ -90,7 +90,7 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 ## How to Play
 
 - Open `CMD` (Windows) or `Terminal` (UNIX)
-- Run `python -m penney` or `python3 -m penney` (or run executable file)
+- Run `python -m penney` or `python3 -m penney` (or run proper **executable** file)
 
 <div align="center">
 <img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/help.gif">

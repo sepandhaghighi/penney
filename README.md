@@ -64,7 +64,7 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
-- Download [Version 0.1](https://github.com/sepandhaghighi/penney/archive/v0.1.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/dev.zip)
+- Download [Version 0.2](https://github.com/sepandhaghighi/penney/archive/v0.2.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -77,14 +77,20 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 
 - Run `easy_install --upgrade penney` (Need root access)
 
-### Exe Version (Only Windows)
-- Download [Penney 0.1](https://github.com/sepandhaghighi/penney/releases/download/v0.1/Penney-0.1.exe)
-- Run `Penney-0.1.exe`
+### Exe Version (Windows)
+- Download [Exe-Version 0.2](https://github.com/sepandhaghighi/penney/releases/download/v0.2/Penney-0.2.exe)
+- Run `Penney-0.2.exe`
+
+### DMG Version (MacOS)
+- Download [DMG-Version 0.2](https://github.com/sepandhaghighi/penney/releases/download/v0.2/Penney-0.2.dmg)
+- Open DMG file
+- Copy `Penney` into your system
+- Run `Penney`
 
 ## How to Play
 
 - Open `CMD` (Windows) or `Terminal` (UNIX)
-- Run `python -m penney` or `python3 -m penney` (or run `Penney.exe`)
+- Run `python -m penney` or `python3 -m penney` (or run proper **executable** version)
 
 <div align="center">
 <img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/help.gif">
@@ -92,6 +98,14 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 
 </div>
 
+## Try Penney in Your Browser!
+
+You can play Penney's game online in interactive Jupyter Notebooks via the Binder service! Try it out now! :	
+
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sepandhaghighi/penney/master)
+
+- Open `Notebook.ipynb`
 
 ## Contribution			
 
@@ -130,3 +144,12 @@ or send an email to [sepand@pycm.ir](mailto:sepand@pycm.ir "sepand@pycm.ir").
 	</tr>
 </table>
 
+## References			
+
+<blockquote>1- Penney, Walter. "Problem 95: penney-ante." Journal of Recreational Mathematics 7 (1974): 321.</blockquote>
+
+<blockquote>2- Zajkowski, Krzysztof. "Penney's game between many players." arXiv preprint arXiv:1212.3973 (2012). </blockquote>
+
+<blockquote>3- Guy, R. K., and John Horton Conway. Winning Ways for your Mathematical Plays. Academic Press, London, 1982. </blockquote>
+
+<blockquote>4- Humble, Steve, and Yutaka Nishiyama. "Humble-Nishiyama Randomness Game-A New Variation on Penney's Coin Game." (2010). </blockquote>

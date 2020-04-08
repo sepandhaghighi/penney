@@ -4,7 +4,7 @@ import os
 import sys
 import codecs
 Failed = 0
-VERSION = "0.1"
+VERSION = "0.2"
 
 VERSION_1 = VERSION.split(".")[0]
 VERSION_2 = str(int(float(VERSION)*10 - int(VERSION_1)*10))
@@ -15,7 +15,8 @@ SETUP_ITEMS = ["version='{0}'"]
 README_ITEMS = [
     "[Version {0}](https://github.com/sepandhaghighi/penney/archive/v{0}.zip)",
     "Run `Penney-{0}.exe`",
-    "[Penney {0}](https://github.com/sepandhaghighi/penney/releases/download/v{0}/Penney-{0}.exe)"]
+    "[Exe-Version {0}](https://github.com/sepandhaghighi/penney/releases/download/v{0}/Penney-{0}.exe)",
+    "[DMG-Version {0}](https://github.com/sepandhaghighi/penney/releases/download/v{0}/Penney-{0}.dmg)"]
 CHANGELOG_ITEMS = [
     "## [{0}]",
     "https://github.com/sepandhaghighi/penney/compare/v{0}...dev",

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Penney params."""
 
-PENNEY_VERSION = "0.1"
+PENNEY_VERSION = "0.2"
 
 PENNEY_DESCRIPTION = """
 Penney's game, named after its inventor Walter Penney, is a binary (head/tail) sequence generating game between two or more players.

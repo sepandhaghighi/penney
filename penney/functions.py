@@ -131,11 +131,11 @@ def C_calc(seq_dict):
     C = []
     names = sorted(list(seq_dict.keys()))
     p_seq = lambda seq: 1 / 2 ** len(seq)
-    for name in names:
-        A_i = seq_dict[str(name)]
+    for name1 in names:
+        A_i = seq_dict[str(name1)]
         C_row = []
-        for name in names:
-            A_j = seq_dict[str(name)]
+        for name2 in names:
+            A_j = seq_dict[str(name2)]
             w_i_j = 0
             for k in range(1, min(len(A_i), len(A_j)) + 1):
                 if A_i[:k] == A_j[len(A_j) - k:]:

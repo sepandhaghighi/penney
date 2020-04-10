@@ -131,11 +131,11 @@ def C_calc(seq_dict):
     C = []
     names = sorted(list(seq_dict.keys()))
     p_seq = lambda seq: 1 / 2 ** len(seq)
-    for i in range(len(names)):
-        A_i = seq_dict[str(names[i])]
+    for name in names:
+        A_i = seq_dict[str(name)]
         C_row = []
-        for j in range(len(names)):
-            A_j = seq_dict[str(names[j])]
+        for name in names:
+            A_j = seq_dict[str(name)]
             w_i_j = 0
             for k in range(1, min(len(A_i), len(A_j)) + 1):
                 if A_i[:k] == A_j[len(A_j) - k:]:
@@ -157,11 +157,11 @@ def prob_calc(seq_dict):
     names = sorted(list(seq_dict.keys()))
     C = C_calc(seq_dict)
     det_dic = {}
-    for j in range(len(names)):
+    for j, name in enumerate(names):
         C_j = []
         for i in range(len(names)):
             C_j.append([1 if k == j else C[i][k] for k in range(len(names))])
-        det_dic[names[j]] = det(C_j)
+        det_dic[name] = det(C_j)
     sum_det = sum(det_dic.values())
     for name in names:
         prob_dic[name] = det_dic[name] / sum_det

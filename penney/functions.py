@@ -111,7 +111,7 @@ def det(A):
     for focus_diagonal in range(n):
         for i in range(focus_diagonal + 1, n):
             if AM[focus_diagonal][focus_diagonal] == 0:
-                AM[focus_diagonal][focus_diagonal] == 1.0e-18
+                AM[focus_diagonal][focus_diagonal] = 1.0e-18
             row_scaler = AM[i][focus_diagonal] / AM[focus_diagonal][focus_diagonal]
             for j in range(n):
                 AM[i][j] = AM[i][j] - row_scaler * AM[focus_diagonal][j]

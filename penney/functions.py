@@ -111,7 +111,7 @@ def det(A):
     for focus_diagonal in range(n):
         for i in range(focus_diagonal + 1, n):
             if AM[focus_diagonal][focus_diagonal] == 0:
-                AM[focus_diagonal][focus_diagonal] == 1.0e-18
+                AM[focus_diagonal][focus_diagonal] = 1.0e-18
             row_scaler = AM[i][focus_diagonal] / AM[focus_diagonal][focus_diagonal]
             for j in range(n):
                 AM[i][j] = AM[i][j] - row_scaler * AM[focus_diagonal][j]
@@ -131,11 +131,11 @@ def C_calc(seq_dict):
     C = []
     names = sorted(list(seq_dict.keys()))
     p_seq = lambda seq: 1 / 2 ** len(seq)
-    for i in range(len(names)):
-        A_i = seq_dict[str(names[i])]
+    for name1 in names:
+        A_i = seq_dict[str(name1)]
         C_row = []
-        for j in range(len(names)):
-            A_j = seq_dict[str(names[j])]
+        for name2 in names:
+            A_j = seq_dict[str(name2)]
             w_i_j = 0
             for k in range(1, min(len(A_i), len(A_j)) + 1):
                 if A_i[:k] == A_j[len(A_j) - k:]:
@@ -157,11 +157,11 @@ def prob_calc(seq_dict):
     names = sorted(list(seq_dict.keys()))
     C = C_calc(seq_dict)
     det_dic = {}
-    for j in range(len(names)):
+    for j, name in enumerate(names):
         C_j = []
         for i in range(len(names)):
             C_j.append([1 if k == j else C[i][k] for k in range(len(names))])
-        det_dic[names[j]] = det(C_j)
+        det_dic[name] = det(C_j)
     sum_det = sum(det_dic.values())
     for name in names:
         prob_dic[name] = det_dic[name] / sum_det

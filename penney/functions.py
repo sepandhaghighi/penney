@@ -351,7 +351,7 @@ def print_result(scores, seq_dict):
         space_name = (name_max_length - len(name) + 5) * " "
         space_score = (score_max_length - len(str(score)) + 3) * " "
         print(name + space_name + str(score) + space_score + seq_dict[name])
-    if len(set(scores.values())) > 1:
+    if sorted_scores[0][1] != sorted_scores[1][1]:
         print("Winner : {}".format(sorted_scores[0][0]))
     else:
         print("Tie!")

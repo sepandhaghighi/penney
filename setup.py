@@ -37,7 +37,7 @@ def read_description():
 setup(
     name='penney',
     packages=['penney'],
-    version='0.2',
+    version='0.3',
     description="Penney's game",
     long_description=read_description(),
     long_description_content_type='text/markdown',

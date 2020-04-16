@@ -37,7 +37,7 @@ def read_description():
 setup(
     name='penney',
     packages=['penney'],
-    version='0.2',
+    version='0.3',
     description="Penney's game",
     long_description=read_description(),
     long_description_content_type='text/markdown',
@@ -52,7 +52,7 @@ setup(
     install_requires=get_requires(),
     python_requires='>=3.5',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Intended Audience :: Education',
         'Intended Audience :: End Users/Desktop',

@@ -26,9 +26,8 @@ jobs:
         python setup.py install
     - name: Test requirements Installation
       run: |
-        grep -i '>=' dev-requirements.txt > valid_packages.txt
-        pip install --upgrade --upgrade-strategy=only-if-needed -r valid_packages.txt
-        rm valid_packages.txt
+        python otherfiles/requirements-splitter.py
+        pip install --upgrade --upgrade-strategy=only-if-needed -r test-requirements.txt
     - name: First test
       run: |
         python -m pytest test --cov=penney --cov-report=term

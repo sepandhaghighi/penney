@@ -27,7 +27,7 @@ jobs:
       run: |
         python otherfiles/requirements-splitter.py
         pip install --upgrade --upgrade-strategy=only-if-needed -r test-requirements.txt
-    - name: First test
+    - name: Test with pytest
       run: |
         python -m pytest test --cov=penney --cov-report=term
     - name: Version check

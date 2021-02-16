@@ -40,7 +40,7 @@ jobs:
       if: matrix.python-version == 3.7
     - name: Other tests
       run: |
-          python -m vulture --min-confidence 65 --exclude=__init__.py --sort-by-size penney/ setup.py version_check.py
+          python -m vulture --min-confidence 65 --exclude=__init__.py --sort-by-size penney/ setup.py otherfiles/
           python -m bandit -r penney -s B311
           python -m pydocstyle --match-dir=penney
       if: matrix.python-version == 3.7

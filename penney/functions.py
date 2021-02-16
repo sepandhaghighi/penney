@@ -472,6 +472,7 @@ def menu():  # pragma: no cover
 
     :return: None
     """
+    tprint("MENU : ")
     player_or_computer = input(PLAYER_COMPUTER_MESSAGE)
     round_number = abs(get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR))
     seq_len = get_len()
@@ -497,4 +498,3 @@ def description():  # pragma: no cover
     line(100)
     print("\n".join(justify(PENNEY_DESCRIPTION.split(), 100)))
     line(100)
-    tprint("MENU : ")

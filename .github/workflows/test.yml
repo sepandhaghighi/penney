@@ -24,6 +24,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         python setup.py install
+    - name: First test
+      run: |
+        python -m penney test
     - name: Test requirements Installation
       run: |
         python otherfiles/requirements-splitter.py
@@ -33,11 +36,11 @@ jobs:
         python -m pytest test --cov=penney --cov-report=term
     - name: Version check
       run: |
-        python version_check.py
+        python otherfiles/version_check.py
       if: matrix.python-version == 3.7
     - name: Other tests
       run: |
-          python -m vulture --min-confidence 65 --exclude=__init__.py --sort-by-size penney/ setup.py version_check.py
+          python -m vulture --min-confidence 65 --exclude=__init__.py --sort-by-size penney/ setup.py otherfiles/
           python -m bandit -r penney -s B311
           python -m pydocstyle --match-dir=penney
       if: matrix.python-version == 3.7

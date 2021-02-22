@@ -368,8 +368,12 @@ def print_seq(seq, delay=0.3):
     :type delay: float
     :return: None
     """
-    for i in seq:
-        print(i,end="",flush=True)
+    end_str = ""
+    seq_len = len(seq)
+    for index,item in enumerate(seq):
+        if index == (seq_len - 1):
+            end_str = "\n"
+        print(item,end=end_str,flush=True)
         time.sleep(delay)
 
 def get_number(message, error_message):  # pragma: no cover

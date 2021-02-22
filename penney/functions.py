@@ -358,7 +358,7 @@ def print_result(scores, seq_dict):
     else:
         print("Tie!")
 
-def print_seq(seq, delay=0.1):
+def print_seq(seq, delay=0.3):
     """
     Print a sequence one by one.
 
@@ -369,7 +369,7 @@ def print_seq(seq, delay=0.1):
     :return: None
     """
     for i in seq:
-        print(i,sep="")
+        print(i,end="",flush=True)
         time.sleep(delay)
 
 def get_number(message, error_message):  # pragma: no cover

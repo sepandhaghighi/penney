@@ -490,7 +490,9 @@ def menu():  # pragma: no cover
     fast_sim_flag = False
     tprint("MENU : ")
     player_or_computer = input(PLAYER_COMPUTER_MESSAGE)
+    line()
     fast_sim_str = input(SIMULATION_MODE_MESSAGE)
+    line()
     round_number = abs(get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR))
     seq_len = get_len()
     if fast_sim_str == "1":

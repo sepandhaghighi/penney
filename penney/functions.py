@@ -190,7 +190,7 @@ def print_prob(prob_dic):
         print("Winner should be {}".format(sorted_probs[0][0]))
 
 
-def game(seq_dict, round_number=100, print_status=False):
+def game(seq_dict, round_number=100, print_status=False, fast_sim=False):
     """
     Game simulation.
 
@@ -200,6 +200,8 @@ def game(seq_dict, round_number=100, print_status=False):
     :type round_number: int
     :param print_status: print status flag
     :type print_status: bool
+    :param fast_sim: fast simulation flag
+    :type fast_sim: bool
     :return: scores as dict
     """
     round_num = 0
@@ -211,7 +213,7 @@ def game(seq_dict, round_number=100, print_status=False):
             round_seq += seq_generator()
             winner = find_winner(round_seq, seq_dict)
             if winner is not None:
-                if print_status:
+                if print_status and not fast_sim:
                     print("Round {}".format(str(round_num + 1)))
                     print(round_seq)
                     print(POINT_MESSAGE.format(winner))

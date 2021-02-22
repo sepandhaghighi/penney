@@ -474,10 +474,14 @@ def menu():  # pragma: no cover
 
     :return: None
     """
+    fast_sim_flag = False
     tprint("MENU : ")
     player_or_computer = input(PLAYER_COMPUTER_MESSAGE)
+    fast_sim_str = input(SIMULATION_MODE_MESSAGE)
     round_number = abs(get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR))
     seq_len = get_len()
+    if fast_sim_str == "1":
+        fast_sim_flag = True
     if player_or_computer != "1":
         seq_dict = player_player_handler(seq_len)
     else:
@@ -485,7 +489,7 @@ def menu():  # pragma: no cover
     line()
     print_prob(prob_calc(seq_dict))
     line()
-    scores = game(seq_dict, round_number=round_number, print_status=True)
+    scores = game(seq_dict, round_number=round_number, print_status=True, fast_sim=fast_sim_flag)
     print_result(scores, seq_dict)
 
 

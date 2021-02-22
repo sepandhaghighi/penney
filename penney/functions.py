@@ -215,7 +215,7 @@ def game(seq_dict, round_number=100, print_status=False, fast_sim=False):
             if winner is not None:
                 if print_status and not fast_sim:
                     print("Round {}".format(str(round_num + 1)))
-                    print(round_seq)
+                    print_seq(round_seq)
                     print(POINT_MESSAGE.format(winner))
                     line()
                     time.sleep(1)
@@ -358,6 +358,19 @@ def print_result(scores, seq_dict):
     else:
         print("Tie!")
 
+def print_seq(seq, delay=0.1):
+    """
+    Print a sequence one by one.
+
+    :param seq: round sequence
+    :type seq: str
+    :param delay: delay between each step
+    :type delay: float
+    :return: None
+    """
+    for i in seq:
+        print(i,sep="")
+        time.sleep(delay)
 
 def get_number(message, error_message):  # pragma: no cover
     """

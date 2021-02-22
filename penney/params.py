@@ -14,6 +14,8 @@ TRY_MESSAGE = "Try again!"
 
 PLAYER_COMPUTER_MESSAGE = "Play with computer [1]\nPlay with other players [any other key]\nPlease select : "
 
+SIMULATION_MODE_MESSAGE = "Slow simulation [1]\nFast simulation [any other key]\nPlease select : "
+
 ROUND_NUMBER_MESSAGE = "Please enter number of rounds : "
 
 ROUND_NUMBER_ERROR = "[Error] Number of rounds should be an integer\n" + TRY_MESSAGE

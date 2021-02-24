@@ -190,7 +190,7 @@ def print_prob(prob_dic):
         print("Winner should be {}".format(sorted_probs[0][0]))
 
 
-def game(seq_dict, round_number=100, print_status=False, fast_sim=False):
+def game(seq_dict, round_number=100, print_status=False):
     """
     Game simulation.
 
@@ -200,8 +200,6 @@ def game(seq_dict, round_number=100, print_status=False, fast_sim=False):
     :type round_number: int
     :param print_status: print status flag
     :type print_status: bool
-    :param fast_sim: fast simulation flag
-    :type fast_sim: bool
     :return: scores as dict
     """
     round_num = 0
@@ -213,7 +211,7 @@ def game(seq_dict, round_number=100, print_status=False, fast_sim=False):
             round_seq += seq_generator()
             winner = find_winner(round_seq, seq_dict)
             if winner is not None:
-                if print_status and not fast_sim:
+                if print_status:
                     print("Round {}".format(str(round_num + 1)))
                     print_seq(round_seq)
                     print(POINT_MESSAGE.format(winner))
@@ -508,7 +506,7 @@ def menu():  # pragma: no cover
     line()
     print_prob(prob_calc(seq_dict))
     line()
-    scores = game(seq_dict, round_number=round_number, print_status=True, fast_sim=fast_sim_flag)
+    scores = game(seq_dict, round_number=round_number, print_status=not fast_sim_flag)
     print_result(scores, seq_dict)
 
 

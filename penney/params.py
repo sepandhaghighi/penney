@@ -12,9 +12,9 @@ appears as a consecutive subsequence of the coin toss outcomes. The player whose
 
 TRY_MESSAGE = "Try again!"
 
-PLAYER_COMPUTER_MESSAGE = "Play with computer [1]\nPlay with other players [any other key]\nPlease select : "
+PLAYER_COMPUTER_MESSAGE = "- Play with computer [1]\n- Play with other players [any other key]\nPlease select : "
 
-SIMULATION_MODE_MESSAGE = "Fast simulation [1]\nSlow simulation [any other key]\nPlease select : "
+SIMULATION_MODE_MESSAGE = "- Fast simulation [1]\n- Step by step [any other key]\nPlease select : "
 
 ROUND_NUMBER_MESSAGE = "Please enter number of rounds : "
 

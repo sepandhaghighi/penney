@@ -371,7 +371,7 @@ def print_seq(seq, delay=0.3):
     for index,item in enumerate(seq):
         if index == (seq_len - 1):
             end_str = "\n"
-        print(item,end=end_str,flush=True)
+        print(item, end=end_str, flush=True)
         time.sleep(delay)
 
 def get_number(message, error_message):  # pragma: no cover

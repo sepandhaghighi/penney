@@ -76,6 +76,8 @@ False
 True
 >>> check_name("Name1",["Name1","Name2"])
 False
+>>> print_seq("HTHHHT")
+HTHHHT
 >>> print_result(scores={"Player1":30,"Player2":32},seq_dict={"Player1":"HHT","Player2":"HTH"})
 Scores Table :
 Player2     32   HTH

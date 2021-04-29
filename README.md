@@ -37,14 +37,9 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 		<td align="center">dev</td>	
 	</tr>
 	<tr>
-		<td align="center">Travis</td>
-		<td align="center"><a href="https://travis-ci.org/sepandhaghighi/penney"><img src="https://travis-ci.org/sepandhaghighi/penney.svg?branch=master"></a></td>
-		<td align="center"><a href="https://travis-ci.org/sepandhaghighi/penney"><img src="https://travis-ci.org/sepandhaghighi/penney.svg?branch=dev"></a></td>
-	</tr>
-	<tr>
-		<td align="center">AppVeyor</td>
-		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/penney"><img src="https://ci.appveyor.com/api/projects/status/a32vdhh52b61ij76/branch/master?svg=true"></a></td>
-		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/penney"><img src="https://ci.appveyor.com/api/projects/status/a32vdhh52b61ij76/branch/dev?svg=true"></a></td>
+		<td align="center">CI</td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/penney/workflows/CI/badge.svg?branch=master"></td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/penney/workflows/CI/badge.svg?branch=dev"></td>
 	</tr>
 </table>
 

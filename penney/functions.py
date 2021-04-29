@@ -213,7 +213,7 @@ def game(seq_dict, round_number=100, print_status=False):
             if winner is not None:
                 if print_status:
                     print("Round {}".format(str(round_num + 1)))
-                    print(round_seq)
+                    print_seq(round_seq)
                     print(POINT_MESSAGE.format(winner))
                     line()
                     time.sleep(1)
@@ -356,6 +356,23 @@ def print_result(scores, seq_dict):
     else:
         print("Tie!")
 
+def print_seq(seq, delay=0.3):
+    """
+    Print a sequence one by one.
+
+    :param seq: round sequence
+    :type seq: str
+    :param delay: delay between each step
+    :type delay: float
+    :return: None
+    """
+    end_str = ""
+    seq_len = len(seq)
+    for index,item in enumerate(seq):
+        if index == (seq_len - 1):
+            end_str = "\n"
+        print(item, end=end_str, flush=True)
+        time.sleep(delay)
 
 def get_number(message, error_message):  # pragma: no cover
     """
@@ -472,9 +489,16 @@ def menu():  # pragma: no cover
 
     :return: None
     """
+    fast_sim_flag = False
+    tprint("MENU : ")
     player_or_computer = input(PLAYER_COMPUTER_MESSAGE)
+    line()
+    fast_sim_str = input(SIMULATION_MODE_MESSAGE)
+    line()
     round_number = abs(get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR))
     seq_len = get_len()
+    if fast_sim_str == "1":
+        fast_sim_flag = True
     if player_or_computer != "1":
         seq_dict = player_player_handler(seq_len)
     else:
@@ -482,7 +506,7 @@ def menu():  # pragma: no cover
     line()
     print_prob(prob_calc(seq_dict))
     line()
-    scores = game(seq_dict, round_number=round_number, print_status=True)
+    scores = game(seq_dict, round_number=round_number, print_status=not fast_sim_flag)
     print_result(scores, seq_dict)
 
 
@@ -497,4 +521,3 @@ def description():  # pragma: no cover
     line(100)
     print("\n".join(justify(PENNEY_DESCRIPTION.split(), 100)))
     line(100)
-    tprint("MENU : ")

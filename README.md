@@ -59,7 +59,7 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
-- Download [Version 0.3](https://github.com/sepandhaghighi/penney/archive/v0.3.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/dev.zip)
+- Download [Version 0.4](https://github.com/sepandhaghighi/penney/archive/v0.4.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -73,8 +73,8 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 - Run `easy_install --upgrade penney` (Need root access)
 
 ### Exe Version (Windows)
-- Download [Exe-Version 0.3](https://github.com/sepandhaghighi/penney/releases/download/v0.3/Penney-0.3.exe)
-- Run `Penney-0.3.exe`
+- Download [Exe-Version 0.4](https://github.com/sepandhaghighi/penney/releases/download/v0.4/Penney-0.4.exe)
+- Run `Penney-0.4.exe`
 
 ## How to Play
 

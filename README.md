@@ -76,16 +76,10 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 - Download [Exe-Version 0.3](https://github.com/sepandhaghighi/penney/releases/download/v0.3/Penney-0.3.exe)
 - Run `Penney-0.3.exe`
 
-### DMG Version (MacOS)
-- Download [DMG-Version 0.3](https://github.com/sepandhaghighi/penney/releases/download/v0.3/Penney-0.3.dmg)
-- Open DMG file
-- Copy `Penney` into your system
-- Run `Penney`
-
 ## How to Play
 
 - Open `CMD` (Windows) or `Terminal` (UNIX)
-- Run `python -m penney` or `python3 -m penney` (or run proper **executable** version)
+- Run `python -m penney` or `python3 -m penney` (or run **executable** version)
 
 <div align="center">
 <img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/help.gif">

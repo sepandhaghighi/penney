@@ -112,7 +112,7 @@ Please consider the following :
 	- Describe changes under `[Unreleased]` section
 6. Submit a pull request into `dev` (please complete the pull request template)
 
-## Issues & bug reports			
+## Issues & Bug Reports			
 
 Just fill an issue and describe it. I'll check it ASAP!							
 or send an email to [sepand@pycm.ir](mailto:sepand@pycm.ir "sepand@pycm.ir"). 
@@ -143,13 +143,13 @@ or send an email to [sepand@pycm.ir](mailto:sepand@pycm.ir "sepand@pycm.ir").
 
 <blockquote>4- Humble, Steve, and Yutaka Nishiyama. "Humble-Nishiyama Randomness Game-A New Variation on Penney's Coin Game." (2010). </blockquote>	
 
-## Show your support
+## Show Your Support
 								
-<h3>Star this repo</h3>					
+<h3>Star This Repo</h3>					
 
 Give a ⭐️ if this project helped you!
 
-<h3>Donate to our project</h3>	
+<h3>Donate to Our Project</h3>	
 
 <h4>Bitcoin</h4>
 1KtNLEEeUbTEK9PdN6Ya3ZAKXaqoKUuxCy

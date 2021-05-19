@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Penney params."""
 
-PENNEY_VERSION = "0.3"
+PENNEY_VERSION = "0.4"
 
 PENNEY_DESCRIPTION = """
 Penney's game, named after its inventor Walter Penney, is a binary (head/tail) sequence generating game between two or more players.
@@ -12,7 +12,9 @@ appears as a consecutive subsequence of the coin toss outcomes. The player whose
 
 TRY_MESSAGE = "Try again!"
 
-PLAYER_COMPUTER_MESSAGE = "Play with computer [1]\nPlay with other players [any other key]\nPlease select : "
+PLAYER_COMPUTER_MESSAGE = "- Play with computer [1]\n- Play with other players [any other key]\nPlease select : "
+
+SIMULATION_MODE_MESSAGE = "- Fast simulation [1]\n- Step by step [any other key]\nPlease select : "
 
 ROUND_NUMBER_MESSAGE = "Please enter number of rounds : "
 

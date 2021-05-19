@@ -37,14 +37,9 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 		<td align="center">dev</td>	
 	</tr>
 	<tr>
-		<td align="center">Travis</td>
-		<td align="center"><a href="https://travis-ci.org/sepandhaghighi/penney"><img src="https://travis-ci.org/sepandhaghighi/penney.svg?branch=master"></a></td>
-		<td align="center"><a href="https://travis-ci.org/sepandhaghighi/penney"><img src="https://travis-ci.org/sepandhaghighi/penney.svg?branch=dev"></a></td>
-	</tr>
-	<tr>
-		<td align="center">AppVeyor</td>
-		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/penney"><img src="https://ci.appveyor.com/api/projects/status/a32vdhh52b61ij76/branch/master?svg=true"></a></td>
-		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/penney"><img src="https://ci.appveyor.com/api/projects/status/a32vdhh52b61ij76/branch/dev?svg=true"></a></td>
+		<td align="center">CI</td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/penney/workflows/CI/badge.svg?branch=master"></td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/penney/workflows/CI/badge.svg?branch=dev"></td>
 	</tr>
 </table>
 
@@ -64,7 +59,7 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
-- Download [Version 0.3](https://github.com/sepandhaghighi/penney/archive/v0.3.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/dev.zip)
+- Download [Version 0.4](https://github.com/sepandhaghighi/penney/archive/v0.4.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -78,19 +73,13 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 - Run `easy_install --upgrade penney` (Need root access)
 
 ### Exe Version (Windows)
-- Download [Exe-Version 0.3](https://github.com/sepandhaghighi/penney/releases/download/v0.3/Penney-0.3.exe)
-- Run `Penney-0.3.exe`
-
-### DMG Version (MacOS)
-- Download [DMG-Version 0.3](https://github.com/sepandhaghighi/penney/releases/download/v0.3/Penney-0.3.dmg)
-- Open DMG file
-- Copy `Penney` into your system
-- Run `Penney`
+- Download [Exe-Version 0.4](https://github.com/sepandhaghighi/penney/releases/download/v0.4/Penney-0.4.exe)
+- Run `Penney-0.4.exe`
 
 ## How to Play
 
 - Open `CMD` (Windows) or `Terminal` (UNIX)
-- Run `python -m penney` or `python3 -m penney` (or run proper **executable** version)
+- Run `python -m penney` or `python3 -m penney` (or run **executable** version)
 
 <div align="center">
 <img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/help.gif">
@@ -123,7 +112,7 @@ Please consider the following :
 	- Describe changes under `[Unreleased]` section
 6. Submit a pull request into `dev` (please complete the pull request template)
 
-## Issues & bug reports			
+## Issues & Bug Reports			
 
 Just fill an issue and describe it. I'll check it ASAP!							
 or send an email to [sepand@pycm.ir](mailto:sepand@pycm.ir "sepand@pycm.ir"). 
@@ -152,6 +141,36 @@ or send an email to [sepand@pycm.ir](mailto:sepand@pycm.ir "sepand@pycm.ir").
 
 <blockquote>3- Guy, R. K., and John Horton Conway. Winning Ways for your Mathematical Plays. Academic Press, London, 1982. </blockquote>
 
-<blockquote>4- Humble, Steve, and Yutaka Nishiyama. "Humble-Nishiyama Randomness Game-A New Variation on Penney's Coin Game." (2010). </blockquote>							
+<blockquote>4- Humble, Steve, and Yutaka Nishiyama. "Humble-Nishiyama Randomness Game-A New Variation on Penney's Coin Game." (2010). </blockquote>	
+
+## Show Your Support
+								
+<h3>Star This Repo</h3>					
+
+Give a ⭐️ if this project helped you!
+
+<h3>Donate to Our Project</h3>	
+
+<h4>Bitcoin</h4>
+1KtNLEEeUbTEK9PdN6Ya3ZAKXaqoKUuxCy
+<h4>Ethereum</h4>
+0xcD4Db18B6664A9662123D4307B074aE968535388
+<h4>Litecoin</h4>
+Ldnz5gMcEeV8BAdsyf8FstWDC6uyYR6pgZ
+<h4>Doge</h4>
+DDUnKpFQbBqLpFVZ9DfuVysBdr249HxVDh
+<h4>Tron</h4>
+TCZxzPZLcJHr2qR3uPUB1tXB6L3FDSSAx7
+<h4>Ripple</h4>
+rN7ZuRG7HDGHR5nof8nu5LrsbmSB61V1qq
+<h4>Binance Coin</h4>
+bnb1zglwcf0ac3d0s2f6ck5kgwvcru4tlctt4p5qef
+<h4>Tether</h4>
+0xcD4Db18B6664A9662123D4307B074aE968535388
+<h4>Dash</h4>
+Xd3Yn2qZJ7VE8nbKw2fS98aLxR5M6WUU3s
+<h4>Stellar</h4>		
+
+GALPOLPISRHIYHLQER2TLJRGUSZH52RYDK6C3HIU4PSMNAV65Q36EGNL						
 
 

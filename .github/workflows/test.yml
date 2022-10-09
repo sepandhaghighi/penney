@@ -37,14 +37,14 @@ jobs:
     - name: Version check
       run: |
         python otherfiles/version_check.py
-      if: matrix.python-version == 3.7
+      if: matrix.python-version == 3.8
     - name: Other tests
       run: |
           python -m vulture --min-confidence 65 --exclude=__init__.py --sort-by-size penney/ setup.py otherfiles/
           python -m bandit -r penney -s B311
           python -m pydocstyle --match-dir=penney
-      if: matrix.python-version == 3.7
+      if: matrix.python-version == 3.8
     - name: Codecov
       run: |
         codecov
-      if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
+      if: matrix.python-version == 3.8 && matrix.os == 'ubuntu-latest'

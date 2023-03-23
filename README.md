@@ -120,19 +120,6 @@ or send an email to [sepand@pycm.ir](mailto:sepand@pycm.ir "sepand@pycm.ir").
 * Please complete the issue template
 
 
-## Dependencies
-
-<table>
-	<tr> 
-		<td align="center">master</td>	
-		<td align="center">dev</td>	
-	</tr>
-	<tr>
-		<td align="center"><a href="https://requires.io/github/sepandhaghighi/penney/requirements/?branch=master"><img src="https://requires.io/github/sepandhaghighi/penney/requirements.svg?branch=master" alt="Requirements Status" /></a></td>
-		<td align="center"><a href="https://requires.io/github/sepandhaghighi/penney/requirements/?branch=dev"><img src="https://requires.io/github/sepandhaghighi/penney/requirements.svg?branch=dev" alt="Requirements Status" /></a></td>
-	</tr>
-</table>
-
 ## References			
 
 <blockquote>1- Penney, Walter. "Problem 95: penney-ante." Journal of Recreational Mathematics 7 (1974): 321.</blockquote>

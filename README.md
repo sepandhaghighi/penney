@@ -60,17 +60,11 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
 - Download [Version 0.4](https://github.com/sepandhaghighi/penney/archive/v0.4.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/dev.zip)
-- Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
-- Run `python3 setup.py install` or `python setup.py install` (Need root access)				
+- Run `pip install .`			
 
 ### PyPI
-
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install penney` or `pip3 install penney` (Need root access)
-
-### Easy Install
-
-- Run `easy_install --upgrade penney` (Need root access)
+- Run `pip install penney==0.4`
 
 ### Exe Version (Windows)
 - Download [Exe-Version 0.4](https://github.com/sepandhaghighi/penney/releases/download/v0.4/Penney-0.4.exe)

@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `codecov` removed from `dev-requirements.txt`
 - `Python 3.10` added to `test.yml`
 - `Python 3.11` added to `test.yml`
+- `Python 3.12` added to `test.yml`
 - `README.md` modified
 ## [0.4] - 2021-05-19
 ### Added

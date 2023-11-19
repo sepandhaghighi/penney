@@ -64,7 +64,7 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 
 ### PyPI
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install penney` or `pip3 install penney`
+- Run `pip install penney==0.4`
 
 ### Exe Version (Windows)
 - Download [Exe-Version 0.4](https://github.com/sepandhaghighi/penney/releases/download/v0.4/Penney-0.4.exe)

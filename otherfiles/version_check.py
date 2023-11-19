@@ -15,6 +15,7 @@ SETUP_ITEMS = ["version='{0}'"]
 README_ITEMS = [
     "[Version {0}](https://github.com/sepandhaghighi/penney/archive/v{0}.zip)",
     "Run `Penney-{0}.exe`",
+    "Run `pip install penney=={0}`",
     "[Exe-Version {0}](https://github.com/sepandhaghighi/penney/releases/download/v{0}/Penney-{0}.exe)"]
 CHANGELOG_ITEMS = [
     "## [{0}]",

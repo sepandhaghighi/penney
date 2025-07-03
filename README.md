@@ -56,7 +56,7 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 ## Installation	
 
 ### Source Code
-- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5)
+- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.7)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
 - Download [Version 0.4](https://github.com/sepandhaghighi/penney/archive/v0.4.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/dev.zip)
@@ -109,7 +109,7 @@ Please consider the following :
 ## Issues & Bug Reports			
 
 Just fill an issue and describe it. I'll check it ASAP!							
-or send an email to [sepand@pycm.ir](mailto:sepand@pycm.ir "sepand@pycm.ir"). 
+or send an email to [me@sepand.tech](mailto:me@sepand.tech "me@sepand.tech"). 
 
 * Please complete the issue template
 

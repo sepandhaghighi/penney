@@ -42,7 +42,7 @@ setup(
     long_description=read_description(),
     long_description_content_type='text/markdown',
     author='Sepand Haghighi',
-    author_email='sepand@pycm.ir',
+    author_email='me@sepand.tech',
     url='https://github.com/sepandhaghighi/penney',
     keywords="penney probability game",
     project_urls={

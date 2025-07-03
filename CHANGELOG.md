@@ -8,9 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Test system modified
 - `codecov` removed from `dev-requirements.txt`
+- `Python 3.5` support dropped
+- `Python 3.6` support dropped
 - `Python 3.10` added to `test.yml`
 - `Python 3.11` added to `test.yml`
 - `Python 3.12` added to `test.yml`
+- `Python 3.13` added to `test.yml`
 - `README.md` modified
 ## [0.4] - 2021-05-19
 ### Added

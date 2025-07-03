@@ -1,10 +1,8 @@
 <div align="center">
 <img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/logo.png" width="164px" height="297px">
 <h1>Penney's Game</h1>
-<a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
-<a href="https://codecov.io/gh/sepandhaghighi/penney">
-  <img src="https://codecov.io/gh/sepandhaghighi/penney/branch/master/graph/badge.svg" />
-</a>
+<a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3"></a>
+<a href="https://codecov.io/gh/sepandhaghighi/penney"><img src="https://codecov.io/gh/sepandhaghighi/penney/branch/master/graph/badge.svg"></a>
 <a href="https://badge.fury.io/py/penney"><img src="https://badge.fury.io/py/penney.svg" alt="PyPI version" height="18"></a>
 </div>
 
@@ -38,8 +36,8 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 	</tr>
 	<tr>
 		<td align="center">CI</td>
-		<td align="center"><img src="https://github.com/sepandhaghighi/penney/workflows/CI/badge.svg?branch=master"></td>
-		<td align="center"><img src="https://github.com/sepandhaghighi/penney/workflows/CI/badge.svg?branch=dev"></td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/penney/actions/workflows/test.yml/badge.svg?branch=master"></td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/penney/actions/workflows/test.yml/badge.svg?branch=dev"></td>
 	</tr>
 </table>
 
@@ -56,7 +54,7 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 ## Installation	
 
 ### Source Code
-- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5)
+- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.7)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
 - Download [Version 0.4](https://github.com/sepandhaghighi/penney/archive/v0.4.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/dev.zip)
@@ -109,7 +107,7 @@ Please consider the following :
 ## Issues & Bug Reports			
 
 Just fill an issue and describe it. I'll check it ASAP!							
-or send an email to [sepand@pycm.ir](mailto:sepand@pycm.ir "sepand@pycm.ir"). 
+or send an email to [me@sepand.tech](mailto:me@sepand.tech "me@sepand.tech"). 
 
 * Please complete the issue template
 

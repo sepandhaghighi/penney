@@ -38,8 +38,8 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 	</tr>
 	<tr>
 		<td align="center">CI</td>
-		<td align="center"><img src="https://github.com/sepandhaghighi/penney/workflows/CI/badge.svg?branch=master"></td>
-		<td align="center"><img src="https://github.com/sepandhaghighi/penney/workflows/CI/badge.svg?branch=dev"></td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/penney/actions/workflows/test.yml/badge.svg?branch=master"></td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/penney/actions/workflows/test.yml/badge.svg?branch=dev"></td>
 	</tr>
 </table>
 

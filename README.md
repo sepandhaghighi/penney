@@ -1,10 +1,8 @@
 <div align="center">
 <img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/logo.png" width="164px" height="297px">
 <h1>Penney's Game</h1>
-<a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
-<a href="https://codecov.io/gh/sepandhaghighi/penney">
-  <img src="https://codecov.io/gh/sepandhaghighi/penney/branch/master/graph/badge.svg" />
-</a>
+<a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3"></a>
+<a href="https://codecov.io/gh/sepandhaghighi/penney"><img src="https://codecov.io/gh/sepandhaghighi/penney/branch/master/graph/badge.svg"></a>
 <a href="https://badge.fury.io/py/penney"><img src="https://badge.fury.io/py/penney.svg" alt="PyPI version" height="18"></a>
 </div>
 

@@ -11,8 +11,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-20.04, windows-latest, macOS-latest]
-        python-version: [3.5, 3.6, 3.7, 3.8, 3.9, 3.10.0, 3.11.0, 3.12.0]
+        os: [ubuntu-22.04, windows-2022, macOS-13]
+        python-version: [3.7, 3.8, 3.9, 3.10.5, 3.11.0, 3.12.0, 3.13.0]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
@@ -36,15 +36,15 @@ jobs:
     - name: Version check
       run: |
         python otherfiles/version_check.py
-      if: matrix.python-version == 3.8
+      if: matrix.python-version == 3.9
     - name: Other tests
       run: |
           python -m vulture --min-confidence 65 --exclude=__init__.py --sort-by-size penney/ setup.py otherfiles/
           python -m bandit -r penney -s B311
           python -m pydocstyle --match-dir=penney
-      if: matrix.python-version == 3.8
+      if: matrix.python-version == 3.9
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
           fail_ci_if_error: true
-      if: matrix.python-version == 3.8 && matrix.os == 'ubuntu-20.04'
+      if: matrix.python-version == 3.9 && matrix.os == 'ubuntu-22.04'

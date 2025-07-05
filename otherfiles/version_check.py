@@ -28,7 +28,7 @@ RC_ITEMS =["filevers=({0}, {1}, {2}, {3})","prodvers=({0}, {1}, {2}, {3})","(u'F
 TEST_ITEMS = ["New Version ({0}) Is Available!"]
 FILES = {
     "setup.py": SETUP_ITEMS, "README.md": README_ITEMS, "CHANGELOG.md": CHANGELOG_ITEMS,
-        os.path.join("penney", "params.py"): PARAMS_ITEMS, "PENNEY.spec": SPEC_ITEMS,}
+        os.path.join("penney", "params.py"): PARAMS_ITEMS, "Penney.spec": SPEC_ITEMS,}
 
 TEST_NUMBER = len(FILES.keys()) +1
 

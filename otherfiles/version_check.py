@@ -23,11 +23,12 @@ CHANGELOG_ITEMS = [
     "[{0}]:"]
 
 PARAMS_ITEMS = ['PENNEY_VERSION = "{0}"']
+SPEC_ITEMS = ['penney_version = "{0}"']
 RC_ITEMS =["filevers=({0}, {1}, {2}, {3})","prodvers=({0}, {1}, {2}, {3})","(u'FileVersion', u'{0}.{1}.{2}.{3}'),","(u'ProductVersion', u'{0}, {1}, {2}, {3}')"]
 TEST_ITEMS = ["New Version ({0}) Is Available!"]
 FILES = {
     "setup.py": SETUP_ITEMS, "README.md": README_ITEMS, "CHANGELOG.md": CHANGELOG_ITEMS,
-        os.path.join("penney", "params.py"): PARAMS_ITEMS}
+        os.path.join("penney", "params.py"): PARAMS_ITEMS, "Penney.spec": SPEC_ITEMS,}
 
 TEST_NUMBER = len(FILES.keys()) +1
 

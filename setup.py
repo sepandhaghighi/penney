@@ -70,5 +70,9 @@ setup(
         'Topic :: Games/Entertainment :: Simulation',
     ],
     license='MIT',
-    include_package_data=True
+    include_package_data=True,
+    entry_points={
+        'console_scripts': [
+            'penney = penney.__main__:main',
+        ]},
 )

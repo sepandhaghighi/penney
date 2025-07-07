@@ -3,13 +3,24 @@
 import sys
 from penney.functions import *
 
-if __name__ == "__main__":
+
+
+def main():
+    """
+    CLI main function.
+
+    :return: None
+    """
     args = sys.argv
     description()
     if len(args) < 2:
-        while(True):
+        while (True):
             menu()
             control_input = input(
                 "\nPress [R] to restart or any other key to exit.")
             if control_input.upper() != "R":
                 break
+
+if __name__ == "__main__":
+    main()
+

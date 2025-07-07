@@ -7,7 +7,7 @@ from penney.functions import *
 
 def main():
     """
-    Main CLI function.
+    CLI main function.
 
     :return: None
     """

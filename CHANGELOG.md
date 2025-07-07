@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Test system modified
 - Build script updated
+- CLI mode updated
 - `codecov` removed from `dev-requirements.txt`
 - `Python 3.5` support dropped
 - `Python 3.6` support dropped

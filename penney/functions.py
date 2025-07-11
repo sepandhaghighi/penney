@@ -87,7 +87,7 @@ def find_winner(seq, seq_dict):
     """
     winner_name = ""
     min_index = len(seq)
-    for name in seq_dict.keys():
+    for name in seq_dict:
         name_index = seq.find(seq_dict[name])
         if name_index != -1:
             if name_index < min_index:
@@ -129,7 +129,7 @@ def C_calc(seq_dict):
     :return: C Matrix as a 2D list.
     """
     C = []
-    names = sorted(list(seq_dict.keys()))
+    names = sorted(seq_dict)
     p_seq = lambda seq: 1 / 2 ** len(seq)
     for name1 in names:
         A_i = seq_dict[str(name1)]
@@ -154,7 +154,7 @@ def prob_calc(seq_dict):
     :return: players win probabilities as a dict.
     """
     prob_dic = {}
-    names = sorted(list(seq_dict.keys()))
+    names = sorted(seq_dict)
     C = C_calc(seq_dict)
     det_dic = {}
     for j, name in enumerate(names):
@@ -179,7 +179,7 @@ def print_prob(prob_dic):
     sorted_probs = sorted(
         prob_dic.items(), key=lambda x: (
             x[1], x[0]), reverse=True)
-    name_max_length = max(map(len, prob_dic.keys()))
+    name_max_length = max(map(len, prob_dic))
     print("Wining Probability : ")
     for item in sorted_probs:
         prob = item[1]
@@ -203,7 +203,7 @@ def game(seq_dict, round_number=100, print_status=False):
     :return: scores as dict
     """
     round_num = 0
-    scores = {name: 0 for name in seq_dict.keys()}
+    scores = {name: 0 for name in seq_dict}
     while(round_num < round_number):
         next_round = False
         round_seq = ""
@@ -255,7 +255,7 @@ def get_seq(seq_len, names_dict, computer_seq=None):  # pragma: no cover
     :return: players sequences as dict
     """
     seq_dict = {name: "" for name in names_dict.values()}
-    for player_ord in sorted(names_dict.keys()):
+    for player_ord in sorted(names_dict):
         while(True):
             player_name = names_dict[player_ord]
             seq_select = input(SEQ_MESSAGE.format(str(player_name)))
@@ -342,7 +342,7 @@ def print_result(scores, seq_dict):
     sorted_scores = sorted(
         scores.items(), key=lambda x: (
             x[1], x[0]), reverse=True)
-    name_max_length = max(map(len, scores.keys()))
+    name_max_length = max(map(len, scores))
     score_max_length = max(map(lambda x: len(str(x)), scores.values()))
     print("Scores Table : ")
     for item in sorted_scores:

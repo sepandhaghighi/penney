@@ -46,7 +46,7 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 	<tr> 
 		<td align="center">Code Quality</td>	
 		<td align="center"><a href="https://www.codefactor.io/repository/github/sepandhaghighi/penney"><img src="https://www.codefactor.io/repository/github/sepandhaghighi/penney/badge" alt="CodeFactor" /></a></td>	
-		<td align="center"><a href="https://www.codacy.com/manual/sepand-haghighi/penney?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/penney&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/d95056b079c844f587dd81914ed9d300"/></a></td>
+		<td align="center"><a href="https://app.codacy.com/gh/sepandhaghighi/penney/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade"><img src="https://app.codacy.com/project/badge/Grade/d95056b079c844f587dd81914ed9d300"/></a></td>
 	</tr>
 </table>
 

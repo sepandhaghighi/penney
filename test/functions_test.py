@@ -2,9 +2,9 @@
 """
 >>> from penney.functions import *
 >>> import random
->>> line(10,"*")
+>>> print_line(10,"*")
 **********
->>> line()
+>>> print_line()
 ###########
 >>> words = ["Word{}".format(str(i)) for i in range(40)]
 >>> output = " ".join(justify(words,100))

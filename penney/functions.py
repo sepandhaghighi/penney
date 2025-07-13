@@ -6,7 +6,7 @@ from .params import *
 from art import tprint
 import copy
 
-def line(num=11, char="#"):
+def print_line(num=11, char="#"):
     """
     Print line of char.
 
@@ -215,7 +215,7 @@ def game(seq_dict, round_number=100, print_status=False):
                     print("Round {}".format(str(round_num + 1)))
                     print_seq(round_seq)
                     print(POINT_MESSAGE.format(winner))
-                    line()
+                    print_line()
                     time.sleep(1)
                 scores[winner] += 1
                 next_round = True
@@ -492,9 +492,9 @@ def menu():  # pragma: no cover
     fast_sim_flag = False
     tprint("MENU : ")
     player_or_computer = input(PLAYER_COMPUTER_MESSAGE)
-    line()
+    print_line()
     fast_sim_str = input(SIMULATION_MODE_MESSAGE)
-    line()
+    print_line()
     round_number = abs(get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR))
     seq_len = get_len()
     if fast_sim_str == "1":
@@ -503,9 +503,9 @@ def menu():  # pragma: no cover
         seq_dict = player_player_handler(seq_len)
     else:
         seq_dict = computer_player_handler(seq_len)
-    line()
+    print_line()
     print_prob(prob_calc(seq_dict))
-    line()
+    print_line()
     scores = game(seq_dict, round_number=round_number, print_status=not fast_sim_flag)
     print_result(scores, seq_dict)
 
@@ -518,6 +518,6 @@ def description():  # pragma: no cover
     """
     tprint("Penney Game", font="larry3d")
     tprint("v {}".format(PENNEY_VERSION))
-    line(100)
+    print_line(100)
     print("\n".join(justify(PENNEY_DESCRIPTION.split(), 100)))
-    line(100)
+    print_line(100)

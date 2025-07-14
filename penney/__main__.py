@@ -4,7 +4,6 @@ import sys
 from penney.functions import *
 
 
-
 def main():
     """
     CLI main function.
@@ -21,6 +20,6 @@ def main():
             if control_input.upper() != "R":
                 break
 
+
 if __name__ == "__main__":
     main()
-

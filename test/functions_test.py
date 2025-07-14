@@ -103,7 +103,7 @@ Tie!
 [Warning] Number of players automatically set to 8
 8
 >>> print_prob(prob_calc({'A1':'THH', 'A2':'HTH', 'A3':'HHT'}))
-Wining Probability : 
+Wining Probability :
 A1     41.667%
 A2     33.333%
 A3     25.000%

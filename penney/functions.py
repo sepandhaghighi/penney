@@ -515,7 +515,7 @@ def menu():  # pragma: no cover
     print_result(scores, seq_dict)
 
 
-def description():  # pragma: no cover
+def print_description():  # pragma: no cover
     """
     Print introduction and description.
 

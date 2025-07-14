@@ -11,7 +11,7 @@ def main():
     :return: None
     """
     args = sys.argv
-    description()
+    print_description()
     if len(args) < 2:
         while (True):
             menu()

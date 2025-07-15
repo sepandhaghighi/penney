@@ -4,7 +4,6 @@ import sys
 from penney.functions import *
 
 
-
 def main():
     """
     CLI main function.
@@ -12,7 +11,7 @@ def main():
     :return: None
     """
     args = sys.argv
-    description()
+    print_description()
     if len(args) < 2:
         while (True):
             menu()
@@ -21,6 +20,6 @@ def main():
             if control_input.upper() != "R":
                 break
 
+
 if __name__ == "__main__":
     main()
-

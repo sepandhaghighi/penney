@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `SECURITY.md`
 ### Changed
 - `line` function renamed to `print_line`
+- `description` function renamed to `print_description`
 - Test system modified
 - Build script updated
 - CLI mode updated

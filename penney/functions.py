@@ -6,6 +6,7 @@ from .params import *
 from art import tprint
 import copy
 
+
 def print_line(num=11, char="#"):
     """
     Print line of char.
@@ -120,6 +121,7 @@ def det(A):
         determinant *= AM[i][i]
     return determinant
 
+
 def C_calc(seq_dict):
     """
     Calculate C Matrix used in winning probability process.
@@ -130,7 +132,8 @@ def C_calc(seq_dict):
     """
     C = []
     names = sorted(seq_dict)
-    p_seq = lambda seq: 1 / 2 ** len(seq)
+
+    def p_seq(seq): return 1 / 2 ** len(seq)
     for name1 in names:
         A_i = seq_dict[str(name1)]
         C_row = []
@@ -356,6 +359,7 @@ def print_result(scores, seq_dict):
     else:
         print("Tie!")
 
+
 def print_seq(seq, delay=0.3):
     """
     Print a sequence one by one.
@@ -368,11 +372,12 @@ def print_seq(seq, delay=0.3):
     """
     end_str = ""
     seq_len = len(seq)
-    for index,item in enumerate(seq):
+    for index, item in enumerate(seq):
         if index == (seq_len - 1):
             end_str = "\n"
         print(item, end=end_str, flush=True)
         time.sleep(delay)
+
 
 def get_number(message, error_message):  # pragma: no cover
     """
@@ -510,7 +515,7 @@ def menu():  # pragma: no cover
     print_result(scores, seq_dict)
 
 
-def description():  # pragma: no cover
+def print_description():  # pragma: no cover
     """
     Print introduction and description.
 

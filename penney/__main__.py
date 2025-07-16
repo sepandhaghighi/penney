@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Penney main."""
 import sys
-from penney.functions import *
+from penney.functions import print_description, menu
 
 
 def main():

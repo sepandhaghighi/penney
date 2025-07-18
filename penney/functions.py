@@ -33,7 +33,7 @@ def justify_left(words, width):
     return ' '.join(words).ljust(width)
 
 
-def justify(words, width):
+def justify_text(words, width):
     """
     Justify input words.
 
@@ -524,5 +524,5 @@ def print_description():  # pragma: no cover
     tprint("Penney Game", font="larry3d")
     tprint("v {}".format(PENNEY_VERSION))
     print_line(100)
-    print("\n".join(justify(PENNEY_DESCRIPTION.split(), 100)))
+    print("\n".join(justify_text(PENNEY_DESCRIPTION.split(), 100)))
     print_line(100)

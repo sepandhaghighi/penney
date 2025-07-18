@@ -148,7 +148,7 @@ def calculate_C(seq_dict):
     return C
 
 
-def prob_calc(seq_dict):
+def calculate_probability(seq_dict):
     """
     Calculate probability of each player.
 
@@ -509,7 +509,7 @@ def menu():  # pragma: no cover
     else:
         seq_dict = computer_player_handler(seq_len)
     print_line()
-    print_prob(prob_calc(seq_dict))
+    print_prob(calculate_probability(seq_dict))
     print_line()
     scores = game(seq_dict, round_number=round_number, print_status=not fast_sim_flag)
     print_result(scores, seq_dict)

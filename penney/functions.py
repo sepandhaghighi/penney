@@ -122,7 +122,7 @@ def det(A):
     return determinant
 
 
-def C_calc(seq_dict):
+def calculate_C(seq_dict):
     """
     Calculate C Matrix used in winning probability process.
 
@@ -158,7 +158,7 @@ def prob_calc(seq_dict):
     """
     prob_dic = {}
     names = sorted(seq_dict)
-    C = C_calc(seq_dict)
+    C = calculate_C(seq_dict)
     det_dic = {}
     for j, name in enumerate(names):
         C_j = []

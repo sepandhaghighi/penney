@@ -226,7 +226,7 @@ def run_game(seq_dict, round_number=100, print_status=False):
     return scores
 
 
-def check_seq(seq, seq_len, seq_dict):
+def validate_sequence(seq, seq_len, seq_dict):
     """
     Check the validity of sequence.
 
@@ -262,7 +262,7 @@ def get_seq(seq_len, names_dict, computer_seq=None):  # pragma: no cover
         while(True):
             player_name = names_dict[player_ord]
             seq_select = input(SEQ_MESSAGE.format(str(player_name)))
-            if check_seq(
+            if validate_sequence(
                     seq_select,
                     seq_len,
                     seq_dict) and seq_select != computer_seq:

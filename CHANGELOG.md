@@ -10,6 +10,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `line` function renamed to `print_line`
 - `description` function renamed to `print_description`
+- `justify_left` function renamed to `left_justify`
+- `justify` function renamed to `justify_text`
+- `seq_generator` function renamed to `generate_sequence`
+- `C_calc` function renamed to `calculate_C`
+- `prob_calc` function renamed to `calculate_probability`
+- `print_prob` function renamed to `print_probability`
+- `game` function renamed to `run_game`
+- `check_seq` function renamed to `validate_sequence`
+- `get_seq` function renamed to `get_sequence`
+- `get_len` function renamed to `get_length`
 - Test system modified
 - Build script updated
 - CLI mode updated

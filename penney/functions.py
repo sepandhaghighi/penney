@@ -273,7 +273,7 @@ def get_sequence(seq_len, names_dict, computer_seq=None):  # pragma: no cover
     return seq_dict
 
 
-def get_len():  # pragma: no cover
+def get_length():  # pragma: no cover
     """
     Get sequence length from user.
 
@@ -501,7 +501,7 @@ def menu():  # pragma: no cover
     fast_sim_str = input(SIMULATION_MODE_MESSAGE)
     print_line()
     round_number = abs(get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR))
-    seq_len = get_len()
+    seq_len = get_length()
     if fast_sim_str == "1":
         fast_sim_flag = True
     if player_or_computer != "1":

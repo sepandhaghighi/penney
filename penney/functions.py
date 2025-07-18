@@ -171,7 +171,7 @@ def calculate_probability(seq_dict):
     return prob_dic
 
 
-def print_prob(prob_dic):
+def print_probability(prob_dic):
     """
     Print win probabilities of players.
 
@@ -509,7 +509,7 @@ def menu():  # pragma: no cover
     else:
         seq_dict = computer_player_handler(seq_len)
     print_line()
-    print_prob(calculate_probability(seq_dict))
+    print_probability(calculate_probability(seq_dict))
     print_line()
     scores = game(seq_dict, round_number=round_number, print_status=not fast_sim_flag)
     print_result(scores, seq_dict)

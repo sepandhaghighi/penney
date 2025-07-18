@@ -102,23 +102,23 @@ Tie!
 >>> player_filter(num=9,seq_len=3,print_status=True)
 [Warning] Number of players automatically set to 8
 8
->>> print_prob(calculate_probability({'A1':'THH', 'A2':'HTH', 'A3':'HHT'}))
+>>> print_probability(calculate_probability({'A1':'THH', 'A2':'HTH', 'A3':'HHT'}))
 Wining Probability :
 A1     41.667%
 A2     33.333%
 A3     25.000%
 Winner should be A1
->>> print_prob(calculate_probability({"2":"HTT","1":"HHH"}))
+>>> print_probability(calculate_probability({"2":"HTT","1":"HHH"}))
 Wining Probability :
 2     60.000%
 1     40.000%
 Winner should be 2
->>> print_prob(calculate_probability({"2":"HHT","1":"TTT"}))
+>>> print_probability(calculate_probability({"2":"HHT","1":"TTT"}))
 Wining Probability :
 2     70.000%
 1     30.000%
 Winner should be 2
->>> print_prob(calculate_probability({"1":"HHT","2":"TTT"}))
+>>> print_probability(calculate_probability({"1":"HHT","2":"TTT"}))
 Wining Probability :
 1     70.000%
 2     30.000%

@@ -245,7 +245,7 @@ def validate_sequence(seq, seq_len, seq_dict):
     return False
 
 
-def get_seq(seq_len, names_dict, computer_seq=None):  # pragma: no cover
+def get_sequence(seq_len, names_dict, computer_seq=None):  # pragma: no cover
     """
     Get sequence from user.
 
@@ -461,7 +461,7 @@ def computer_player_handler(seq_len):  # pragma: no cover
     if first_coin == "T":
         computer_seq = computer_seq_gen(seq_len)
         print(COMPUTER_SEQ_MESSAGE.format(computer_name, computer_seq))
-    seq_dict = get_seq(seq_len, names_dict, computer_seq)
+    seq_dict = get_sequence(seq_len, names_dict, computer_seq)
     player_seq = list(seq_dict.values())[0]
     if computer_seq is None:
         computer_seq = computer_seq_gen(seq_len, player_seq)
@@ -484,7 +484,7 @@ def player_player_handler(seq_len):  # pragma: no cover
         seq_len=seq_len,
         print_status=True)
     names_dict = get_names(num=player_number)
-    seq_dict = get_seq(seq_len, names_dict)
+    seq_dict = get_sequence(seq_len, names_dict)
     return seq_dict
 
 

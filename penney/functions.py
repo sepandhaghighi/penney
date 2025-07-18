@@ -67,7 +67,7 @@ def justify_text(words, width):
         yield justify_left(line, width)
 
 
-def seq_generator():
+def generate_sequence():
     """
     Generate each part of sequence.
 
@@ -211,7 +211,7 @@ def game(seq_dict, round_number=100, print_status=False):
         next_round = False
         round_seq = ""
         while(not next_round):
-            round_seq += seq_generator()
+            round_seq += generate_sequence()
             winner = find_winner(round_seq, seq_dict)
             if winner is not None:
                 if print_status:
@@ -413,7 +413,7 @@ def computer_seq_gen(seq_len, seq=None):
         result = ""
         index = 0
         while(index < seq_len):
-            result += seq_generator()
+            result += generate_sequence()
             index += 1
         if seq != result or seq is None:
             break
@@ -457,7 +457,7 @@ def computer_player_handler(seq_len):  # pragma: no cover
     if player_name.upper() == 'COMPUTER':
         computer_name = "Bot"
     computer_seq = None
-    first_coin = seq_generator()
+    first_coin = generate_sequence()
     if first_coin == "T":
         computer_seq = computer_seq_gen(seq_len)
         print(COMPUTER_SEQ_MESSAGE.format(computer_name, computer_seq))

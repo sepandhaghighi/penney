@@ -20,10 +20,10 @@ Word0 Word1 Word2 Word3 Word4 Word5 Word6 Word7 Word8 Word9 Word10 Word11 Word12
 >>> det([[2,1],[2,2]])
 2.0
 >>> random.seed(2)
->>> seq_generator()
+>>> generate_sequence()
 'T'
 >>> random.seed(5)
->>> seq_generator()
+>>> generate_sequence()
 'H'
 >>> find_winner("HTTTHH",{"Player1":"HTT","Player2":"TTH"})
 'Player1'

@@ -193,7 +193,7 @@ def print_probability(prob_dic):
         print("Winner should be {}".format(sorted_probs[0][0]))
 
 
-def game(seq_dict, round_number=100, print_status=False):
+def run_game(seq_dict, round_number=100, print_status=False):
     """
     Game simulation.
 
@@ -511,7 +511,7 @@ def menu():  # pragma: no cover
     print_line()
     print_probability(calculate_probability(seq_dict))
     print_line()
-    scores = game(seq_dict, round_number=round_number, print_status=not fast_sim_flag)
+    scores = run_game(seq_dict, round_number=round_number, print_status=not fast_sim_flag)
     print_result(scores, seq_dict)
 
 

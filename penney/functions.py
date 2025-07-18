@@ -20,7 +20,7 @@ def print_line(num=11, char="#"):
     print(char * num)
 
 
-def left_justify(words, width):
+def justify_left(words, width):
     """
     Left justify words.
 
@@ -33,7 +33,7 @@ def left_justify(words, width):
     return ' '.join(words).ljust(width)
 
 
-def justify(words, width):
+def justify_text(words, width):
     """
     Justify input words.
 
@@ -48,7 +48,7 @@ def justify(words, width):
     for word in words:
         if line and col + len(word) > width:
             if len(line) == 1:
-                yield left_justify(line, width)
+                yield justify_left(line, width)
             else:
                 # After n + 1 spaces are placed between each pair of
                 # words, there are r spaces left over; these result in
@@ -64,10 +64,10 @@ def justify(words, width):
         line.append(word)
         col += len(word) + 1
     if line:
-        yield left_justify(line, width)
+        yield justify_left(line, width)
 
 
-def seq_generator():
+def generate_sequence():
     """
     Generate each part of sequence.
 
@@ -122,7 +122,7 @@ def det(A):
     return determinant
 
 
-def C_calc(seq_dict):
+def calculate_C(seq_dict):
     """
     Calculate C Matrix used in winning probability process.
 
@@ -148,7 +148,7 @@ def C_calc(seq_dict):
     return C
 
 
-def prob_calc(seq_dict):
+def calculate_probability(seq_dict):
     """
     Calculate probability of each player.
 
@@ -158,7 +158,7 @@ def prob_calc(seq_dict):
     """
     prob_dic = {}
     names = sorted(seq_dict)
-    C = C_calc(seq_dict)
+    C = calculate_C(seq_dict)
     det_dic = {}
     for j, name in enumerate(names):
         C_j = []
@@ -171,7 +171,7 @@ def prob_calc(seq_dict):
     return prob_dic
 
 
-def print_prob(prob_dic):
+def print_probability(prob_dic):
     """
     Print win probabilities of players.
 
@@ -193,7 +193,7 @@ def print_prob(prob_dic):
         print("Winner should be {}".format(sorted_probs[0][0]))
 
 
-def game(seq_dict, round_number=100, print_status=False):
+def run_game(seq_dict, round_number=100, print_status=False):
     """
     Game simulation.
 
@@ -211,7 +211,7 @@ def game(seq_dict, round_number=100, print_status=False):
         next_round = False
         round_seq = ""
         while(not next_round):
-            round_seq += seq_generator()
+            round_seq += generate_sequence()
             winner = find_winner(round_seq, seq_dict)
             if winner is not None:
                 if print_status:
@@ -226,7 +226,7 @@ def game(seq_dict, round_number=100, print_status=False):
     return scores
 
 
-def check_seq(seq, seq_len, seq_dict):
+def validate_sequence(seq, seq_len, seq_dict):
     """
     Check the validity of sequence.
 
@@ -245,7 +245,7 @@ def check_seq(seq, seq_len, seq_dict):
     return False
 
 
-def get_seq(seq_len, names_dict, computer_seq=None):  # pragma: no cover
+def get_sequence(seq_len, names_dict, computer_seq=None):  # pragma: no cover
     """
     Get sequence from user.
 
@@ -262,7 +262,7 @@ def get_seq(seq_len, names_dict, computer_seq=None):  # pragma: no cover
         while(True):
             player_name = names_dict[player_ord]
             seq_select = input(SEQ_MESSAGE.format(str(player_name)))
-            if check_seq(
+            if validate_sequence(
                     seq_select,
                     seq_len,
                     seq_dict) and seq_select != computer_seq:
@@ -273,7 +273,7 @@ def get_seq(seq_len, names_dict, computer_seq=None):  # pragma: no cover
     return seq_dict
 
 
-def get_len():  # pragma: no cover
+def get_length():  # pragma: no cover
     """
     Get sequence length from user.
 
@@ -413,7 +413,7 @@ def computer_seq_gen(seq_len, seq=None):
         result = ""
         index = 0
         while(index < seq_len):
-            result += seq_generator()
+            result += generate_sequence()
             index += 1
         if seq != result or seq is None:
             break
@@ -457,11 +457,11 @@ def computer_player_handler(seq_len):  # pragma: no cover
     if player_name.upper() == 'COMPUTER':
         computer_name = "Bot"
     computer_seq = None
-    first_coin = seq_generator()
+    first_coin = generate_sequence()
     if first_coin == "T":
         computer_seq = computer_seq_gen(seq_len)
         print(COMPUTER_SEQ_MESSAGE.format(computer_name, computer_seq))
-    seq_dict = get_seq(seq_len, names_dict, computer_seq)
+    seq_dict = get_sequence(seq_len, names_dict, computer_seq)
     player_seq = list(seq_dict.values())[0]
     if computer_seq is None:
         computer_seq = computer_seq_gen(seq_len, player_seq)
@@ -484,7 +484,7 @@ def player_player_handler(seq_len):  # pragma: no cover
         seq_len=seq_len,
         print_status=True)
     names_dict = get_names(num=player_number)
-    seq_dict = get_seq(seq_len, names_dict)
+    seq_dict = get_sequence(seq_len, names_dict)
     return seq_dict
 
 
@@ -501,7 +501,7 @@ def menu():  # pragma: no cover
     fast_sim_str = input(SIMULATION_MODE_MESSAGE)
     print_line()
     round_number = abs(get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR))
-    seq_len = get_len()
+    seq_len = get_length()
     if fast_sim_str == "1":
         fast_sim_flag = True
     if player_or_computer != "1":
@@ -509,9 +509,9 @@ def menu():  # pragma: no cover
     else:
         seq_dict = computer_player_handler(seq_len)
     print_line()
-    print_prob(prob_calc(seq_dict))
+    print_probability(calculate_probability(seq_dict))
     print_line()
-    scores = game(seq_dict, round_number=round_number, print_status=not fast_sim_flag)
+    scores = run_game(seq_dict, round_number=round_number, print_status=not fast_sim_flag)
     print_result(scores, seq_dict)
 
 
@@ -524,5 +524,5 @@ def print_description():  # pragma: no cover
     tprint("Penney Game", font="larry3d")
     tprint("v {}".format(PENNEY_VERSION))
     print_line(100)
-    print("\n".join(justify(PENNEY_DESCRIPTION.split(), 100)))
+    print("\n".join(justify_text(PENNEY_DESCRIPTION.split(), 100)))
     print_line(100)

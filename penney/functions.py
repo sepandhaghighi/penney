@@ -20,7 +20,7 @@ def print_line(num=11, char="#"):
     print(char * num)
 
 
-def left_justify(words, width):
+def justify_left(words, width):
     """
     Left justify words.
 
@@ -48,7 +48,7 @@ def justify(words, width):
     for word in words:
         if line and col + len(word) > width:
             if len(line) == 1:
-                yield left_justify(line, width)
+                yield justify_left(line, width)
             else:
                 # After n + 1 spaces are placed between each pair of
                 # words, there are r spaces left over; these result in
@@ -64,7 +64,7 @@ def justify(words, width):
         line.append(word)
         col += len(word) + 1
     if line:
-        yield left_justify(line, width)
+        yield justify_left(line, width)
 
 
 def seq_generator():

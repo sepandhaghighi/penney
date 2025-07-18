@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `line` function renamed to `print_line`
 - `description` function renamed to `print_description`
-- `justify_left` function renamed to `left_justify`
+- `left_justify` function renamed to `justify_left`
 - `justify` function renamed to `justify_text`
 - `seq_generator` function renamed to `generate_sequence`
 - `C_calc` function renamed to `calculate_C`

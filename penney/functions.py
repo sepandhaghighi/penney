@@ -292,7 +292,7 @@ def get_length():  # pragma: no cover
     return seq_len
 
 
-def check_name(name, name_list):
+def validate_name(name, name_list):
     """
     Check the validity of name.
 
@@ -321,7 +321,7 @@ def get_names(num=2):  # pragma: no cover
     while(index < num):
         while(True):
             name = input(PLAYER_NAME_MESSAGE.format(str(index + 1)))
-            if check_name(name, names_dict):
+            if validate_name(name, names_dict):
                 rand_order = random.choice(names_order)
                 names_order.remove(rand_order)
                 names_dict[rand_order] = name

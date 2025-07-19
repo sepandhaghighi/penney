@@ -72,9 +72,9 @@ False
 False
 >>> validate_sequence(seq="HHHH",seq_len=4,seq_dict={1:"HTTT",2:"HHHH"})
 False
->>> check_name("Name1",["Name2"])
+>>> validate_name("Name1",["Name2"])
 True
->>> check_name("Name1",["Name1","Name2"])
+>>> validate_name("Name1",["Name1","Name2"])
 False
 >>> print_seq("HTHHHT")
 HTHHHT

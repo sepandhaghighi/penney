@@ -89,10 +89,10 @@ Player2     30   HTH
 Player1     30   HHT
 Tie!
 >>> random.seed(300)
->>> computer_seq_gen(3,"HTH")
+>>> generate_computer_sequence(3,"HTH")
 'HHT'
 >>> random.seed(301)
->>> computer_seq_gen(3)
+>>> generate_computer_sequence(3)
 'HHH'
 >>> player_filter(num=1,seq_len=3,print_status=True)
 [Warning] Number of players automatically set to 2

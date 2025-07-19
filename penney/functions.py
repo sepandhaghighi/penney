@@ -399,7 +399,7 @@ def get_number(message, error_message):  # pragma: no cover
     return number
 
 
-def computer_seq_gen(seq_len, seq=None):
+def generate_computer_sequence(seq_len, seq=None):
     """
     Generate computer sequence.
 
@@ -459,12 +459,12 @@ def computer_player_handler(seq_len):  # pragma: no cover
     computer_seq = None
     first_coin = generate_sequence()
     if first_coin == "T":
-        computer_seq = computer_seq_gen(seq_len)
+        computer_seq = generate_computer_sequence(seq_len)
         print(COMPUTER_SEQ_MESSAGE.format(computer_name, computer_seq))
     seq_dict = get_sequence(seq_len, names_dict, computer_seq)
     player_seq = list(seq_dict.values())[0]
     if computer_seq is None:
-        computer_seq = computer_seq_gen(seq_len, player_seq)
+        computer_seq = generate_computer_sequence(seq_len, player_seq)
         print(COMPUTER_SEQ_MESSAGE.format(computer_name, computer_seq))
     seq_dict[computer_name] = computer_seq
     return seq_dict

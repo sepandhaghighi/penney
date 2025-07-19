@@ -488,7 +488,7 @@ def player_player_handler(seq_len):  # pragma: no cover
     return seq_dict
 
 
-def menu():  # pragma: no cover
+def menu_handler():  # pragma: no cover
     """
     CLI menu main handler.
 

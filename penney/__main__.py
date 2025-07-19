@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Penney main."""
 import sys
-from penney.functions import print_description, menu
+from penney.functions import print_description, menu_handler
 
 
 def main():
@@ -14,7 +14,7 @@ def main():
     print_description()
     if len(args) < 2:
         while (True):
-            menu()
+            menu_handler()
             control_input = input(
                 "\nPress [R] to restart or any other key to exit.")
             if control_input.upper() != "R":

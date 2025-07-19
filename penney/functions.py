@@ -216,7 +216,7 @@ def run_game(seq_dict, round_number=100, print_status=False):
             if winner is not None:
                 if print_status:
                     print("Round {}".format(str(round_num + 1)))
-                    print_seq(round_seq)
+                    print_sequence(round_seq)
                     print(POINT_MESSAGE.format(winner))
                     print_line()
                     time.sleep(1)
@@ -360,7 +360,7 @@ def print_result(scores, seq_dict):
         print("Tie!")
 
 
-def print_seq(seq, delay=0.3):
+def print_sequence(seq, delay=0.3):
     """
     Print a sequence one by one.
 

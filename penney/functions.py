@@ -420,7 +420,7 @@ def generate_computer_sequence(seq_len, seq=None):
     return result
 
 
-def player_filter(num, seq_len, print_status=False):
+def filter_players(num, seq_len, print_status=False):
     """
     Filter number of players.
 
@@ -479,7 +479,7 @@ def player_player_handler(seq_len):  # pragma: no cover
     :return: players sequences as dict
     """
     player_number = get_number(PLAYER_NUMBER_MESSAGE, PLAYER_NUMBER_ERROR)
-    player_number = player_filter(
+    player_number = filter_players(
         player_number,
         seq_len=seq_len,
         print_status=True)

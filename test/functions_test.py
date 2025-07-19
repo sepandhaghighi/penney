@@ -94,12 +94,12 @@ Tie!
 >>> random.seed(301)
 >>> generate_computer_sequence(3)
 'HHH'
->>> player_filter(num=1,seq_len=3,print_status=True)
+>>> filter_players(num=1,seq_len=3,print_status=True)
 [Warning] Number of players automatically set to 2
 2
->>> player_filter(num=3,seq_len=3,print_status=True)
+>>> filter_players(num=3,seq_len=3,print_status=True)
 3
->>> player_filter(num=9,seq_len=3,print_status=True)
+>>> filter_players(num=9,seq_len=3,print_status=True)
 [Warning] Number of players automatically set to 8
 8
 >>> print_probability(calculate_probability({'A1':'THH', 'A2':'HTH', 'A3':'HHT'}))

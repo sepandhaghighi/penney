@@ -20,6 +20,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `check_seq` function renamed to `validate_sequence`
 - `get_seq` function renamed to `get_sequence`
 - `get_len` function renamed to `get_length`
+- `check_name` function renamed to `validate_name`
+- `print_seq` function renamed to `print_sequence`
+- `computer_seq_gen` function renamed to `generate_computer_sequence`
+- `player_filter` function renamed to `filter_players`
+- `menu` function renamed to `menu_handler`
 - Test system modified
 - Build script updated
 - CLI mode updated

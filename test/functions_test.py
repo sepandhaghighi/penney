@@ -72,11 +72,11 @@ False
 False
 >>> validate_sequence(seq="HHHH",seq_len=4,seq_dict={1:"HTTT",2:"HHHH"})
 False
->>> check_name("Name1",["Name2"])
+>>> validate_name("Name1",["Name2"])
 True
->>> check_name("Name1",["Name1","Name2"])
+>>> validate_name("Name1",["Name1","Name2"])
 False
->>> print_seq("HTHHHT")
+>>> print_sequence("HTHHHT")
 HTHHHT
 >>> print_result(scores={"Player1":30,"Player2":32},seq_dict={"Player1":"HHT","Player2":"HTH"})
 Scores Table :
@@ -89,17 +89,17 @@ Player2     30   HTH
 Player1     30   HHT
 Tie!
 >>> random.seed(300)
->>> computer_seq_gen(3,"HTH")
+>>> generate_computer_sequence(3,"HTH")
 'HHT'
 >>> random.seed(301)
->>> computer_seq_gen(3)
+>>> generate_computer_sequence(3)
 'HHH'
->>> player_filter(num=1,seq_len=3,print_status=True)
+>>> filter_players(num=1,seq_len=3,print_status=True)
 [Warning] Number of players automatically set to 2
 2
->>> player_filter(num=3,seq_len=3,print_status=True)
+>>> filter_players(num=3,seq_len=3,print_status=True)
 3
->>> player_filter(num=9,seq_len=3,print_status=True)
+>>> filter_players(num=9,seq_len=3,print_status=True)
 [Warning] Number of players automatically set to 8
 8
 >>> print_probability(calculate_probability({'A1':'THH', 'A2':'HTH', 'A3':'HHT'}))

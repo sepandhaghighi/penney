@@ -216,7 +216,7 @@ def run_game(seq_dict, round_number=100, print_status=False):
             if winner is not None:
                 if print_status:
                     print("Round {}".format(str(round_num + 1)))
-                    print_seq(round_seq)
+                    print_sequence(round_seq)
                     print(POINT_MESSAGE.format(winner))
                     print_line()
                     time.sleep(1)
@@ -292,7 +292,7 @@ def get_length():  # pragma: no cover
     return seq_len
 
 
-def check_name(name, name_list):
+def validate_name(name, name_list):
     """
     Check the validity of name.
 
@@ -321,7 +321,7 @@ def get_names(num=2):  # pragma: no cover
     while(index < num):
         while(True):
             name = input(PLAYER_NAME_MESSAGE.format(str(index + 1)))
-            if check_name(name, names_dict):
+            if validate_name(name, names_dict):
                 rand_order = random.choice(names_order)
                 names_order.remove(rand_order)
                 names_dict[rand_order] = name
@@ -360,7 +360,7 @@ def print_result(scores, seq_dict):
         print("Tie!")
 
 
-def print_seq(seq, delay=0.3):
+def print_sequence(seq, delay=0.3):
     """
     Print a sequence one by one.
 
@@ -399,7 +399,7 @@ def get_number(message, error_message):  # pragma: no cover
     return number
 
 
-def computer_seq_gen(seq_len, seq=None):
+def generate_computer_sequence(seq_len, seq=None):
     """
     Generate computer sequence.
 
@@ -420,7 +420,7 @@ def computer_seq_gen(seq_len, seq=None):
     return result
 
 
-def player_filter(num, seq_len, print_status=False):
+def filter_players(num, seq_len, print_status=False):
     """
     Filter number of players.
 
@@ -459,12 +459,12 @@ def computer_player_handler(seq_len):  # pragma: no cover
     computer_seq = None
     first_coin = generate_sequence()
     if first_coin == "T":
-        computer_seq = computer_seq_gen(seq_len)
+        computer_seq = generate_computer_sequence(seq_len)
         print(COMPUTER_SEQ_MESSAGE.format(computer_name, computer_seq))
     seq_dict = get_sequence(seq_len, names_dict, computer_seq)
     player_seq = list(seq_dict.values())[0]
     if computer_seq is None:
-        computer_seq = computer_seq_gen(seq_len, player_seq)
+        computer_seq = generate_computer_sequence(seq_len, player_seq)
         print(COMPUTER_SEQ_MESSAGE.format(computer_name, computer_seq))
     seq_dict[computer_name] = computer_seq
     return seq_dict
@@ -479,7 +479,7 @@ def player_player_handler(seq_len):  # pragma: no cover
     :return: players sequences as dict
     """
     player_number = get_number(PLAYER_NUMBER_MESSAGE, PLAYER_NUMBER_ERROR)
-    player_number = player_filter(
+    player_number = filter_players(
         player_number,
         seq_len=seq_len,
         print_status=True)
@@ -488,7 +488,7 @@ def player_player_handler(seq_len):  # pragma: no cover
     return seq_dict
 
 
-def menu():  # pragma: no cover
+def menu_handler():  # pragma: no cover
     """
     CLI menu main handler.
 

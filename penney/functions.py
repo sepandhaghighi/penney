@@ -217,7 +217,7 @@ def run_game(seq_dict, round_number=100, print_status=False):
                 if print_status:
                     print("Round {}".format(str(round_num + 1)))
                     print_sequence(round_seq)
-                    print(POINT_MESSAGE.format(winner))
+                    print(POINT_MESSAGE.format(winner=winner))
                     print_line()
                     time.sleep(1)
                 scores[winner] += 1
@@ -261,7 +261,7 @@ def get_sequence(seq_len, names_dict, computer_seq=None):  # pragma: no cover
     for player_ord in sorted(names_dict):
         while(True):
             player_name = names_dict[player_ord]
-            seq_select = input(SEQ_MESSAGE.format(str(player_name)))
+            seq_select = input(SEQ_MESSAGE.format(player_name=str(player_name)))
             if validate_sequence(
                     seq_select,
                     seq_len,
@@ -269,7 +269,7 @@ def get_sequence(seq_len, names_dict, computer_seq=None):  # pragma: no cover
                 seq_dict[player_name] = seq_select
                 break
             else:
-                print(SEQ_ERROR.format(str(seq_len)))
+                print(SEQ_ERROR.format(sequence_length=str(seq_len)))
     return seq_dict
 
 
@@ -320,7 +320,7 @@ def get_names(num=2):  # pragma: no cover
     index = 0
     while(index < num):
         while(True):
-            name = input(PLAYER_NAME_MESSAGE.format(str(index + 1)))
+            name = input(PLAYER_NAME_MESSAGE.format(index=str(index + 1)))
             if validate_name(name, names_dict):
                 rand_order = random.choice(names_order)
                 names_order.remove(rand_order)
@@ -434,11 +434,11 @@ def filter_players(num, seq_len, print_status=False):
     """
     if num < 2:
         if print_status:
-            print(PLAYER_NUMBER_WARNING.format("2"))
+            print(PLAYER_NUMBER_WARNING.format(number_of_players="2"))
         return 2
     if num > 2**seq_len:
         if print_status:
-            print(PLAYER_NUMBER_WARNING.format(str(2**seq_len)))
+            print(PLAYER_NUMBER_WARNING.format(number_of_players=str(2**seq_len)))
         return 2**seq_len
     return num
 
@@ -460,12 +460,12 @@ def computer_player_handler(seq_len):  # pragma: no cover
     first_coin = generate_sequence()
     if first_coin == "T":
         computer_seq = generate_computer_sequence(seq_len)
-        print(COMPUTER_SEQ_MESSAGE.format(computer_name, computer_seq))
+        print(COMPUTER_SEQ_MESSAGE.format(computer_name=computer_name, computer_sequence=computer_seq))
     seq_dict = get_sequence(seq_len, names_dict, computer_seq)
     player_seq = list(seq_dict.values())[0]
     if computer_seq is None:
         computer_seq = generate_computer_sequence(seq_len, player_seq)
-        print(COMPUTER_SEQ_MESSAGE.format(computer_name, computer_seq))
+        print(COMPUTER_SEQ_MESSAGE.format(computer_name=computer_name, computer_sequence=computer_seq))
     seq_dict[computer_name] = computer_seq
     return seq_dict
 

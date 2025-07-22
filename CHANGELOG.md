@@ -36,6 +36,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `Python 3.12` added to `test.yml`
 - `Python 3.13` added to `test.yml`
 - `README.md` modified
+- String templates modified
 ## [0.4] - 2021-05-19
 ### Added
 - `requirements-splitter.py`

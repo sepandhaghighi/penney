@@ -188,9 +188,9 @@ def print_probability(prob_dic):
         prob = item[1]
         name = item[0]
         space_name = (name_max_length - len(name) + 5) * " "
-        print(name + space_name + "{:0.3f}%".format(prob * 100))
+        print(name + space_name + "{probability:0.3f}%".format(probability=prob * 100))
     if len(set(prob_dic.values())) > 1:
-        print("Winner should be {}".format(sorted_probs[0][0]))
+        print("Winner should be {possible_winner}".format(possible_winner=sorted_probs[0][0]))
 
 
 def run_game(seq_dict, round_number=100, print_status=False):
@@ -215,7 +215,7 @@ def run_game(seq_dict, round_number=100, print_status=False):
             winner = find_winner(round_seq, seq_dict)
             if winner is not None:
                 if print_status:
-                    print("Round {}".format(str(round_num + 1)))
+                    print("Round {round_number}".format(round_number=str(round_num + 1)))
                     print_sequence(round_seq)
                     print(POINT_MESSAGE.format(winner=winner))
                     print_line()
@@ -355,7 +355,7 @@ def print_result(scores, seq_dict):
         space_score = (score_max_length - len(str(score)) + 3) * " "
         print(name + space_name + str(score) + space_score + seq_dict[name])
     if sorted_scores[0][1] != sorted_scores[1][1]:
-        print("Winner : {}".format(sorted_scores[0][0]))
+        print("Winner : {winner}".format(winner=sorted_scores[0][0]))
     else:
         print("Tie!")
 
@@ -522,7 +522,7 @@ def print_description():  # pragma: no cover
     :return: None
     """
     tprint("Penney Game", font="larry3d")
-    tprint("v {}".format(PENNEY_VERSION))
+    tprint("v {version}".format(version=PENNEY_VERSION))
     print_line(100)
     print("\n".join(justify_text(PENNEY_DESCRIPTION.split(), 100)))
     print_line(100)

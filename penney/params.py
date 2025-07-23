@@ -24,9 +24,9 @@ PLAYER_NUMBER_MESSAGE = "Please enter number of players : "
 
 PLAYER_NUMBER_ERROR = "[Error] Number of players should be an integer\n" + TRY_MESSAGE
 
-PLAYER_NUMBER_WARNING = "[Warning] Number of players automatically set to {}"
+PLAYER_NUMBER_WARNING = "[Warning] Number of players automatically set to {number_of_players}"
 
-PLAYER_NAME_MESSAGE = "Please enter player-{} name : "
+PLAYER_NAME_MESSAGE = "Please enter player-{index} name : "
 
 PLAYER_NAME_ERROR = "[Error] Player name should be uniqe and contains at least one character" + TRY_MESSAGE
 
@@ -36,10 +36,10 @@ LENGTH_ERROR1 = "[Error] Sequence length should be greater than 2\n" + TRY_MESSA
 
 LENGTH_ERROR2 = "[Error] Sequence length should be an integer\n" + TRY_MESSAGE
 
-SEQ_MESSAGE = "[{}] Please enter your sequence : "
+SEQ_MESSAGE = "[{player_name}] Please enter your sequence : "
 
-SEQ_ERROR = "[Error] Sequence should be uniqe, only consist of 'T' and 'H' characters with length of {}"
+SEQ_ERROR = "[Error] Sequence should be uniqe, only consist of 'T' and 'H' characters with length of {sequence_length}"
 
-COMPUTER_SEQ_MESSAGE = "{0} sequence : {1}"
+COMPUTER_SEQ_MESSAGE = "{computer_name} sequence : {computer_sequence}"
 
-POINT_MESSAGE = "Point for --> {}"
+POINT_MESSAGE = "Point for --> {winner}"

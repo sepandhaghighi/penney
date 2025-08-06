@@ -7,17 +7,17 @@ from art import tprint
 import copy
 
 
-def print_line(num=11, char="#"):
+def print_line(number=11, char="#"):
     """
     Print line of char.
 
-    :param num: number of character in this line
-    :type num : int
+    :param number: number of character in this line
+    :type number : int
     :param char: character
     :type char : str
     :return: None
     """
-    print(char * num)
+    print(char * number)
 
 
 def justify_left(words, width):
@@ -307,18 +307,18 @@ def validate_name(name, name_list):
     return False
 
 
-def get_names(num=2):  # pragma: no cover
+def get_names(number=2):  # pragma: no cover
     """
     Get names from user.
 
-    :param num: number of players
-    :type num: int
+    :param number: number of players
+    :type number: int
     :return: players names as dict
     """
     names_dict = {}
-    names_order = list(range(1, num + 1))
+    names_order = list(range(1, number + 1))
     index = 0
-    while(index < num):
+    while(index < number):
         while(True):
             name = input(PLAYER_NAME_MESSAGE.format(index=str(index + 1)))
             if validate_name(name, names_dict):
@@ -420,27 +420,27 @@ def generate_computer_sequence(sequence_length, sequence=None):
     return result
 
 
-def filter_players(num, sequence_length, print_status=False):
+def filter_players(number, sequence_length, print_status=False):
     """
     Filter number of players.
 
-    :param num: number of players
-    :type num: int
+    :param number: number of players
+    :type number: int
     :param sequence_length: sequence length
     :type sequence_length: int
     :param print_status: print status flag
     :type print_status: bool
     :return: filtered number of players as int
     """
-    if num < 2:
+    if number < 2:
         if print_status:
             print(PLAYER_NUMBER_WARNING.format(number_of_players="2"))
         return 2
-    if num > 2**sequence_length:
+    if number > 2**sequence_length:
         if print_status:
             print(PLAYER_NUMBER_WARNING.format(number_of_players=str(2**sequence_length)))
         return 2**sequence_length
-    return num
+    return number
 
 
 def computer_player_handler(sequence_length):  # pragma: no cover
@@ -451,7 +451,7 @@ def computer_player_handler(sequence_length):  # pragma: no cover
     :type sequence_length: int
     :return: players sequences as dict
     """
-    names_dict = get_names(num=1)
+    names_dict = get_names(number=1)
     computer_name = "Computer"
     player_name = list(names_dict.values())[0]
     if player_name.upper() == 'COMPUTER':
@@ -483,7 +483,7 @@ def player_player_handler(sequence_length):  # pragma: no cover
         player_number,
         sequence_length=sequence_length,
         print_status=True)
-    names_dict = get_names(num=player_number)
+    names_dict = get_names(number=player_number)
     player_sequences = get_sequence(sequence_length, names_dict)
     return player_sequences
 

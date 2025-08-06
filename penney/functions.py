@@ -76,20 +76,20 @@ def generate_sequence():
     return random.choice(["T", "H"])
 
 
-def find_winner(seq, player_sequences):
+def find_winner(sequence, player_sequences):
     """
     Identify each round winner.
 
-    :param seq: round sequence
-    :type seq: str
+    :param sequence: round sequence
+    :type sequence: str
     :param player_sequences: players sequences
     :type player_sequences: dict
     :return: winner name as str
     """
     winner_name = ""
-    min_index = len(seq)
+    min_index = len(sequence)
     for name in player_sequences:
-        name_index = seq.find(player_sequences[name])
+        name_index = sequence.find(player_sequences[name])
         if name_index != -1:
             if name_index < min_index:
                 winner_name = name
@@ -133,7 +133,7 @@ def calculate_C(player_sequences):
     C = []
     names = sorted(player_sequences)
 
-    def p_seq(seq): return 1 / 2 ** len(seq)
+    def p_seq(sequence): return 1 / 2 ** len(sequence)
     for name1 in names:
         A_i = player_sequences[str(name1)]
         C_row = []
@@ -226,21 +226,21 @@ def run_game(player_sequences, round_number=100, print_status=False):
     return scores
 
 
-def validate_sequence(seq, sequence_length, player_sequences):
+def validate_sequence(sequence, sequence_length, player_sequences):
     """
     Check the validity of sequence.
 
-    :param seq: test sequence
-    :type seq: str
+    :param sequence: test sequence
+    :type sequence: str
     :param sequence_length: sequence length
     :type sequence_length: int
     :param player_sequences: players sequences
     :type player_sequences: dict
     :return: validity as bool
     """
-    seq_elements = set(list(seq))
-    if len(seq) == sequence_length and seq_elements.issubset(
-            {"T", "H"}) and seq not in player_sequences.values():
+    seq_elements = set(list(sequence))
+    if len(sequence) == sequence_length and seq_elements.issubset(
+            {"T", "H"}) and sequence not in player_sequences.values():
         return True
     return False
 
@@ -360,19 +360,19 @@ def print_result(scores, player_sequences):
         print("Tie!")
 
 
-def print_sequence(seq, delay=0.3):
+def print_sequence(sequence, delay=0.3):
     """
     Print a sequence one by one.
 
-    :param seq: round sequence
-    :type seq: str
+    :param sequence: round sequence
+    :type sequence: str
     :param delay: delay between each step
     :type delay: float
     :return: None
     """
     end_str = ""
-    sequence_length = len(seq)
-    for index, item in enumerate(seq):
+    sequence_length = len(sequence)
+    for index, item in enumerate(sequence):
         if index == (sequence_length - 1):
             end_str = "\n"
         print(item, end=end_str, flush=True)
@@ -399,14 +399,14 @@ def get_number(message, error_message):  # pragma: no cover
     return number
 
 
-def generate_computer_sequence(sequence_length, seq=None):
+def generate_computer_sequence(sequence_length, sequence=None):
     """
     Generate computer sequence.
 
     :param sequence_length: sequence length
     :type sequence_length: int
-    :param seq: player sequence
-    :type seq: str
+    :param sequence: player sequence
+    :type sequence: str
     :return: computer sequence as str
     """
     while(True):
@@ -415,7 +415,7 @@ def generate_computer_sequence(sequence_length, seq=None):
         while(index < sequence_length):
             result += generate_sequence()
             index += 1
-        if seq != result or seq is None:
+        if sequence != result or sequence is None:
             break
     return result
 

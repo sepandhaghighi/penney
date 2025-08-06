@@ -64,13 +64,13 @@ Point for --> Player1
 2
 >>> result['Player2']
 1
->>> validate_sequence(seq="HTHH",sequence_length=4,player_sequences={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(sequence="HTHH",sequence_length=4,player_sequences={1:"HTTT",2:"HHHH"})
 True
->>> validate_sequence(seq="HTHH",sequence_length=3,player_sequences={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(sequence="HTHH",sequence_length=3,player_sequences={1:"HTTT",2:"HHHH"})
 False
->>> validate_sequence(seq="HTHA",sequence_length=4,player_sequences={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(sequence="HTHA",sequence_length=4,player_sequences={1:"HTTT",2:"HHHH"})
 False
->>> validate_sequence(seq="HHHH",sequence_length=4,player_sequences={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(sequence="HHHH",sequence_length=4,player_sequences={1:"HTTT",2:"HHHH"})
 False
 >>> validate_name("Name1",["Name2"])
 True

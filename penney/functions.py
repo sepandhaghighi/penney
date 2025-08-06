@@ -226,31 +226,31 @@ def run_game(player_sequences, round_number=100, print_status=False):
     return scores
 
 
-def validate_sequence(seq, seq_len, player_sequences):
+def validate_sequence(seq, sequence_length, player_sequences):
     """
     Check the validity of sequence.
 
     :param seq: test sequence
     :type seq: str
-    :param seq_len: sequence length
-    :type seq_len: int
+    :param sequence_length: sequence length
+    :type sequence_length: int
     :param player_sequences: players sequences
     :type player_sequences: dict
     :return: validity as bool
     """
     seq_elements = set(list(seq))
-    if len(seq) == seq_len and seq_elements.issubset(
+    if len(seq) == sequence_length and seq_elements.issubset(
             {"T", "H"}) and seq not in player_sequences.values():
         return True
     return False
 
 
-def get_sequence(seq_len, names_dict, computer_seq=None):  # pragma: no cover
+def get_sequence(sequence_length, names_dict, computer_seq=None):  # pragma: no cover
     """
     Get sequence from user.
 
-    :param seq_len: sequence length
-    :type seq_len: int
+    :param sequence_length: sequence length
+    :type sequence_length: int
     :param names_dict: players names
     :type names_dict: dict
     :param computer_seq: computer sequence
@@ -264,12 +264,12 @@ def get_sequence(seq_len, names_dict, computer_seq=None):  # pragma: no cover
             seq_select = input(SEQ_MESSAGE.format(player_name=str(player_name)))
             if validate_sequence(
                     seq_select,
-                    seq_len,
+                    sequence_length,
                     player_sequences) and seq_select != computer_seq:
                 player_sequences[player_name] = seq_select
                 break
             else:
-                print(SEQ_ERROR.format(sequence_length=str(seq_len)))
+                print(SEQ_ERROR.format(sequence_length=str(sequence_length)))
     return player_sequences
 
 
@@ -279,17 +279,17 @@ def get_length():  # pragma: no cover
 
     :return: sequence length as int
     """
-    seq_len = 0
+    sequence_length = 0
     while(True):
         try:
-            seq_len = int(input(LENGTH_MESSAGE))
-            if seq_len >= 3:
+            sequence_length = int(input(LENGTH_MESSAGE))
+            if sequence_length >= 3:
                 break
             else:
                 print(LENGTH_ERROR1)
         except Exception:
             print(LENGTH_ERROR2)
-    return seq_len
+    return sequence_length
 
 
 def validate_name(name, name_list):
@@ -371,9 +371,9 @@ def print_sequence(seq, delay=0.3):
     :return: None
     """
     end_str = ""
-    seq_len = len(seq)
+    sequence_length = len(seq)
     for index, item in enumerate(seq):
-        if index == (seq_len - 1):
+        if index == (sequence_length - 1):
             end_str = "\n"
         print(item, end=end_str, flush=True)
         time.sleep(delay)
@@ -399,12 +399,12 @@ def get_number(message, error_message):  # pragma: no cover
     return number
 
 
-def generate_computer_sequence(seq_len, seq=None):
+def generate_computer_sequence(sequence_length, seq=None):
     """
     Generate computer sequence.
 
-    :param seq_len: sequence length
-    :type seq_len: int
+    :param sequence_length: sequence length
+    :type sequence_length: int
     :param seq: player sequence
     :type seq: str
     :return: computer sequence as str
@@ -412,7 +412,7 @@ def generate_computer_sequence(seq_len, seq=None):
     while(True):
         result = ""
         index = 0
-        while(index < seq_len):
+        while(index < sequence_length):
             result += generate_sequence()
             index += 1
         if seq != result or seq is None:
@@ -420,14 +420,14 @@ def generate_computer_sequence(seq_len, seq=None):
     return result
 
 
-def filter_players(num, seq_len, print_status=False):
+def filter_players(num, sequence_length, print_status=False):
     """
     Filter number of players.
 
     :param num: number of players
     :type num: int
-    :param seq_len: sequence length
-    :type seq_len: int
+    :param sequence_length: sequence length
+    :type sequence_length: int
     :param print_status: print status flag
     :type print_status: bool
     :return: filtered number of players as int
@@ -436,19 +436,19 @@ def filter_players(num, seq_len, print_status=False):
         if print_status:
             print(PLAYER_NUMBER_WARNING.format(number_of_players="2"))
         return 2
-    if num > 2**seq_len:
+    if num > 2**sequence_length:
         if print_status:
-            print(PLAYER_NUMBER_WARNING.format(number_of_players=str(2**seq_len)))
-        return 2**seq_len
+            print(PLAYER_NUMBER_WARNING.format(number_of_players=str(2**sequence_length)))
+        return 2**sequence_length
     return num
 
 
-def computer_player_handler(seq_len):  # pragma: no cover
+def computer_player_handler(sequence_length):  # pragma: no cover
     """
     Computer-Player mode handler.
 
-    :param seq_len: sequence length
-    :type seq_len: int
+    :param sequence_length: sequence length
+    :type sequence_length: int
     :return: players sequences as dict
     """
     names_dict = get_names(num=1)
@@ -459,32 +459,32 @@ def computer_player_handler(seq_len):  # pragma: no cover
     computer_seq = None
     first_coin = generate_sequence()
     if first_coin == "T":
-        computer_seq = generate_computer_sequence(seq_len)
+        computer_seq = generate_computer_sequence(sequence_length)
         print(COMPUTER_SEQ_MESSAGE.format(computer_name=computer_name, computer_sequence=computer_seq))
-    player_sequences = get_sequence(seq_len, names_dict, computer_seq)
+    player_sequences = get_sequence(sequence_length, names_dict, computer_seq)
     player_seq = list(player_sequences.values())[0]
     if computer_seq is None:
-        computer_seq = generate_computer_sequence(seq_len, player_seq)
+        computer_seq = generate_computer_sequence(sequence_length, player_seq)
         print(COMPUTER_SEQ_MESSAGE.format(computer_name=computer_name, computer_sequence=computer_seq))
     player_sequences[computer_name] = computer_seq
     return player_sequences
 
 
-def player_player_handler(seq_len):  # pragma: no cover
+def player_player_handler(sequence_length):  # pragma: no cover
     """
     Player-Player mode handler.
 
-    :param seq_len: sequence length
-    :type seq_len: int
+    :param sequence_length: sequence length
+    :type sequence_length: int
     :return: players sequences as dict
     """
     player_number = get_number(PLAYER_NUMBER_MESSAGE, PLAYER_NUMBER_ERROR)
     player_number = filter_players(
         player_number,
-        seq_len=seq_len,
+        sequence_length=sequence_length,
         print_status=True)
     names_dict = get_names(num=player_number)
-    player_sequences = get_sequence(seq_len, names_dict)
+    player_sequences = get_sequence(sequence_length, names_dict)
     return player_sequences
 
 
@@ -501,13 +501,13 @@ def menu_handler():  # pragma: no cover
     fast_sim_str = input(SIMULATION_MODE_MESSAGE)
     print_line()
     round_number = abs(get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR))
-    seq_len = get_length()
+    sequence_length = get_length()
     if fast_sim_str == "1":
         fast_sim_flag = True
     if player_or_computer != "1":
-        player_sequences = player_player_handler(seq_len)
+        player_sequences = player_player_handler(sequence_length)
     else:
-        player_sequences = computer_player_handler(seq_len)
+        player_sequences = computer_player_handler(sequence_length)
     print_line()
     print_probability(calculate_probability(player_sequences))
     print_line()

@@ -64,13 +64,13 @@ Point for --> Player1
 2
 >>> result['Player2']
 1
->>> validate_sequence(seq="HTHH",seq_len=4,player_sequences={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(seq="HTHH",sequence_length=4,player_sequences={1:"HTTT",2:"HHHH"})
 True
->>> validate_sequence(seq="HTHH",seq_len=3,player_sequences={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(seq="HTHH",sequence_length=3,player_sequences={1:"HTTT",2:"HHHH"})
 False
->>> validate_sequence(seq="HTHA",seq_len=4,player_sequences={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(seq="HTHA",sequence_length=4,player_sequences={1:"HTTT",2:"HHHH"})
 False
->>> validate_sequence(seq="HHHH",seq_len=4,player_sequences={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(seq="HHHH",sequence_length=4,player_sequences={1:"HTTT",2:"HHHH"})
 False
 >>> validate_name("Name1",["Name2"])
 True
@@ -94,12 +94,12 @@ Tie!
 >>> random.seed(301)
 >>> generate_computer_sequence(3)
 'HHH'
->>> filter_players(num=1,seq_len=3,print_status=True)
+>>> filter_players(num=1,sequence_length=3,print_status=True)
 [Warning] Number of players automatically set to 2
 2
->>> filter_players(num=3,seq_len=3,print_status=True)
+>>> filter_players(num=3,sequence_length=3,print_status=True)
 3
->>> filter_players(num=9,seq_len=3,print_status=True)
+>>> filter_players(num=9,sequence_length=3,print_status=True)
 [Warning] Number of players automatically set to 8
 8
 >>> print_probability(calculate_probability({'A1':'THH', 'A2':'HTH', 'A3':'HHT'}))

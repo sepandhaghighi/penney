@@ -64,13 +64,13 @@ Point for --> Player1
 2
 >>> result['Player2']
 1
->>> validate_sequence(seq="HTHH",seq_len=4,seq_dict={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(seq="HTHH",seq_len=4,player_sequences={1:"HTTT",2:"HHHH"})
 True
->>> validate_sequence(seq="HTHH",seq_len=3,seq_dict={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(seq="HTHH",seq_len=3,player_sequences={1:"HTTT",2:"HHHH"})
 False
->>> validate_sequence(seq="HTHA",seq_len=4,seq_dict={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(seq="HTHA",seq_len=4,player_sequences={1:"HTTT",2:"HHHH"})
 False
->>> validate_sequence(seq="HHHH",seq_len=4,seq_dict={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(seq="HHHH",seq_len=4,player_sequences={1:"HTTT",2:"HHHH"})
 False
 >>> validate_name("Name1",["Name2"])
 True
@@ -78,12 +78,12 @@ True
 False
 >>> print_sequence("HTHHHT")
 HTHHHT
->>> print_result(scores={"Player1":30,"Player2":32},seq_dict={"Player1":"HHT","Player2":"HTH"})
+>>> print_result(scores={"Player1":30,"Player2":32},player_sequences={"Player1":"HHT","Player2":"HTH"})
 Scores Table :
 Player2     32   HTH
 Player1     30   HHT
 Winner : Player2
->>> print_result(scores={"Player1":30,"Player2":30},seq_dict={"Player1":"HHT","Player2":"HTH"})
+>>> print_result(scores={"Player1":30,"Player2":30},player_sequences={"Player1":"HHT","Player2":"HTH"})
 Scores Table :
 Player2     30   HTH
 Player1     30   HHT

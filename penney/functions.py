@@ -76,20 +76,20 @@ def generate_sequence():
     return random.choice(["T", "H"])
 
 
-def find_winner(seq, seq_dict):
+def find_winner(seq, player_sequences):
     """
     Identify each round winner.
 
     :param seq: round sequence
     :type seq: str
-    :param seq_dict: players sequences
-    :type seq_dict: dict
+    :param player_sequences: players sequences
+    :type player_sequences: dict
     :return: winner name as str
     """
     winner_name = ""
     min_index = len(seq)
-    for name in seq_dict:
-        name_index = seq.find(seq_dict[name])
+    for name in player_sequences:
+        name_index = seq.find(player_sequences[name])
         if name_index != -1:
             if name_index < min_index:
                 winner_name = name
@@ -122,23 +122,23 @@ def det(A):
     return determinant
 
 
-def calculate_C(seq_dict):
+def calculate_C(player_sequences):
     """
     Calculate C Matrix used in winning probability process.
 
-    :param seq_dict: players sequences
-    :type seq_dict: dict
+    :param player_sequences: players sequences
+    :type player_sequences: dict
     :return: C Matrix as a 2D list.
     """
     C = []
-    names = sorted(seq_dict)
+    names = sorted(player_sequences)
 
     def p_seq(seq): return 1 / 2 ** len(seq)
     for name1 in names:
-        A_i = seq_dict[str(name1)]
+        A_i = player_sequences[str(name1)]
         C_row = []
         for name2 in names:
-            A_j = seq_dict[str(name2)]
+            A_j = player_sequences[str(name2)]
             w_i_j = 0
             for k in range(1, min(len(A_i), len(A_j)) + 1):
                 if A_i[:k] == A_j[len(A_j) - k:]:
@@ -148,17 +148,17 @@ def calculate_C(seq_dict):
     return C
 
 
-def calculate_probability(seq_dict):
+def calculate_probability(player_sequences):
     """
     Calculate probability of each player.
 
-    :param seq_dict: players sequences
-    :type seq_dict: dict
+    :param player_sequences: players sequences
+    :type player_sequences: dict
     :return: players win probabilities as a dict.
     """
     prob_dic = {}
-    names = sorted(seq_dict)
-    C = calculate_C(seq_dict)
+    names = sorted(player_sequences)
+    C = calculate_C(player_sequences)
     det_dic = {}
     for j, name in enumerate(names):
         C_j = []
@@ -193,12 +193,12 @@ def print_probability(prob_dic):
         print("Winner should be {possible_winner}".format(possible_winner=sorted_probs[0][0]))
 
 
-def run_game(seq_dict, round_number=100, print_status=False):
+def run_game(player_sequences, round_number=100, print_status=False):
     """
     Game simulation.
 
-    :param seq_dict: players sequences
-    :type seq_dict: dict
+    :param player_sequences: players sequences
+    :type player_sequences: dict
     :param round_number: number of rounds
     :type round_number: int
     :param print_status: print status flag
@@ -206,13 +206,13 @@ def run_game(seq_dict, round_number=100, print_status=False):
     :return: scores as dict
     """
     round_num = 0
-    scores = {name: 0 for name in seq_dict}
+    scores = {name: 0 for name in player_sequences}
     while(round_num < round_number):
         next_round = False
         round_seq = ""
         while(not next_round):
             round_seq += generate_sequence()
-            winner = find_winner(round_seq, seq_dict)
+            winner = find_winner(round_seq, player_sequences)
             if winner is not None:
                 if print_status:
                     print("Round {round_number}".format(round_number=str(round_num + 1)))
@@ -226,7 +226,7 @@ def run_game(seq_dict, round_number=100, print_status=False):
     return scores
 
 
-def validate_sequence(seq, seq_len, seq_dict):
+def validate_sequence(seq, seq_len, player_sequences):
     """
     Check the validity of sequence.
 
@@ -234,13 +234,13 @@ def validate_sequence(seq, seq_len, seq_dict):
     :type seq: str
     :param seq_len: sequence length
     :type seq_len: int
-    :param seq_dict: players sequences
-    :type seq_dict: dict
+    :param player_sequences: players sequences
+    :type player_sequences: dict
     :return: validity as bool
     """
     seq_elements = set(list(seq))
     if len(seq) == seq_len and seq_elements.issubset(
-            {"T", "H"}) and seq not in seq_dict.values():
+            {"T", "H"}) and seq not in player_sequences.values():
         return True
     return False
 
@@ -257,7 +257,7 @@ def get_sequence(seq_len, names_dict, computer_seq=None):  # pragma: no cover
     :type computer_seq: str
     :return: players sequences as dict
     """
-    seq_dict = {name: "" for name in names_dict.values()}
+    player_sequences = {name: "" for name in names_dict.values()}
     for player_ord in sorted(names_dict):
         while(True):
             player_name = names_dict[player_ord]
@@ -265,12 +265,12 @@ def get_sequence(seq_len, names_dict, computer_seq=None):  # pragma: no cover
             if validate_sequence(
                     seq_select,
                     seq_len,
-                    seq_dict) and seq_select != computer_seq:
-                seq_dict[player_name] = seq_select
+                    player_sequences) and seq_select != computer_seq:
+                player_sequences[player_name] = seq_select
                 break
             else:
                 print(SEQ_ERROR.format(sequence_length=str(seq_len)))
-    return seq_dict
+    return player_sequences
 
 
 def get_length():  # pragma: no cover
@@ -332,14 +332,14 @@ def get_names(num=2):  # pragma: no cover
     return names_dict
 
 
-def print_result(scores, seq_dict):
+def print_result(scores, player_sequences):
     """
     Print game result.
 
     :param scores: players scores
     :type scores: dict
-    :param seq_dict: players sequences
-    :type seq_dict: dict
+    :param player_sequences: players sequences
+    :type player_sequences: dict
     :return: None
     """
     sorted_scores = sorted(
@@ -353,7 +353,7 @@ def print_result(scores, seq_dict):
         name = item[0]
         space_name = (name_max_length - len(name) + 5) * " "
         space_score = (score_max_length - len(str(score)) + 3) * " "
-        print(name + space_name + str(score) + space_score + seq_dict[name])
+        print(name + space_name + str(score) + space_score + player_sequences[name])
     if sorted_scores[0][1] != sorted_scores[1][1]:
         print("Winner : {winner}".format(winner=sorted_scores[0][0]))
     else:
@@ -461,13 +461,13 @@ def computer_player_handler(seq_len):  # pragma: no cover
     if first_coin == "T":
         computer_seq = generate_computer_sequence(seq_len)
         print(COMPUTER_SEQ_MESSAGE.format(computer_name=computer_name, computer_sequence=computer_seq))
-    seq_dict = get_sequence(seq_len, names_dict, computer_seq)
-    player_seq = list(seq_dict.values())[0]
+    player_sequences = get_sequence(seq_len, names_dict, computer_seq)
+    player_seq = list(player_sequences.values())[0]
     if computer_seq is None:
         computer_seq = generate_computer_sequence(seq_len, player_seq)
         print(COMPUTER_SEQ_MESSAGE.format(computer_name=computer_name, computer_sequence=computer_seq))
-    seq_dict[computer_name] = computer_seq
-    return seq_dict
+    player_sequences[computer_name] = computer_seq
+    return player_sequences
 
 
 def player_player_handler(seq_len):  # pragma: no cover
@@ -484,8 +484,8 @@ def player_player_handler(seq_len):  # pragma: no cover
         seq_len=seq_len,
         print_status=True)
     names_dict = get_names(num=player_number)
-    seq_dict = get_sequence(seq_len, names_dict)
-    return seq_dict
+    player_sequences = get_sequence(seq_len, names_dict)
+    return player_sequences
 
 
 def menu_handler():  # pragma: no cover
@@ -505,14 +505,14 @@ def menu_handler():  # pragma: no cover
     if fast_sim_str == "1":
         fast_sim_flag = True
     if player_or_computer != "1":
-        seq_dict = player_player_handler(seq_len)
+        player_sequences = player_player_handler(seq_len)
     else:
-        seq_dict = computer_player_handler(seq_len)
+        player_sequences = computer_player_handler(seq_len)
     print_line()
-    print_probability(calculate_probability(seq_dict))
+    print_probability(calculate_probability(player_sequences))
     print_line()
-    scores = run_game(seq_dict, round_number=round_number, print_status=not fast_sim_flag)
-    print_result(scores, seq_dict)
+    scores = run_game(player_sequences, round_number=round_number, print_status=not fast_sim_flag)
+    print_result(scores, player_sequences)
 
 
 def print_description():  # pragma: no cover

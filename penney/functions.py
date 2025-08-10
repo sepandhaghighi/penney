@@ -238,14 +238,14 @@ def validate_sequence(sequence, sequence_length, player_sequences):
     :type player_sequences: dict
     :return: validity as bool
     """
-    seq_elements = set(list(sequence))
-    if len(sequence) == sequence_length and seq_elements.issubset(
+    sequence_elements = set(list(sequence))
+    if len(sequence) == sequence_length and sequence_elements.issubset(
             {"T", "H"}) and sequence not in player_sequences.values():
         return True
     return False
 
 
-def get_sequence(sequence_length, names_dict, computer_seq=None):  # pragma: no cover
+def get_sequence(sequence_length, names_dict, computer_sequence=None):  # pragma: no cover
     """
     Get sequence from user.
 
@@ -253,8 +253,8 @@ def get_sequence(sequence_length, names_dict, computer_seq=None):  # pragma: no 
     :type sequence_length: int
     :param names_dict: players names
     :type names_dict: dict
-    :param computer_seq: computer sequence
-    :type computer_seq: str
+    :param computer_sequence: computer sequence
+    :type computer_sequence: str
     :return: players sequences as dict
     """
     player_sequences = {name: "" for name in names_dict.values()}
@@ -265,7 +265,7 @@ def get_sequence(sequence_length, names_dict, computer_seq=None):  # pragma: no 
             if validate_sequence(
                     seq_select,
                     sequence_length,
-                    player_sequences) and seq_select != computer_seq:
+                    player_sequences) and seq_select != computer_sequence:
                 player_sequences[player_name] = seq_select
                 break
             else:
@@ -456,17 +456,17 @@ def computer_player_handler(sequence_length):  # pragma: no cover
     player_name = list(names_dict.values())[0]
     if player_name.upper() == 'COMPUTER':
         computer_name = "Bot"
-    computer_seq = None
+    computer_sequence = None
     first_coin = generate_sequence()
     if first_coin == "T":
-        computer_seq = generate_computer_sequence(sequence_length)
-        print(COMPUTER_SEQ_MESSAGE.format(computer_name=computer_name, computer_sequence=computer_seq))
-    player_sequences = get_sequence(sequence_length, names_dict, computer_seq)
+        computer_sequence = generate_computer_sequence(sequence_length)
+        print(COMPUTER_SEQ_MESSAGE.format(computer_name=computer_name, computer_sequence=computer_sequence))
+    player_sequences = get_sequence(sequence_length, names_dict, computer_sequence)
     player_seq = list(player_sequences.values())[0]
-    if computer_seq is None:
-        computer_seq = generate_computer_sequence(sequence_length, player_seq)
-        print(COMPUTER_SEQ_MESSAGE.format(computer_name=computer_name, computer_sequence=computer_seq))
-    player_sequences[computer_name] = computer_seq
+    if computer_sequence is None:
+        computer_sequence = generate_computer_sequence(sequence_length, player_seq)
+        print(COMPUTER_SEQ_MESSAGE.format(computer_name=computer_name, computer_sequence=computer_sequence))
+    player_sequences[computer_name] = computer_sequence
     return player_sequences
 
 

@@ -258,9 +258,9 @@ def get_sequence(sequence_length, names_dict, computer_sequence=None):  # pragma
     :return: players sequences as dict
     """
     player_sequences = {name: "" for name in names_dict.values()}
-    for player_ord in sorted(names_dict):
+    for player_index in sorted(names_dict):
         while(True):
-            player_name = names_dict[player_ord]
+            player_name = names_dict[player_index]
             player_sequence = input(SEQUENCE_MESSAGE.format(player_name=str(player_name)))
             if validate_sequence(
                     player_sequence,

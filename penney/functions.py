@@ -205,9 +205,9 @@ def run_game(player_sequences, round_number=100, print_status=False):
     :type print_status: bool
     :return: scores as dict
     """
-    round_num = 0
+    current_round = 0
     scores = {name: 0 for name in player_sequences}
-    while(round_num < round_number):
+    while(current_round < round_number):
         next_round = False
         round_sequence = ""
         while(not next_round):
@@ -215,14 +215,14 @@ def run_game(player_sequences, round_number=100, print_status=False):
             winner = find_winner(round_sequence, player_sequences)
             if winner is not None:
                 if print_status:
-                    print("Round {round_number}".format(round_number=str(round_num + 1)))
+                    print("Round {round_number}".format(round_number=str(current_round + 1)))
                     print_sequence(round_sequence)
                     print(POINT_MESSAGE.format(winner=winner))
                     print_line()
                     time.sleep(1)
                 scores[winner] += 1
                 next_round = True
-        round_num += 1
+        current_round += 1
     return scores
 
 

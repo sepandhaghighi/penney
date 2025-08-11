@@ -36,7 +36,7 @@ LENGTH_ERROR1 = "[Error] Sequence length should be greater than 2\n" + TRY_MESSA
 
 LENGTH_ERROR2 = "[Error] Sequence length should be an integer\n" + TRY_MESSAGE
 
-SEQ_MESSAGE = "[{player_name}] Please enter your sequence : "
+SEQUENCE_MESSAGE = "[{player_name}] Please enter your sequence : "
 
 SEQ_ERROR = "[Error] Sequence should be uniqe, only consist of 'T' and 'H' characters with length of {sequence_length}"
 

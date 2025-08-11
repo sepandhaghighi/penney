@@ -269,7 +269,7 @@ def get_sequence(sequence_length, names_dict, computer_sequence=None):  # pragma
                 player_sequences[player_name] = seq_select
                 break
             else:
-                print(SEQ_ERROR.format(sequence_length=str(sequence_length)))
+                print(SEQUENCE_ERROR.format(sequence_length=str(sequence_length)))
     return player_sequences
 
 

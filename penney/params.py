@@ -38,7 +38,7 @@ LENGTH_ERROR2 = "[Error] Sequence length should be an integer\n" + TRY_MESSAGE
 
 SEQUENCE_MESSAGE = "[{player_name}] Please enter your sequence : "
 
-SEQ_ERROR = "[Error] Sequence should be uniqe, only consist of 'T' and 'H' characters with length of {sequence_length}"
+SEQUENCE_ERROR = "[Error] Sequence should be uniqe, only consist of 'T' and 'H' characters with length of {sequence_length}"
 
 COMPUTER_SEQUENCE_MESSAGE = "{computer_name} sequence : {computer_sequence}"
 

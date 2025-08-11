@@ -261,12 +261,12 @@ def get_sequence(sequence_length, names_dict, computer_sequence=None):  # pragma
     for player_ord in sorted(names_dict):
         while(True):
             player_name = names_dict[player_ord]
-            seq_select = input(SEQUENCE_MESSAGE.format(player_name=str(player_name)))
+            player_sequence = input(SEQUENCE_MESSAGE.format(player_name=str(player_name)))
             if validate_sequence(
-                    seq_select,
+                    player_sequence,
                     sequence_length,
-                    player_sequences) and seq_select != computer_sequence:
-                player_sequences[player_name] = seq_select
+                    player_sequences) and player_sequence != computer_sequence:
+                player_sequences[player_name] = player_sequence
                 break
             else:
                 print(SEQUENCE_ERROR.format(sequence_length=str(sequence_length)))

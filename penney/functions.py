@@ -82,7 +82,7 @@ def find_winner(sequence, player_sequences):
 
     :param sequence: round sequence
     :type sequence: str
-    :param player_sequences: players sequences
+    :param player_sequences: player sequences
     :type player_sequences: dict
     :return: winner name as str
     """
@@ -126,7 +126,7 @@ def calculate_C(player_sequences):
     """
     Calculate C Matrix used in winning probability process.
 
-    :param player_sequences: players sequences
+    :param player_sequences: player sequences
     :type player_sequences: dict
     :return: C Matrix as a 2D list.
     """
@@ -152,7 +152,7 @@ def calculate_probability(player_sequences):
     """
     Calculate probability of each player.
 
-    :param player_sequences: players sequences
+    :param player_sequences: player sequences
     :type player_sequences: dict
     :return: players win probabilities as a dict.
     """
@@ -197,7 +197,7 @@ def run_game(player_sequences, round_number=100, print_status=False):
     """
     Game simulation.
 
-    :param player_sequences: players sequences
+    :param player_sequences: player sequences
     :type player_sequences: dict
     :param round_number: number of rounds
     :type round_number: int
@@ -209,14 +209,14 @@ def run_game(player_sequences, round_number=100, print_status=False):
     scores = {name: 0 for name in player_sequences}
     while(round_num < round_number):
         next_round = False
-        round_seq = ""
+        round_sequence = ""
         while(not next_round):
-            round_seq += generate_sequence()
-            winner = find_winner(round_seq, player_sequences)
+            round_sequence += generate_sequence()
+            winner = find_winner(round_sequence, player_sequences)
             if winner is not None:
                 if print_status:
                     print("Round {round_number}".format(round_number=str(round_num + 1)))
-                    print_sequence(round_seq)
+                    print_sequence(round_sequence)
                     print(POINT_MESSAGE.format(winner=winner))
                     print_line()
                     time.sleep(1)

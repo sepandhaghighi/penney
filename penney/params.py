@@ -40,6 +40,6 @@ SEQUENCE_MESSAGE = "[{player_name}] Please enter your sequence : "
 
 SEQ_ERROR = "[Error] Sequence should be uniqe, only consist of 'T' and 'H' characters with length of {sequence_length}"
 
-COMPUTER_SEQ_MESSAGE = "{computer_name} sequence : {computer_sequence}"
+COMPUTER_SEQUENCE_MESSAGE = "{computer_name} sequence : {computer_sequence}"
 
 POINT_MESSAGE = "Point for --> {winner}"

@@ -99,26 +99,26 @@ def find_winner(sequence, player_sequences):
     return None
 
 
-def det(A):
+def calculate_determinant(matrix):
     """
     Calculate determinant of a matrix in a fast way.
 
-    :param A: matrix itself
-    :type A: list or numpy.array
-    :return: determinant of A in float
+    :param matrix: matrix itself
+    :type matrix: list or numpy.array
+    :return: determinant of matrix in float
     """
-    n = len(A)
-    AM = copy.deepcopy(A)
+    n = len(matrix)
+    matrix_copy = copy.deepcopy(matrix)
     for focus_diagonal in range(n):
         for i in range(focus_diagonal + 1, n):
-            if AM[focus_diagonal][focus_diagonal] == 0:
-                AM[focus_diagonal][focus_diagonal] = 1.0e-18
-            row_scaler = AM[i][focus_diagonal] / AM[focus_diagonal][focus_diagonal]
+            if matrix_copy[focus_diagonal][focus_diagonal] == 0:
+                matrix_copy[focus_diagonal][focus_diagonal] = 1.0e-18
+            row_scaler = matrix_copy[i][focus_diagonal] / matrix_copy[focus_diagonal][focus_diagonal]
             for j in range(n):
-                AM[i][j] = AM[i][j] - row_scaler * AM[focus_diagonal][j]
+                matrix_copy[i][j] = matrix_copy[i][j] - row_scaler * matrix_copy[focus_diagonal][j]
     determinant = 1.0
     for i in range(n):
-        determinant *= AM[i][i]
+        determinant *= matrix_copy[i][i]
     return determinant
 
 
@@ -164,7 +164,7 @@ def calculate_probability(player_sequences):
         C_j = []
         for i in range(len(names)):
             C_j.append([1 if k == j else C[i][k] for k in range(len(names))])
-        det_dic[name] = det(C_j)
+        det_dic[name] = calculate_determinant(C_j)
     sum_det = sum(det_dic.values())
     for name in names:
         prob_dic[name] = det_dic[name] / sum_det

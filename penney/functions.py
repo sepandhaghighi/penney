@@ -179,18 +179,18 @@ def print_probability(probability_dict):
     :type probability_dict: dict
     :return: None
     """
-    sorted_probs = sorted(
+    probabilities = sorted(
         probability_dict.items(), key=lambda x: (
             x[1], x[0]), reverse=True)
     name_max_length = max(map(len, probability_dict))
     print("Wining Probability : ")
-    for item in sorted_probs:
-        prob = item[1]
+    for item in probabilities:
+        probability = item[1]
         name = item[0]
         space_name = (name_max_length - len(name) + 5) * " "
-        print(name + space_name + "{probability:0.3f}%".format(probability=prob * 100))
+        print(name + space_name + "{probability:0.3f}%".format(probability=probability * 100))
     if len(set(probability_dict.values())) > 1:
-        print("Winner should be {possible_winner}".format(possible_winner=sorted_probs[0][0]))
+        print("Winner should be {possible_winner}".format(possible_winner=probabilities[0][0]))
 
 
 def run_game(player_sequences, round_number=100, print_status=False):

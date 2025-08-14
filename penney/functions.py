@@ -156,7 +156,7 @@ def calculate_probability(player_sequences):
     :type player_sequences: dict
     :return: players win probabilities as a dict.
     """
-    prob_dic = {}
+    probability_dict = {}
     names = sorted(player_sequences)
     C = calculate_C(player_sequences)
     det_dic = {}
@@ -167,29 +167,29 @@ def calculate_probability(player_sequences):
         det_dic[name] = calculate_determinant(C_j)
     sum_det = sum(det_dic.values())
     for name in names:
-        prob_dic[name] = det_dic[name] / sum_det
-    return prob_dic
+        probability_dict[name] = det_dic[name] / sum_det
+    return probability_dict
 
 
-def print_probability(prob_dic):
+def print_probability(probability_dict):
     """
     Print win probabilities of players.
 
-    :param prob_dic: win probability dictionary
-    :type prob_dic: dict
+    :param probability_dict: win probability dictionary
+    :type probability_dict: dict
     :return: None
     """
     sorted_probs = sorted(
-        prob_dic.items(), key=lambda x: (
+        probability_dict.items(), key=lambda x: (
             x[1], x[0]), reverse=True)
-    name_max_length = max(map(len, prob_dic))
+    name_max_length = max(map(len, probability_dict))
     print("Wining Probability : ")
     for item in sorted_probs:
         prob = item[1]
         name = item[0]
         space_name = (name_max_length - len(name) + 5) * " "
         print(name + space_name + "{probability:0.3f}%".format(probability=prob * 100))
-    if len(set(prob_dic.values())) > 1:
+    if len(set(probability_dict.values())) > 1:
         print("Winner should be {possible_winner}".format(possible_winner=sorted_probs[0][0]))
 
 

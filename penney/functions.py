@@ -292,17 +292,17 @@ def get_length():  # pragma: no cover
     return sequence_length
 
 
-def validate_name(name, name_list):
+def validate_name(name, names_list):
     """
     Check the validity of name.
 
     :param name: test name
     :type name: str
-    :param name_list: players names
-    :type name_list: list
+    :param names_list: players names
+    :type names_list: list
     :return: validity as bool
     """
-    if len(name) != 0 and name not in name_list:
+    if len(name) != 0 and name not in names_list:
         return True
     return False
 

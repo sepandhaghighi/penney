@@ -259,7 +259,7 @@ def get_sequence(sequence_length, names_dict, computer_sequence=None):  # pragma
     """
     player_sequences = {name: "" for name in names_dict.values()}
     for player_index in sorted(names_dict):
-        while(True):
+        while True:
             player_name = names_dict[player_index]
             player_sequence = input(SEQUENCE_MESSAGE.format(player_name=str(player_name)))
             if validate_sequence(
@@ -409,10 +409,10 @@ def generate_computer_sequence(sequence_length, sequence=None):
     :type sequence: str
     :return: computer sequence as str
     """
-    while(True):
+    while True:
         result = ""
         index = 0
-        while(index < sequence_length):
+        while index < sequence_length:
             result += generate_sequence()
             index += 1
         if sequence != result or sequence is None:

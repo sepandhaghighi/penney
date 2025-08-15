@@ -164,9 +164,9 @@ def calculate_probability(player_sequences):
         for i in range(len(names)):
             C_j.append([1 if k == j else C[i][k] for k in range(len(names))])
         determinant_dict[name] = calculate_determinant(C_j)
-    sum_det = sum(determinant_dict.values())
+    determinant_sum = sum(determinant_dict.values())
     for name in names:
-        probability_dict[name] = determinant_dict[name] / sum_det
+        probability_dict[name] = determinant_dict[name] / determinant_sum
     return probability_dict
 
 

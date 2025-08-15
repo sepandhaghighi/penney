@@ -132,8 +132,7 @@ def calculate_C(player_sequences):
     """
     C = []
     names = sorted(player_sequences)
-
-    def p_seq(sequence): return 1 / 2 ** len(sequence)
+    def calculate_sequence_probability(sequence): return 1 / 2 ** len(sequence)
     for name1 in names:
         A_i = player_sequences[str(name1)]
         C_row = []
@@ -142,7 +141,7 @@ def calculate_C(player_sequences):
             w_i_j = 0
             for k in range(1, min(len(A_i), len(A_j)) + 1):
                 if A_i[:k] == A_j[len(A_j) - k:]:
-                    w_i_j += p_seq(A_i[k:])
+                    w_i_j += calculate_sequence_probability(A_i[k:])
             C_row.append(w_i_j)
         C.append(C_row)
     return C

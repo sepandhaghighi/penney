@@ -206,10 +206,10 @@ def run_game(player_sequences, round_number=100, print_status=False):
     """
     current_round = 0
     scores = {name: 0 for name in player_sequences}
-    while(current_round < round_number):
+    while current_round < round_number:
         next_round = False
         round_sequence = ""
-        while(not next_round):
+        while not next_round:
             round_sequence += generate_sequence()
             winner = find_winner(round_sequence, player_sequences)
             if winner is not None:
@@ -279,7 +279,7 @@ def get_length():  # pragma: no cover
     :return: sequence length as int
     """
     sequence_length = 0
-    while(True):
+    while True:
         try:
             sequence_length = int(input(LENGTH_MESSAGE))
             if sequence_length >= 3:
@@ -317,8 +317,8 @@ def get_names(number=2):  # pragma: no cover
     names_dict = {}
     names_order = list(range(1, number + 1))
     index = 0
-    while(index < number):
-        while(True):
+    while index < number:
+        while True:
             name = input(PLAYER_NAME_MESSAGE.format(index=str(index + 1)))
             if validate_name(name, names_dict):
                 rand_order = random.choice(names_order)
@@ -389,7 +389,7 @@ def get_number(message, error_message):  # pragma: no cover
     :return: number as int
     """
     number = 0
-    while(True):
+    while True:
         try:
             number = int(input(message))
             break

@@ -493,16 +493,16 @@ def menu_handler():  # pragma: no cover
 
     :return: None
     """
-    fast_sim_flag = False
+    fast_simulation_flag = False
     tprint("MENU : ")
     player_or_computer = input(PLAYER_COMPUTER_MESSAGE)
     print_line()
-    fast_sim_str = input(SIMULATION_MODE_MESSAGE)
+    fast_simulation_str = input(SIMULATION_MODE_MESSAGE)
     print_line()
     round_number = abs(get_number(ROUND_NUMBER_MESSAGE, ROUND_NUMBER_ERROR))
     sequence_length = get_length()
-    if fast_sim_str == "1":
-        fast_sim_flag = True
+    if fast_simulation_str == "1":
+        fast_simulation_flag = True
     if player_or_computer != "1":
         player_sequences = player_player_handler(sequence_length)
     else:
@@ -510,7 +510,7 @@ def menu_handler():  # pragma: no cover
     print_line()
     print_probability(calculate_probability(player_sequences))
     print_line()
-    scores = run_game(player_sequences, round_number=round_number, print_status=not fast_sim_flag)
+    scores = run_game(player_sequences, round_number=round_number, print_status=not fast_simulation_flag)
     print_result(scores, player_sequences)
 
 

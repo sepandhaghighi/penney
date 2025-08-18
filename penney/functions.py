@@ -321,9 +321,9 @@ def get_names(number=2):  # pragma: no cover
         while True:
             name = input(PLAYER_NAME_MESSAGE.format(index=str(index + 1)))
             if validate_name(name, names_dict):
-                rand_order = random.choice(names_order)
-                names_order.remove(rand_order)
-                names_dict[rand_order] = name
+                random_order = random.choice(names_order)
+                names_order.remove(random_order)
+                names_dict[random_order] = name
                 break
             else:
                 print(PLAYER_NAME_ERROR)

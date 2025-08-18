@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - `SECURITY.md`
 ### Changed
+- `det` function renamed to `calculate_determinant`
 - `line` function renamed to `print_line`
 - `description` function renamed to `print_description`
 - `left_justify` function renamed to `justify_left`

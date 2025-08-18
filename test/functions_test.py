@@ -13,11 +13,11 @@ Word0  Word1  Word2  Word3  Word4  Word5  Word6 Word7 Word8 Word9 Word10 Word11 
 >>> output = " ".join(justify_text(words,2))
 >>> print(output)
 Word0 Word1 Word2 Word3 Word4 Word5 Word6 Word7 Word8 Word9 Word10 Word11 Word12 Word13 Word14 Word15 Word16 Word17 Word18 Word19 Word20 Word21 Word22 Word23 Word24 Word25 Word26 Word27 Word28 Word29 Word30 Word31 Word32 Word33 Word34 Word35 Word36 Word37 Word38 Word39
->>> det([[1,0],[0,1]])
+>>> calculate_determinant([[1,0],[0,1]])
 1.0
->>> det([[1,1],[1,1]])
+>>> calculate_determinant([[1,1],[1,1]])
 0.0
->>> det([[2,1],[2,2]])
+>>> calculate_determinant([[2,1],[2,2]])
 2.0
 >>> random.seed(2)
 >>> generate_sequence()
@@ -64,13 +64,13 @@ Point for --> Player1
 2
 >>> result['Player2']
 1
->>> validate_sequence(seq="HTHH",seq_len=4,seq_dict={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(sequence="HTHH",sequence_length=4,player_sequences={1:"HTTT",2:"HHHH"})
 True
->>> validate_sequence(seq="HTHH",seq_len=3,seq_dict={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(sequence="HTHH",sequence_length=3,player_sequences={1:"HTTT",2:"HHHH"})
 False
->>> validate_sequence(seq="HTHA",seq_len=4,seq_dict={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(sequence="HTHA",sequence_length=4,player_sequences={1:"HTTT",2:"HHHH"})
 False
->>> validate_sequence(seq="HHHH",seq_len=4,seq_dict={1:"HTTT",2:"HHHH"})
+>>> validate_sequence(sequence="HHHH",sequence_length=4,player_sequences={1:"HTTT",2:"HHHH"})
 False
 >>> validate_name("Name1",["Name2"])
 True
@@ -78,12 +78,12 @@ True
 False
 >>> print_sequence("HTHHHT")
 HTHHHT
->>> print_result(scores={"Player1":30,"Player2":32},seq_dict={"Player1":"HHT","Player2":"HTH"})
+>>> print_result(scores={"Player1":30,"Player2":32},player_sequences={"Player1":"HHT","Player2":"HTH"})
 Scores Table :
 Player2     32   HTH
 Player1     30   HHT
 Winner : Player2
->>> print_result(scores={"Player1":30,"Player2":30},seq_dict={"Player1":"HHT","Player2":"HTH"})
+>>> print_result(scores={"Player1":30,"Player2":30},player_sequences={"Player1":"HHT","Player2":"HTH"})
 Scores Table :
 Player2     30   HTH
 Player1     30   HHT
@@ -94,12 +94,12 @@ Tie!
 >>> random.seed(301)
 >>> generate_computer_sequence(3)
 'HHH'
->>> filter_players(num=1,seq_len=3,print_status=True)
+>>> filter_players(number=1,sequence_length=3,print_status=True)
 [Warning] Number of players automatically set to 2
 2
->>> filter_players(num=3,seq_len=3,print_status=True)
+>>> filter_players(number=3,sequence_length=3,print_status=True)
 3
->>> filter_players(num=9,seq_len=3,print_status=True)
+>>> filter_players(number=9,sequence_length=3,print_status=True)
 [Warning] Number of players automatically set to 8
 8
 >>> print_probability(calculate_probability({'A1':'THH', 'A2':'HTH', 'A3':'HHT'}))

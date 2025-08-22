@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Penney functions."""
-from typing import Dict, List, Optional, Union, Iterator
+from typing import Dict, List, Optional, Iterator
 import random
 import time
 from .params import *

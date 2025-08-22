@@ -84,7 +84,7 @@ def find_winner(sequence: str, player_sequences: Dict[str, str]) -> str:
     return None
 
 
-def calculate_determinant(matrix: Union[List[float], "numpy.array"]) -> float:
+def calculate_determinant(matrix: List[float]) -> float:
     """
     Calculate determinant of a matrix in a fast way.
 

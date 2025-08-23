@@ -84,7 +84,7 @@ def find_winner(sequence: str, player_sequences: Dict[str, str]) -> str:
     return None
 
 
-def calculate_determinant(matrix: List[float]) -> float:
+def calculate_determinant(matrix: List[List[float]]) -> float:
     """
     Calculate determinant of a matrix in a fast way.
 
@@ -105,7 +105,7 @@ def calculate_determinant(matrix: List[float]) -> float:
     return determinant
 
 
-def calculate_C(player_sequences: Dict[str, str]) -> List[List[int]]:
+def calculate_C(player_sequences: Dict[str, str]) -> List[List[float]]:
     """
     Calculate C Matrix used in winning probability process.
 
@@ -113,7 +113,7 @@ def calculate_C(player_sequences: Dict[str, str]) -> List[List[int]]:
     """
     C = []
     names = sorted(player_sequences)
-    def calculate_sequence_probability(sequence): return 1 / 2 ** len(sequence)
+    def calculate_sequence_probability(sequence: str) -> float: return 1 / 2 ** len(sequence)
     for name1 in names:
         A_i = player_sequences[str(name1)]
         C_row = []

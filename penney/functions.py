@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Penney functions."""
-from typing import Dict, List, Optional, Iterator
+from typing import Dict, List, Optional, Generator
 import random
 import time
 from .params import *
@@ -28,7 +28,7 @@ def justify_left(words: List[str], width: int) -> str:
     return ' '.join(words).ljust(width)
 
 
-def justify_text(words: List[str], width: int) -> Iterator[str]:
+def justify_text(words: List[str], width: int) -> Generator[str, None, None]:
     """
     Justify input words.
 

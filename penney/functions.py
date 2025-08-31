@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Penney functions."""
+from typing import Dict, List, Optional, Generator
 import random
 import time
 from .params import *
@@ -7,41 +8,32 @@ from art import tprint
 import copy
 
 
-def print_line(number=11, char="#"):
+def print_line(number: int = 11, char: str = "#") -> None:
     """
     Print line of char.
 
     :param number: number of character in this line
-    :type number : int
     :param char: character
-    :type char : str
-    :return: None
     """
     print(char * number)
 
 
-def justify_left(words, width):
+def justify_left(words: List[str], width: int) -> str:
     """
     Left justify words.
 
     :param words: list of words
-    :type words : list
     :param width: width of each line
-    :type width: int
-    :return: left justified words as list
     """
     return ' '.join(words).ljust(width)
 
 
-def justify_text(words, width):
+def justify_text(words: List[str], width: int) -> Generator[str, None, None]:
     """
     Justify input words.
 
     :param words: list of words
-    :type words : list
     :param width: width of each line
-    :type width : int
-    :return: list of justified words as list
     """
     line = []
     col = 0
@@ -67,24 +59,17 @@ def justify_text(words, width):
         yield justify_left(line, width)
 
 
-def generate_sequence():
-    """
-    Generate each part of sequence.
-
-    :return: sequence part as str
-    """
+def generate_sequence() -> str:
+    """Generate each part of sequence."""
     return random.choice(["T", "H"])
 
 
-def find_winner(sequence, player_sequences):
+def find_winner(sequence: str, player_sequences: Dict[str, str]) -> str:
     """
     Identify each round winner.
 
     :param sequence: round sequence
-    :type sequence: str
     :param player_sequences: player sequences
-    :type player_sequences: dict
-    :return: winner name as str
     """
     winner_name = ""
     min_index = len(sequence)
@@ -99,13 +84,11 @@ def find_winner(sequence, player_sequences):
     return None
 
 
-def calculate_determinant(matrix):
+def calculate_determinant(matrix: List[List[float]]) -> float:
     """
     Calculate determinant of a matrix in a fast way.
 
     :param matrix: matrix itself
-    :type matrix: list or numpy.array
-    :return: determinant of matrix in float
     """
     n = len(matrix)
     matrix_copy = copy.deepcopy(matrix)
@@ -122,17 +105,15 @@ def calculate_determinant(matrix):
     return determinant
 
 
-def calculate_C(player_sequences):
+def calculate_C(player_sequences: Dict[str, str]) -> List[List[float]]:
     """
     Calculate C Matrix used in winning probability process.
 
     :param player_sequences: player sequences
-    :type player_sequences: dict
-    :return: C Matrix as a 2D list.
     """
     C = []
     names = sorted(player_sequences)
-    def calculate_sequence_probability(sequence): return 1 / 2 ** len(sequence)
+    def calculate_sequence_probability(sequence: str) -> float: return 1 / 2 ** len(sequence)
     for name1 in names:
         A_i = player_sequences[str(name1)]
         C_row = []
@@ -147,13 +128,11 @@ def calculate_C(player_sequences):
     return C
 
 
-def calculate_probability(player_sequences):
+def calculate_probability(player_sequences: Dict[str, str]) -> Dict[str, float]:
     """
     Calculate probability of each player.
 
     :param player_sequences: player sequences
-    :type player_sequences: dict
-    :return: players win probabilities as a dict.
     """
     probability_dict = {}
     names = sorted(player_sequences)
@@ -170,13 +149,11 @@ def calculate_probability(player_sequences):
     return probability_dict
 
 
-def print_probability(probability_dict):
+def print_probability(probability_dict: Dict[str, float]) -> None:
     """
     Print win probabilities of players.
 
     :param probability_dict: win probability dictionary
-    :type probability_dict: dict
-    :return: None
     """
     probabilities = sorted(
         probability_dict.items(), key=lambda x: (
@@ -192,17 +169,13 @@ def print_probability(probability_dict):
         print("Winner should be {possible_winner}".format(possible_winner=probabilities[0][0]))
 
 
-def run_game(player_sequences, round_number=100, print_status=False):
+def run_game(player_sequences: Dict[str, str], round_number: int = 100, print_status: bool = False) -> Dict[str, int]:
     """
     Game simulation.
 
     :param player_sequences: player sequences
-    :type player_sequences: dict
     :param round_number: number of rounds
-    :type round_number: int
     :param print_status: print status flag
-    :type print_status: bool
-    :return: scores as dict
     """
     current_round = 0
     scores = {name: 0 for name in player_sequences}
@@ -225,17 +198,13 @@ def run_game(player_sequences, round_number=100, print_status=False):
     return scores
 
 
-def validate_sequence(sequence, sequence_length, player_sequences):
+def validate_sequence(sequence: str, sequence_length: int, player_sequences: Dict[str, str]) -> bool:
     """
     Check the validity of sequence.
 
     :param sequence: test sequence
-    :type sequence: str
     :param sequence_length: sequence length
-    :type sequence_length: int
     :param player_sequences: players sequences
-    :type player_sequences: dict
-    :return: validity as bool
     """
     sequence_elements = set(list(sequence))
     if len(sequence) == sequence_length and sequence_elements.issubset(
@@ -244,17 +213,13 @@ def validate_sequence(sequence, sequence_length, player_sequences):
     return False
 
 
-def get_sequence(sequence_length, names_dict, computer_sequence=None):  # pragma: no cover
+def get_sequence(sequence_length: int, names_dict: Dict[int, str], computer_sequence: Optional[str] = None) -> Dict[str, str]:  # pragma: no cover
     """
     Get sequence from user.
 
     :param sequence_length: sequence length
-    :type sequence_length: int
     :param names_dict: players names
-    :type names_dict: dict
     :param computer_sequence: computer sequence
-    :type computer_sequence: str
-    :return: players sequences as dict
     """
     player_sequences = {name: "" for name in names_dict.values()}
     for player_index in sorted(names_dict):
@@ -272,12 +237,8 @@ def get_sequence(sequence_length, names_dict, computer_sequence=None):  # pragma
     return player_sequences
 
 
-def get_length():  # pragma: no cover
-    """
-    Get sequence length from user.
-
-    :return: sequence length as int
-    """
+def get_length() -> int:  # pragma: no cover
+    """Get sequence length from user."""
     sequence_length = 0
     while True:
         try:
@@ -291,28 +252,23 @@ def get_length():  # pragma: no cover
     return sequence_length
 
 
-def validate_name(name, names_list):
+def validate_name(name: str, names_list: List[str]) -> bool:
     """
     Check the validity of name.
 
     :param name: test name
-    :type name: str
     :param names_list: players names
-    :type names_list: list
-    :return: validity as bool
     """
     if len(name) != 0 and name not in names_list:
         return True
     return False
 
 
-def get_names(number=2):  # pragma: no cover
+def get_names(number: int = 2) -> Dict[int, str]:  # pragma: no cover
     """
     Get names from user.
 
     :param number: number of players
-    :type number: int
-    :return: players names as dict
     """
     names_dict = {}
     names_order = list(range(1, number + 1))
@@ -331,15 +287,12 @@ def get_names(number=2):  # pragma: no cover
     return names_dict
 
 
-def print_result(scores, player_sequences):
+def print_result(scores: Dict[str, int], player_sequences: Dict[str, str]) -> None:
     """
     Print game result.
 
     :param scores: players scores
-    :type scores: dict
     :param player_sequences: players sequences
-    :type player_sequences: dict
-    :return: None
     """
     sorted_scores = sorted(
         scores.items(), key=lambda x: (
@@ -359,15 +312,12 @@ def print_result(scores, player_sequences):
         print("Tie!")
 
 
-def print_sequence(sequence, delay=0.3):
+def print_sequence(sequence: str, delay: float = 0.3) -> None:
     """
     Print a sequence one by one.
 
     :param sequence: round sequence
-    :type sequence: str
     :param delay: delay between each step
-    :type delay: float
-    :return: None
     """
     end_str = ""
     sequence_length = len(sequence)
@@ -378,15 +328,12 @@ def print_sequence(sequence, delay=0.3):
         time.sleep(delay)
 
 
-def get_number(message, error_message):  # pragma: no cover
+def get_number(message: str, error_message: str) -> int:  # pragma: no cover
     """
     Get a number from user.
 
     :param message: user message
-    :type message: str
     :param error_message: error message
-    :type error_message: str
-    :return: number as int
     """
     number = 0
     while True:
@@ -398,15 +345,12 @@ def get_number(message, error_message):  # pragma: no cover
     return number
 
 
-def generate_computer_sequence(sequence_length, sequence=None):
+def generate_computer_sequence(sequence_length: int, sequence: Optional[str] = None) -> str:
     """
     Generate computer sequence.
 
     :param sequence_length: sequence length
-    :type sequence_length: int
     :param sequence: player sequence
-    :type sequence: str
-    :return: computer sequence as str
     """
     while True:
         result = ""
@@ -419,17 +363,13 @@ def generate_computer_sequence(sequence_length, sequence=None):
     return result
 
 
-def filter_players(number, sequence_length, print_status=False):
+def filter_players(number: int, sequence_length: int, print_status: bool = False) -> int:
     """
     Filter number of players.
 
     :param number: number of players
-    :type number: int
     :param sequence_length: sequence length
-    :type sequence_length: int
     :param print_status: print status flag
-    :type print_status: bool
-    :return: filtered number of players as int
     """
     if number < 2:
         if print_status:
@@ -442,13 +382,11 @@ def filter_players(number, sequence_length, print_status=False):
     return number
 
 
-def computer_player_handler(sequence_length):  # pragma: no cover
+def computer_player_handler(sequence_length: int) -> Dict[str, str]:  # pragma: no cover
     """
     Computer-Player mode handler.
 
     :param sequence_length: sequence length
-    :type sequence_length: int
-    :return: players sequences as dict
     """
     names_dict = get_names(number=1)
     computer_name = "Computer"
@@ -469,13 +407,11 @@ def computer_player_handler(sequence_length):  # pragma: no cover
     return player_sequences
 
 
-def player_player_handler(sequence_length):  # pragma: no cover
+def player_player_handler(sequence_length: int) -> Dict[str, str]:  # pragma: no cover
     """
     Player-Player mode handler.
 
     :param sequence_length: sequence length
-    :type sequence_length: int
-    :return: players sequences as dict
     """
     player_number = get_number(PLAYER_NUMBER_MESSAGE, PLAYER_NUMBER_ERROR)
     player_number = filter_players(
@@ -487,12 +423,8 @@ def player_player_handler(sequence_length):  # pragma: no cover
     return player_sequences
 
 
-def menu_handler():  # pragma: no cover
-    """
-    CLI menu main handler.
-
-    :return: None
-    """
+def menu_handler() -> None:  # pragma: no cover
+    """CLI menu main handler."""
     fast_simulation_flag = False
     tprint("MENU : ")
     player_or_computer = input(PLAYER_COMPUTER_MESSAGE)
@@ -514,12 +446,8 @@ def menu_handler():  # pragma: no cover
     print_result(scores, player_sequences)
 
 
-def print_description():  # pragma: no cover
-    """
-    Print introduction and description.
-
-    :return: None
-    """
+def print_description() -> None:  # pragma: no cover
+    """Print introduction and description."""
     tprint("Penney Game", font="larry3d")
     tprint("v {version}".format(version=PENNEY_VERSION))
     print_line(100)

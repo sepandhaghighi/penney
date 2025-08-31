@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Setup module."""
+from typing import List
 try:
     from setuptools import setup
 except ImportError:
@@ -14,13 +15,13 @@ or player B's sequence appears as a consecutive subsequence of the coin toss out
 '''
 
 
-def get_requires():
+def get_requires() -> List[str]:
     """Read requirements.txt."""
     requirements = open("requirements.txt", "r").read()
     return list(filter(lambda x: x != "", requirements.split()))
 
 
-def read_description():
+def read_description() -> str:
     """Read README.md and CHANGELOG.md."""
     try:
         with open("README.md") as r:

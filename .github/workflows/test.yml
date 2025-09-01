@@ -5,6 +5,11 @@ name: CI
 
 on: [push, pull_request]
 
+
+env:
+  TEST_PYTHON_VERSION: 3.9
+  TEST_OS: 'ubuntu-22.04'
+
 jobs:
   build:
 
@@ -37,16 +42,16 @@ jobs:
     - name: Version check
       run: |
         python otherfiles/version_check.py
-      if: matrix.python-version == 3.9
+      if: matrix.python-version == env.TEST_PYTHON_VERSION
     - name: Other tests
       run: |
           python -m vulture --min-confidence 65 --exclude=__init__.py --sort-by-size penney/ setup.py otherfiles/
           python -m bandit -r penney -s B311
           python -m pydocstyle --match-dir=penney
-      if: matrix.python-version == 3.9
+      if: matrix.python-version == env.TEST_PYTHON_VERSION
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v4
       with:
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
-      if: matrix.python-version == 3.9 && matrix.os == 'ubuntu-22.04'
+      if: matrix.python-version == env.TEST_PYTHON_VERSION && matrix.os == env.TEST_OS

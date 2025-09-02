@@ -213,9 +213,9 @@ def validate_sequence(sequence: str, sequence_length: int, player_sequences: Dic
     return False
 
 
-def get_sequence(sequence_length: int, names_dict: Dict[int, str], computer_sequence: Optional[str] = None) -> Dict[str, str]:  # pragma: no cover
+def get_sequences(sequence_length: int, names_dict: Dict[int, str], computer_sequence: Optional[str] = None) -> Dict[str, str]:  # pragma: no cover
     """
-    Get sequence from user.
+    Get sequences from user.
 
     :param sequence_length: sequence length
     :param names_dict: players names
@@ -398,7 +398,7 @@ def computer_player_handler(sequence_length: int) -> Dict[str, str]:  # pragma: 
     if first_coin == "T":
         computer_sequence = generate_computer_sequence(sequence_length)
         print(COMPUTER_SEQUENCE_MESSAGE.format(computer_name=computer_name, computer_sequence=computer_sequence))
-    player_sequences = get_sequence(sequence_length, names_dict, computer_sequence)
+    player_sequences = get_sequences(sequence_length, names_dict, computer_sequence)
     player_seq = list(player_sequences.values())[0]
     if computer_sequence is None:
         computer_sequence = generate_computer_sequence(sequence_length, player_seq)
@@ -419,7 +419,7 @@ def player_player_handler(sequence_length: int) -> Dict[str, str]:  # pragma: no
         sequence_length=sequence_length,
         print_status=True)
     names_dict = get_names(number=player_number)
-    player_sequences = get_sequence(sequence_length, names_dict)
+    player_sequences = get_sequences(sequence_length, names_dict)
     return player_sequences
 
 

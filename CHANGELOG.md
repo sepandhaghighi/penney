@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `print_prob` function renamed to `print_probability`
 - `game` function renamed to `run_game`
 - `check_seq` function renamed to `validate_sequence`
-- `get_seq` function renamed to `get_sequence`
+- `get_seq` function renamed to `get_sequences`
 - `get_len` function renamed to `get_length`
 - `check_name` function renamed to `validate_name`
 - `print_seq` function renamed to `print_sequence`

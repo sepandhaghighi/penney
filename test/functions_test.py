@@ -6,6 +6,9 @@
 **********
 >>> print_line()
 ###########
+>>> output = " ".join(justify_text([],100))
+>>> output == ""
+True
 >>> words = ["Word{index}".format(index=str(i)) for i in range(40)]
 >>> output = " ".join(justify_text(words,100))
 >>> print(output)

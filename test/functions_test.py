@@ -96,6 +96,9 @@ Tie!
 >>> random.seed(300)
 >>> generate_computer_sequence(3,"HTH")
 'HHT'
+>>> random.seed(300)
+>>> generate_computer_sequence(3,'HHT')
+'HHH'
 >>> random.seed(301)
 >>> generate_computer_sequence(3)
 'HHH'

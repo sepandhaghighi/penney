@@ -129,4 +129,8 @@ Wining Probability :
 1     70.000%
 2     30.000%
 Winner should be 1
+>>> print_probability(calculate_probability({"2":"TTT","1":"HHH"}))
+Wining Probability :
+2     50.000%
+1     50.000%
 """

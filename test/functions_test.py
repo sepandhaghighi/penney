@@ -19,6 +19,8 @@ Word0 Word1 Word2 Word3 Word4 Word5 Word6 Word7 Word8 Word9 Word10 Word11 Word12
 0.0
 >>> calculate_determinant([[2,1],[2,2]])
 2.0
+>>> calculate_determinant([[0,0],[0,0]])
+0.0
 >>> random.seed(2)
 >>> generate_sequence()
 'T'
@@ -97,10 +99,14 @@ Tie!
 >>> filter_players(number=1,sequence_length=3,print_status=True)
 [Warning] Number of players automatically set to 2
 2
+>>> filter_players(number=1,sequence_length=3,print_status=False)
+2
 >>> filter_players(number=3,sequence_length=3,print_status=True)
 3
 >>> filter_players(number=9,sequence_length=3,print_status=True)
 [Warning] Number of players automatically set to 8
+8
+>>> filter_players(number=9,sequence_length=3,print_status=False)
 8
 >>> print_probability(calculate_probability({'A1':'THH', 'A2':'HTH', 'A3':'HHT'}))
 Wining Probability :

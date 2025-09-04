@@ -6,6 +6,9 @@
 **********
 >>> print_line()
 ###########
+>>> output = " ".join(justify_text([],100))
+>>> output == ""
+True
 >>> words = ["Word{index}".format(index=str(i)) for i in range(40)]
 >>> output = " ".join(justify_text(words,100))
 >>> print(output)
@@ -19,6 +22,8 @@ Word0 Word1 Word2 Word3 Word4 Word5 Word6 Word7 Word8 Word9 Word10 Word11 Word12
 0.0
 >>> calculate_determinant([[2,1],[2,2]])
 2.0
+>>> calculate_determinant([[0,0],[0,0]])
+0.0
 >>> random.seed(2)
 >>> generate_sequence()
 'T'
@@ -91,16 +96,23 @@ Tie!
 >>> random.seed(300)
 >>> generate_computer_sequence(3,"HTH")
 'HHT'
+>>> random.seed(300)
+>>> generate_computer_sequence(3,'HHT')
+'HHH'
 >>> random.seed(301)
 >>> generate_computer_sequence(3)
 'HHH'
 >>> filter_players(number=1,sequence_length=3,print_status=True)
 [Warning] Number of players automatically set to 2
 2
+>>> filter_players(number=1,sequence_length=3,print_status=False)
+2
 >>> filter_players(number=3,sequence_length=3,print_status=True)
 3
 >>> filter_players(number=9,sequence_length=3,print_status=True)
 [Warning] Number of players automatically set to 8
+8
+>>> filter_players(number=9,sequence_length=3,print_status=False)
 8
 >>> print_probability(calculate_probability({'A1':'THH', 'A2':'HTH', 'A3':'HHT'}))
 Wining Probability :
@@ -123,4 +135,8 @@ Wining Probability :
 1     70.000%
 2     30.000%
 Winner should be 1
+>>> print_probability(calculate_probability({"2":"TTT","1":"HHH"}))
+Wining Probability :
+2     50.000%
+1     50.000%
 """

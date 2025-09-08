@@ -81,10 +81,12 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 
 ## Try Penney in Your Browser!
 
-You can play Penney's game online in interactive Jupyter Notebooks via the Binder service! Try it out now! :	
+You can play Penney's game online in interactive Jupyter Notebooks via the Binder or Colab services! Try it out now!:
 
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sepandhaghighi/penney/master)
+
+[![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sepandhaghighi/penney/blob/master)
 
 - Open `Notebook.ipynb`
 

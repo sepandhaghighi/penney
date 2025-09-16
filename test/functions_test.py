@@ -118,25 +118,25 @@ Tie!
 Wining Probability :
 A1     41.667%
 A2     33.333%
-A3     25.000%
+A3     25%
 Winner should be A1
 >>> print_probability(calculate_probability({"2":"HTT","1":"HHH"}))
 Wining Probability :
-2     60.000%
-1     40.000%
+2     60%
+1     40%
 Winner should be 2
 >>> print_probability(calculate_probability({"2":"HHT","1":"TTT"}))
 Wining Probability :
-2     70.000%
-1     30.000%
+2     70%
+1     30%
 Winner should be 2
 >>> print_probability(calculate_probability({"1":"HHT","2":"TTT"}))
 Wining Probability :
-1     70.000%
-2     30.000%
+1     70%
+2     30%
 Winner should be 1
 >>> print_probability(calculate_probability({"2":"TTT","1":"HHH"}))
 Wining Probability :
-2     50.000%
-1     50.000%
+2     50%
+1     50%
 """

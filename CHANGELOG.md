@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `computer_seq_gen` function renamed to `generate_computer_sequence`
 - `player_filter` function renamed to `filter_players`
 - `menu` function renamed to `menu_handler`
+- `print_probability` function bug fixed
 - Test system modified
 - Build script updated
 - CLI mode updated

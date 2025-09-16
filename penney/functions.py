@@ -164,7 +164,7 @@ def print_probability(probability_dict: Dict[str, float]) -> None:
         probability = item[1]
         name = item[0]
         space_name = (name_max_length - len(name) + 5) * " "
-        print(name + space_name + "{probability:0.3f}%".format(probability=probability * 100))
+        print(name + space_name + "{probability:0.4g}%".format(probability=probability * 100))
     if len(set(probability_dict.values())) > 1:
         print("Winner should be {possible_winner}".format(possible_winner=probabilities[0][0]))
 

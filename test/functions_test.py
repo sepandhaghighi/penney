@@ -116,8 +116,8 @@ Tie!
 8
 >>> print_probability(calculate_probability({'A1':'THH', 'A2':'HTH', 'A3':'HHT'}))
 Wining Probability :
-A1     41.667%
-A2     33.333%
+A1     41.7%
+A2     33.3%
 A3     25%
 Winner should be A1
 >>> print_probability(calculate_probability({"2":"HTT","1":"HHH"}))

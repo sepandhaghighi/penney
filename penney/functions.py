@@ -274,9 +274,10 @@ def get_names(number: int = 2) -> Dict[int, str]:  # pragma: no cover
     names_order = list(range(1, number + 1))
     index = 0
     while index < number:
+        names_list = list(names_dict.values())
         while True:
             name = input(PLAYER_NAME_MESSAGE.format(index=str(index + 1)))
-            if validate_name(name, names_dict):
+            if validate_name(name, names_list):
                 random_order = random.choice(names_order)
                 names_order.remove(random_order)
                 names_dict[random_order] = name

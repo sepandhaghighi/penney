@@ -81,6 +81,8 @@ False
 True
 >>> validate_name("Name1",["Name1","Name2"])
 False
+>>> validate_name("",["Name2"])
+False
 >>> print_sequence("HTHHHT")
 HTHHHT
 >>> print_result(scores={"Player1":30,"Player2":32},player_sequences={"Player1":"HHT","Player2":"HTH"})

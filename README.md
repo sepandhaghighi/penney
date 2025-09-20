@@ -73,8 +73,8 @@ Here we have a clone of this game that I wrote during coronavirus quarantine day
 - You can use `penney`, `python -m penney` or `Penney.exe` to run this program
 
 <div align="center">
-<img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/help.gif">
-<p>GIF</p>
+<img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/help.gif" alt="Screen Record">
+<p>Screen Record</p>
 </div>
 
 ## Try Penney in Your Browser!

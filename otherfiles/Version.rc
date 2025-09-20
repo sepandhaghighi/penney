@@ -18,7 +18,7 @@ VSVersionInfo(
         StringStruct(u'FileDescription', u'Penney.exe'),
         StringStruct(u'FileVersion', u'0.4.0.0'),
         StringStruct(u'InternalName', u'Penney.exe'),
-        StringStruct(u'LegalCopyright', u'Copyright (c) 2021 Sepand Haghighi'),
+        StringStruct(u'LegalCopyright', u'Copyright (c) 2025 Sepand Haghighi'),
         StringStruct(u'OriginalFilename', u'Penney.exe'),
         StringStruct(u'ProductName', u'Penney'),
         StringStruct(u'ProductVersion', u'0, 4, 0, 0')])

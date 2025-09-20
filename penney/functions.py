@@ -113,6 +113,7 @@ def calculate_C(player_sequences: Dict[str, str]) -> List[List[float]]:
     """
     C = []
     names = sorted(player_sequences)
+
     def calculate_sequence_probability(sequence: str) -> float: return 1 / 2 ** len(sequence)
     for name1 in names:
         A_i = player_sequences[str(name1)]

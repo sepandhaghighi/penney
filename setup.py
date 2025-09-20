@@ -45,7 +45,7 @@ setup(
     author='Sepand Haghighi',
     author_email='me@sepand.tech',
     url='https://github.com/sepandhaghighi/penney',
-    keywords="penney probability game",
+    keywords="penney probability game fun terminal",
     project_urls={
         'Source': 'https://github.com/sepandhaghighi/penney',
         'Tracker': 'https://github.com/sepandhaghighi/penney/issues',

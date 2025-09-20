@@ -70,13 +70,11 @@ Here we have a clone of this game that I wrote during coronavirus quarantine day
 
 ## How to Play
 
-- Open `CMD` (Windows) or `Terminal` (UNIX)
-- Run `penney` or `python -m penney` (or run **executable** version)
+- You can use `penney`, `python -m penney` or `Penney.exe` to run this program
 
 <div align="center">
 <img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/help.gif">
 <p>GIF</p>
-
 </div>
 
 ## Try Penney in Your Browser!
@@ -101,10 +99,12 @@ Please consider the following :
 1. Fork it!
 2. Create your feature branch (under `dev` branch)
 3. Add your functions/methods to proper files
-4. Pass all CI tests
-5. Update `CHANGELOG.md`
+4. Add standard `docstring` to your functions/methods
+5. Add tests for your functions/methods (`doctest` testcases in `test` folder)
+6. Pass all CI tests
+7. Update `CHANGELOG.md`
 	- Describe changes under `[Unreleased]` section
-6. Submit a pull request into `dev` (please complete the pull request template)
+8. Submit a pull request into `dev` (please complete the pull request template)
 
 ## Issues & Bug Reports			
 

@@ -117,28 +117,28 @@ Tie!
 >>> filter_players(number=9,sequence_length=3,print_status=False)
 8
 >>> print_probability(calculate_probability({'A1':'THH', 'A2':'HTH', 'A3':'HHT'}))
-Wining Probability :
+Winning Probability :
 A1     41.67%
 A2     33.33%
 A3     25%
 Winner should be A1
 >>> print_probability(calculate_probability({"2":"HTT","1":"HHH"}))
-Wining Probability :
+Winning Probability :
 2     60%
 1     40%
 Winner should be 2
 >>> print_probability(calculate_probability({"2":"HHT","1":"TTT"}))
-Wining Probability :
+Winning Probability :
 2     70%
 1     30%
 Winner should be 2
 >>> print_probability(calculate_probability({"1":"HHT","2":"TTT"}))
-Wining Probability :
+Winning Probability :
 1     70%
 2     30%
 Winner should be 1
 >>> print_probability(calculate_probability({"2":"TTT","1":"HHH"}))
-Wining Probability :
+Winning Probability :
 2     50%
 1     50%
 """

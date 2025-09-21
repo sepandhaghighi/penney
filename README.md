@@ -22,7 +22,7 @@ Here we have a clone of this game that I wrote during coronavirus quarantine day
 		<td align="center"><a href="http://pepy.tech/count/penney"><img src="http://pepy.tech/badge/penney"></a></td>
 	</tr>
 	<tr>
-		<td align="center">Github Stars</td>
+		<td align="center">GitHub Stars</td>
 		<td align="center"><a href="https://github.com/sepandhaghighi/penney"><img src="https://img.shields.io/github/stars/sepandhaghighi/penney.svg?style=social&label=Stars"></a></td>
 	</tr>
 </table>
@@ -100,7 +100,7 @@ Please consider the following :
 2. Create your feature branch (under `dev` branch)
 3. Add your functions/methods to proper files
 4. Add standard `docstring` to your functions/methods
-5. Add tests for your functions/methods (testcases in `test` folder)
+5. Add tests for your functions/methods (test cases in `test` folder)
 6. Pass all CI tests
 7. Update `CHANGELOG.md`
 	- Describe changes under `[Unreleased]` section
@@ -108,7 +108,7 @@ Please consider the following :
 
 ## Issues & Bug Reports			
 
-Just fill an issue and describe it. I'll check it ASAP!							
+Just open an issue and describe it. I'll check it ASAP!							
 or send an email to [me@sepand.tech](mailto:me@sepand.tech "me@sepand.tech"). 
 
 * Please complete the issue template

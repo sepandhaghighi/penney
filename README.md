@@ -13,7 +13,7 @@
 
 Penney's game, named after its inventor Walter Penney, is a binary (head/tail) sequence generating game between two or more players. Player A selects a sequence of heads and tails (of length 3 or larger), and shows this sequence to player B. Player B then selects another sequence of heads and tails of the same length. Subsequently, a fair coin is tossed until either player A's or player B's sequence appears as a consecutive subsequence of the coin toss outcomes. The player whose sequence appears first wins [[Wikipedia](https://en.wikipedia.org/wiki/Penney%27s_game)].
 							
-Here we have a friendly clone of this game that I wrote during coronavirus quarantine days.
+Here we have a clone of this game that I wrote during coronavirus quarantine days.
 
 
 <table>
@@ -70,13 +70,11 @@ Here we have a friendly clone of this game that I wrote during coronavirus quara
 
 ## How to Play
 
-- Open `CMD` (Windows) or `Terminal` (UNIX)
-- Run `penney` or `python -m penney` (or run **executable** version)
+- You can use `penney`, `python -m penney` or `Penney.exe` to run this program
 
 <div align="center">
-<img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/help.gif">
-<p>GIF</p>
-
+<img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/help.gif" alt="Screen Record">
+<p>Screen Record</p>
 </div>
 
 ## Try Penney in Your Browser!
@@ -101,10 +99,12 @@ Please consider the following :
 1. Fork it!
 2. Create your feature branch (under `dev` branch)
 3. Add your functions/methods to proper files
-4. Pass all CI tests
-5. Update `CHANGELOG.md`
+4. Add standard `docstring` to your functions/methods
+5. Add tests for your functions/methods (testcases in `test` folder)
+6. Pass all CI tests
+7. Update `CHANGELOG.md`
 	- Describe changes under `[Unreleased]` section
-6. Submit a pull request into `dev` (please complete the pull request template)
+8. Submit a pull request into `dev` (please complete the pull request template)
 
 ## Issues & Bug Reports			
 

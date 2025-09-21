@@ -4,7 +4,7 @@ echo "Your Python Version : $py_version"
 echo "Recommended Python Version : >= 3.7"
 echo "-----"
 echo "-----"
-pip3 install –upgrade pip
+pip3 install --upgrade pip
 pip3 install -r requirements.txt
 pip3 install "PyInstaller>=3.3"
 if [[ "$OSTYPE" == "linux-gnu" ]]; then

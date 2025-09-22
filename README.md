@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/sepandhaghighi/penney/raw/logo/otherfiles/logo.png" width="350">
+<img src="https://github.com/sepandhaghighi/penney/raw/logo/otherfiles/logo.png" width="300">
 <h1>Penney's Game</h1>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3"></a>
 <a href="https://github.com/sepandhaghighi/penney"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/sepandhaghighi/penney"></a>

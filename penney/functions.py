@@ -160,7 +160,7 @@ def print_probability(probability_dict: Dict[str, float]) -> None:
         probability_dict.items(), key=lambda x: (
             x[1], x[0]), reverse=True)
     name_max_length = max(map(len, probability_dict))
-    print("Wining Probability : ")
+    print("Winning Probability : ")
     for item in probabilities:
         probability = item[1]
         name = item[0]

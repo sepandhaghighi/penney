@@ -28,7 +28,7 @@ PLAYER_NUMBER_WARNING = "[Warning] Number of players automatically set to {numbe
 
 PLAYER_NAME_MESSAGE = "Please enter player-{index} name : "
 
-PLAYER_NAME_ERROR = "[Error] Player name should be uniqe and contains at least one character" + TRY_MESSAGE
+PLAYER_NAME_ERROR = "[Error] Player name should be unique and contains at least one character" + TRY_MESSAGE
 
 LENGTH_MESSAGE = "Please enter sequence length : "
 
@@ -38,7 +38,7 @@ LENGTH_ERROR2 = "[Error] Sequence length should be an integer\n" + TRY_MESSAGE
 
 SEQUENCE_MESSAGE = "[{player_name}] Please enter your sequence : "
 
-SEQUENCE_ERROR = "[Error] Sequence should be uniqe, only consist of 'T' and 'H' characters with length of {sequence_length}"
+SEQUENCE_ERROR = "[Error] Sequence should be unique, only consist of 'T' and 'H' characters with length of {sequence_length}"
 
 COMPUTER_SEQUENCE_MESSAGE = "{computer_name} sequence : {computer_sequence}"
 

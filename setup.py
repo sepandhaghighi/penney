@@ -17,7 +17,8 @@ or player B's sequence appears as a consecutive subsequence of the coin toss out
 
 def get_requires() -> List[str]:
     """Read requirements.txt."""
-    requirements = open("requirements.txt", "r").read()
+    with open("requirements.txt", "r") as f:
+        requirements = f.read()
     return list(filter(lambda x: x != "", requirements.split()))
 
 

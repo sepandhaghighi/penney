@@ -28,7 +28,7 @@ PLAYER_NUMBER_WARNING = "[Warning] Number of players automatically set to {numbe
 
 PLAYER_NAME_MESSAGE = "Please enter player-{index} name : "
 
-PLAYER_NAME_ERROR = "[Error] Player name should be unique and contains at least one character" + TRY_MESSAGE
+PLAYER_NAME_ERROR = "[Error] Player name should be unique and contains at least one character\n" + TRY_MESSAGE
 
 LENGTH_MESSAGE = "Please enter sequence length : "
 

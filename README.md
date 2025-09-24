@@ -74,7 +74,7 @@ Here we have a clone of this game that I wrote during coronavirus quarantine day
 
 ## How to Play
 
-- You can use `penney`, `python -m penney` or `Penney.exe` to run this program
+ℹ️ You can use `penney`, `python -m penney` or `Penney.exe` to run this program
 
 <div align="center">
 <img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/help.gif" alt="Screen Record">

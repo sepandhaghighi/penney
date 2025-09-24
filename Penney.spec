@@ -2,7 +2,7 @@
 
 block_cipher = None
 
-penney_version = "0.4"
+penney_version = "0.5"
 
 a = Analysis(['penney/__main__.py'],
              pathex=['penney'],

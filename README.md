@@ -57,16 +57,16 @@ Here we have a clone of this game that I wrote during coronavirus quarantine day
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.7)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
-- Download [Version 0.4](https://github.com/sepandhaghighi/penney/archive/v0.4.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/dev.zip)
+- Download [Version 0.5](https://github.com/sepandhaghighi/penney/archive/v0.5.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/dev.zip)
 - Run `pip install .`			
 
 ### PyPI
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install penney==0.4`
+- Run `pip install penney==0.5`
 
 ### Exe Version (Windows)
-- Download [Exe-Version 0.4](https://github.com/sepandhaghighi/penney/releases/download/v0.4/Penney-0.4.exe)
-- Run `Penney-0.4.exe`
+- Download [Exe-Version 0.5](https://github.com/sepandhaghighi/penney/releases/download/v0.5/Penney-0.5.exe)
+- Run `Penney-0.5.exe`
 
 ## How to Play
 

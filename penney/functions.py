@@ -64,7 +64,7 @@ def generate_sequence() -> str:
     return random.choice(["T", "H"])
 
 
-def find_winner(sequence: str, player_sequences: Dict[str, str]) -> str:
+def find_winner(sequence: str, player_sequences: Dict[str, str]) -> Optional[str]:
     """
     Identify each round winner.
 

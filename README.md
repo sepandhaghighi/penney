@@ -11,9 +11,13 @@
 
 ## Overview	
 
-Penney's game, named after its inventor Walter Penney, is a binary (head/tail) sequence generating game between two or more players. Player A selects a sequence of heads and tails (of length 3 or larger), and shows this sequence to player B. Player B then selects another sequence of heads and tails of the same length. Subsequently, a fair coin is tossed until either player A's or player B's sequence appears as a consecutive subsequence of the coin toss outcomes. The player whose sequence appears first wins [[Wikipedia](https://en.wikipedia.org/wiki/Penney%27s_game)].
-							
+Penney's game, named after its inventor Walter Penney, is a binary (head/tail) sequence generating game between two or more players. Player A selects a sequence of heads and tails (of length 3 or larger), and shows this sequence to player B. Player B then selects another sequence of heads and tails of the same length. Subsequently, a fair coin is tossed until either player A's or player B's sequence appears as a consecutive subsequence of the coin toss outcomes. The player whose sequence appears first wins.							
 Here we have a clone of this game that I wrote during coronavirus quarantine days.
+
+ℹ️ In playing with the computer, the computer selects its sequence randomly
+
+ℹ️ For details about how the winning probability is calculated, you can visit [Penney’s game between many players](https://arxiv.org/pdf/1212.3973) paper
+
 
 
 <table>
@@ -57,20 +61,20 @@ Here we have a clone of this game that I wrote during coronavirus quarantine day
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.7)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
-- Download [Version 0.4](https://github.com/sepandhaghighi/penney/archive/v0.4.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/dev.zip)
+- Download [Version 0.5](https://github.com/sepandhaghighi/penney/archive/v0.5.zip) or [Latest Source ](https://github.com/sepandhaghighi/penney/archive/dev.zip)
 - Run `pip install .`			
 
 ### PyPI
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install penney==0.4`
+- Run `pip install penney==0.5`
 
 ### Exe Version (Windows)
-- Download [Exe-Version 0.4](https://github.com/sepandhaghighi/penney/releases/download/v0.4/Penney-0.4.exe)
-- Run `Penney-0.4.exe`
+- Download [Exe-Version 0.5](https://github.com/sepandhaghighi/penney/releases/download/v0.5/Penney-0.5.exe)
+- Run `Penney-0.5.exe`
 
 ## How to Play
 
-- You can use `penney`, `python -m penney` or `Penney.exe` to run this program
+ℹ️ You can use `penney`, `python -m penney` or `Penney.exe` to run this program
 
 <div align="center">
 <img src="https://github.com/sepandhaghighi/penney/raw/master/otherfiles/help.gif" alt="Screen Record">

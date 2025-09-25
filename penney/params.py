@@ -13,8 +13,7 @@ appears as a consecutive subsequence of the coin toss outcomes. The player whose
 PENNEY_NOTES = """
 - In playing with the computer, the computer selects its sequence randomly
 
-- For details about how the winning probability is calculated, you can visit https://arxiv.org/pdf/1212.3973
-"""
+- For details about how the winning probability is calculated, you can visit https://arxiv.org/pdf/1212.3973"""
 
 TRY_MESSAGE = "Try again!"
 

@@ -454,5 +454,5 @@ def print_description() -> None:  # pragma: no cover
     tprint("v {version}".format(version=PENNEY_VERSION))
     print_line(100)
     print("\n".join(justify_text(PENNEY_DESCRIPTION.split(), 100)))
-    print(PENNEY_NOTES)
+    print(PENNEY_NOTE)
     print_line(100)

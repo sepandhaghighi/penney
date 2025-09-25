@@ -10,7 +10,7 @@ another sequence of heads and tails of the same length. Subsequently, a fair coi
 appears as a consecutive subsequence of the coin toss outcomes. The player whose sequence appears first wins.
 """
 
-PENNEY_NOTES = """
+PENNEY_NOTE = """
 - In playing with the computer, the computer selects its sequence randomly
 
 - For details about how the winning probability is calculated, you can visit https://arxiv.org/pdf/1212.3973"""

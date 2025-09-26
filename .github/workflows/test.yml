@@ -5,25 +5,30 @@ name: CI
 
 on: [push, pull_request]
 
+
+env:
+  TEST_PYTHON_VERSION: 3.9
+  TEST_OS: 'ubuntu-22.04'
+
 jobs:
   build:
 
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
-        python-version: [3.5, 3.6, 3.7, 3.8, 3.9]
+        os: [ubuntu-22.04, windows-2022, macos-15-intel]
+        python-version: [3.7, 3.8, 3.9, 3.10.5, 3.11.0, 3.12.0, 3.13.0]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
     - name: Installation
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        python setup.py install
+        pip install .
     - name: First test
       run: |
         python -m penney test
@@ -37,14 +42,16 @@ jobs:
     - name: Version check
       run: |
         python otherfiles/version_check.py
-      if: matrix.python-version == 3.7
+      if: matrix.python-version == env.TEST_PYTHON_VERSION
     - name: Other tests
       run: |
           python -m vulture --min-confidence 65 --exclude=__init__.py --sort-by-size penney/ setup.py otherfiles/
           python -m bandit -r penney -s B311
           python -m pydocstyle --match-dir=penney
-      if: matrix.python-version == 3.7
-    - name: Codecov
-      run: |
-        codecov
-      if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
+      if: matrix.python-version == env.TEST_PYTHON_VERSION
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+          fail_ci_if_error: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+      if: matrix.python-version == env.TEST_PYTHON_VERSION && matrix.os == env.TEST_OS

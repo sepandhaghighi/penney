@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """Setup module."""
+from typing import List
 try:
     from setuptools import setup
 except ImportError:
@@ -14,13 +15,14 @@ or player B's sequence appears as a consecutive subsequence of the coin toss out
 '''
 
 
-def get_requires():
+def get_requires() -> List[str]:
     """Read requirements.txt."""
-    requirements = open("requirements.txt", "r").read()
+    with open("requirements.txt", "r") as f:
+        requirements = f.read()
     return list(filter(lambda x: x != "", requirements.split()))
 
 
-def read_description():
+def read_description() -> str:
     """Read README.md and CHANGELOG.md."""
     try:
         with open("README.md") as r:
@@ -37,20 +39,20 @@ def read_description():
 setup(
     name='penney',
     packages=['penney'],
-    version='0.4',
+    version='0.5',
     description="Penney's game",
     long_description=read_description(),
     long_description_content_type='text/markdown',
     author='Sepand Haghighi',
-    author_email='sepand@pycm.ir',
+    author_email='me@sepand.tech',
     url='https://github.com/sepandhaghighi/penney',
-    keywords="penney probability game",
+    keywords="penney probability game fun terminal",
     project_urls={
         'Source': 'https://github.com/sepandhaghighi/penney',
         'Tracker': 'https://github.com/sepandhaghighi/penney/issues',
     },
     install_requires=get_requires(),
-    python_requires='>=3.5',
+    python_requires='>=3.7',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
@@ -59,14 +61,22 @@ setup(
         'Natural Language :: English',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
+        'Topic :: Scientific/Engineering :: Mathematics',
         'Topic :: Games/Entertainment',
         'Topic :: Games/Entertainment :: Simulation',
+        'Topic :: Games/Entertainment :: Turn Based Strategy',
     ],
     license='MIT',
-    include_package_data=True
+    include_package_data=True,
+    entry_points={
+        'console_scripts': [
+            'penney = penney.__main__:main',
+        ]},
 )

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Penney params."""
 
-PENNEY_VERSION = "0.4"
+PENNEY_VERSION = "0.5"
 
 PENNEY_DESCRIPTION = """
 Penney's game, named after its inventor Walter Penney, is a binary (head/tail) sequence generating game between two or more players.
@@ -9,6 +9,11 @@ Player A selects a sequence of heads and tails (of length 3 or larger), and show
 another sequence of heads and tails of the same length. Subsequently, a fair coin is tossed until either player A's or player B's sequence
 appears as a consecutive subsequence of the coin toss outcomes. The player whose sequence appears first wins.
 """
+
+PENNEY_NOTE = """
+- In playing with the computer, the computer selects its sequence randomly
+
+- For details about how the winning probability is calculated, you can visit https://arxiv.org/pdf/1212.3973"""
 
 TRY_MESSAGE = "Try again!"
 
@@ -24,11 +29,11 @@ PLAYER_NUMBER_MESSAGE = "Please enter number of players : "
 
 PLAYER_NUMBER_ERROR = "[Error] Number of players should be an integer\n" + TRY_MESSAGE
 
-PLAYER_NUMBER_WARNING = "[Warning] Number of players automatically set to {}"
+PLAYER_NUMBER_WARNING = "[Warning] Number of players automatically set to {number_of_players}"
 
-PLAYER_NAME_MESSAGE = "Please enter player-{} name : "
+PLAYER_NAME_MESSAGE = "Please enter player-{index} name : "
 
-PLAYER_NAME_ERROR = "[Error] Player name should be uniqe and contains at least one character" + TRY_MESSAGE
+PLAYER_NAME_ERROR = "[Error] Player name should be unique and contains at least one character\n" + TRY_MESSAGE
 
 LENGTH_MESSAGE = "Please enter sequence length : "
 
@@ -36,10 +41,10 @@ LENGTH_ERROR1 = "[Error] Sequence length should be greater than 2\n" + TRY_MESSA
 
 LENGTH_ERROR2 = "[Error] Sequence length should be an integer\n" + TRY_MESSAGE
 
-SEQ_MESSAGE = "[{}] Please enter your sequence : "
+SEQUENCE_MESSAGE = "[{player_name}] Please enter your sequence (e.g. HHT) : "
 
-SEQ_ERROR = "[Error] Sequence should be uniqe, only consist of 'T' and 'H' characters with length of {}"
+SEQUENCE_ERROR = "[Error] Sequence should be unique, only consist of 'T' and 'H' characters with length of {sequence_length}"
 
-COMPUTER_SEQ_MESSAGE = "{0} sequence : {1}"
+COMPUTER_SEQUENCE_MESSAGE = "[{computer_name}] sequence : {computer_sequence}"
 
-POINT_MESSAGE = "Point for --> {}"
+POINT_MESSAGE = "Point for --> {winner}"

@@ -2,6 +2,7 @@
 
 block_cipher = None
 
+penney_version = "0.5"
 
 a = Analysis(['penney/__main__.py'],
              pathex=['penney'],
@@ -21,7 +22,7 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,
-          name='Penney',
+          name='Penney-' + penney_version,
           debug=False,
           strip=False,
           upx=True,

@@ -1,10 +1,13 @@
-# Core Developers #
-
+# Core Developers
 ----------
-- Sepand Haghighi - Sharif University Of Technology/Moduland Co - ([http://github.com/sepandhaghighi](http://github.com/sepandhaghighi)) ([sepand@pycm.ir](mailto:sepand@pycm.ir))
-- Sadra Sabouri - Sharif University Of Technology - [@sadrasabouri](https://github.com/sadrasabouri)
+- Sepand Haghighi - Open Science Laboratory ([Github](https://github.com/sepandhaghighi)) **
+- Sadra Sabouri - Open Science Laboratory ([Github](https://github.com/sadrasabouri))
+
+** **Maintainer**
 
 
-# Other Contributors #
-
+# Other Contributors
 ----------
+- [ChatGPT](https://chat.openai.com/) ++
+
+++ Graphic designer

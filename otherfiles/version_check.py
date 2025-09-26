@@ -4,17 +4,18 @@ import os
 import sys
 import codecs
 Failed = 0
-VERSION = "0.4"
+VERSION = "0.5"
 
 VERSION_1 = VERSION.split(".")[0]
-VERSION_2 = str(int(float(VERSION)*10 - int(VERSION_1)*10))
-VERSION_3 = str(int(float(VERSION)*100 - int(VERSION_1)*100 - int(VERSION_2)*10))
+VERSION_2 = str(int(float(VERSION) * 10 - int(VERSION_1) * 10))
+VERSION_3 = str(int(float(VERSION) * 100 - int(VERSION_1) * 100 - int(VERSION_2) * 10))
 VERSION_4 = "0"
 
 SETUP_ITEMS = ["version='{0}'"]
 README_ITEMS = [
     "[Version {0}](https://github.com/sepandhaghighi/penney/archive/v{0}.zip)",
     "Run `Penney-{0}.exe`",
+    "Run `pip install penney=={0}`",
     "[Exe-Version {0}](https://github.com/sepandhaghighi/penney/releases/download/v{0}/Penney-{0}.exe)"]
 CHANGELOG_ITEMS = [
     "## [{0}]",
@@ -22,22 +23,26 @@ CHANGELOG_ITEMS = [
     "[{0}]:"]
 
 PARAMS_ITEMS = ['PENNEY_VERSION = "{0}"']
-RC_ITEMS =["filevers=({0}, {1}, {2}, {3})","prodvers=({0}, {1}, {2}, {3})","(u'FileVersion', u'{0}.{1}.{2}.{3}'),","(u'ProductVersion', u'{0}, {1}, {2}, {3}')"]
+SPEC_ITEMS = ['penney_version = "{0}"']
+RC_ITEMS = [
+    "filevers=({0}, {1}, {2}, {3})",
+    "prodvers=({0}, {1}, {2}, {3})",
+    "(u'FileVersion', u'{0}.{1}.{2}.{3}'),",
+    "(u'ProductVersion', u'{0}, {1}, {2}, {3}')"]
 TEST_ITEMS = ["New Version ({0}) Is Available!"]
+SECURITY_ITEMS = ["| {0}           | :white_check_mark: |", "| < {0}         | :x:                |"]
 FILES = {
     "setup.py": SETUP_ITEMS, "README.md": README_ITEMS, "CHANGELOG.md": CHANGELOG_ITEMS,
-        os.path.join("penney", "params.py"): PARAMS_ITEMS}
+    os.path.join("penney", "params.py"): PARAMS_ITEMS, "Penney.spec": SPEC_ITEMS, "SECURITY.md": SECURITY_ITEMS, }
 
-TEST_NUMBER = len(FILES.keys()) +1
+TEST_NUMBER = len(FILES.keys()) + 1
 
 
-def print_result(failed=False):
+def print_result(failed: bool = False) -> None:
     """
     Print final result.
 
     :param failed: failed flag
-    :type failed: bool
-    :return: None
     """
     message = "Version tag tests "
     if not failed:
@@ -61,9 +66,9 @@ if __name__ == "__main__":
             Failed += 1
             print("Error in " + file_name + "\n" + "Message : " + str(e))
     try:
-        file_content = codecs.open(os.path.join("otherfiles","Version.rc"), "r", "utf-8", 'ignore').read()
+        file_content = codecs.open(os.path.join("otherfiles", "Version.rc"), "r", "utf-8", 'ignore').read()
         for test_item in RC_ITEMS:
-            if file_content.find(test_item.format(VERSION_1,VERSION_2,VERSION_3,VERSION_4)) == -1:
+            if file_content.find(test_item.format(VERSION_1, VERSION_2, VERSION_3, VERSION_4)) == -1:
                 print("Incorrect version tag in " + "Version.rc")
                 Failed += 1
                 break

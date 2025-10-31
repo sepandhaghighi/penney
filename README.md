@@ -23,7 +23,7 @@ Here we have a clone of this game that I wrote during coronavirus quarantine day
 <table>
 	<tr>
 		<td align="center">PyPI Counter</td>
-		<td align="center"><a href="http://pepy.tech/count/penney"><img src="http://pepy.tech/badge/penney"></a></td>
+		<td align="center"><a href="http://pepy.tech/project/penney"><img src="http://pepy.tech/badge/penney"></a></td>
 	</tr>
 	<tr>
 		<td align="center">GitHub Stars</td>
